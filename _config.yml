@@ -1,2 +1,45 @@
-theme: jekyll-theme-hacker
-title: "Coming Soon"
+title: "Rajan's Portfolio"
+email: rajanmaharjanmails@gmail.com
+description: "Welcome to my personal portfolio and blog."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://rajanjs.github.io" # the base hostname & protocol for your site
+
+# Social media usernames
+twitter_username: rajanmaharjn
+github_username: rajanjs
+linkedin_username: rajanmaharjn
+devto_username: rajanjs
+stackoverflow_userid: 5738760
+medium_username: rajanmaharjan
+hackerrank_username: maharjanrajan
+
+# Jekyll settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag # Optional plugin for better SEO
+  - jekyll-paginate # Optional plugin for pagination of blog posts
+
+# Pagination settings (if using jekyll-paginate)
+paginate: 5 # Number of posts per page
+paginate_path: "/blog/page:num/"
+
+# Exclude files and directories from the site build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# SEO configuration
+defaults:
+  - scope:
+      path: ""
+    values:
+      sitemap:
+        changefreq: weekly
+        priority: 0.5
+
+# Build settings
+future: true # Display posts dated in the future
