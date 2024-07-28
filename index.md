@@ -89,7 +89,7 @@ title: "Coming Soon"
 
 <script>
   function updateCountdown() {
-    const countdownDate = new Date("December 31, 2024 23:59:59").getTime();
+    const countdownDate = new Date("August 30, 2024 23:59:59").getTime();
     const now = new Date().getTime();
     const distance = countdownDate - now;
 
