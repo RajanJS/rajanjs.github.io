@@ -3,12 +3,29 @@ layout: default
 title: "Coming Soon"
 ---
 
-<div style="text-align: center; margin-top: 50px;">
-  <h1 style="font-size: 3em; margin-bottom: 20px;">{{ page.title }}</h1>
-  <p style="font-size: 1.5em;">We are working hard to launch our new website. Stay tuned!</p>
+<div class="coming-soon-container">
+  <h1>{{ page.title }}</h1>
+  <p>We are working hard to launch our new website. Stay tuned!</p>
   
-  <!-- Optional countdown timer -->
-  <div id="countdown" style="margin: 20px 0; font-size: 1.5em;"></div>
+  <!-- Countdown Timer -->
+  <div class="countdown">
+    <div class="time-segment">
+      <span id="days" class="time-value">00</span>
+      <span class="time-label">Days</span>
+    </div>
+    <div class="time-segment">
+      <span id="hours" class="time-value">00</span>
+      <span class="time-label">Hours</span>
+    </div>
+    <div class="time-segment">
+      <span id="minutes" class="time-value">00</span>
+      <span class="time-label">Minutes</span>
+    </div>
+    <div class="time-segment">
+      <span id="seconds" class="time-value">00</span>
+      <span class="time-label">Seconds</span>
+    </div>
+  </div>
 
   <!-- Social Media Links -->
   <p>Follow me for updates:</p>
@@ -22,20 +39,76 @@ title: "Coming Soon"
   </div>
 </div>
 
+<style>
+  .coming-soon-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+  }
+
+  .time-segment {
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .time-value {
+    display: block;
+    font-size: 2.5em;
+    color: #333;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+
+  .time-label {
+    font-size: 1em;
+    color: #666;
+  }
+
+  .social-icons img {
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+</style>
+
 <script>
-  // Optional: Countdown timer script
-  const countdownDate = new Date("December 31, 2024 23:59:59").getTime();
-  const x = setInterval(function() {
+  function updateCountdown() {
+    const countdownDate = new Date("December 31, 2024 23:59:59").getTime();
     const now = new Date().getTime();
     const distance = countdownDate - now;
+
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+    document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+    document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+    document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
     if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("countdown").innerHTML = "EXPIRED";
+      clearInterval(countdownInterval);
+      document.querySelector(".countdown").innerHTML = "EXPIRED";
     }
-  }, 1000);
+  }
+
+  const countdownInterval = setInterval(updateCountdown, 1000);
+  updateCountdown();
 </script>
