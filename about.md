@@ -18,7 +18,7 @@ I am passionate about [briefly describe your interests, background, or expertise
 
 ## Contact Me
 
-Feel free to reach out to me via [email](mailto:your-email@example.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/your-profile) or [Twitter](https://twitter.com/your-profile).
+Feel free to reach out to me via [email](mailto:{{ site.email }}) or connect with me on [LinkedIn](https://linkedin.com/in/{{ site.linkedin_username }}) or [Twitter](https://twitter.com/{{ site.twitter_username }}).
 
 Thanks for visiting!
 
