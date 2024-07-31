@@ -16,9 +16,17 @@ Recognized for strong analytical skills, innovative problem-solving abilities, a
 
 ## What I Do
 
-- **[React.js]**: Describe what you do in this role or skill.
-- **[React Native]**: Describe what you do in this role or skill.
-- **[Node.js]]**: Describe what you do in this role or skill.
+#### Currently as **React Native Mobile Engineer** @ **SunPower Corporation**
+
+- As Mobile Engineer, I with my team apply our expertise to develop new improved commissioning and monitoring apps for SunPower customers, dealers, and installing partners, that streamlined workflows for over 1,000 users and cut onboarding time by 40% through intuitive design
+  > Users now connect and configure devices directly via a smartphone using ProConnect App
+  > mySunPower App offers convenient information about and control over your SunPower home solar power system
+- Contributed to a 20% increase in system efficiency through optimized design and integration of IoT devices during commissioning with BLE and WiFi modules
+- Teamed up with the QA team to craft test plans and validate solutions, significantly reducing production bugs and increasing app ratings by 20%.
+- Reduced deployment times by 30% and decreased billing minutes for GitHub Actions by 25% through effective use of automated testing in CI tools.
+- Developed a Scanner Component in React Native using open-source libraries to scan multiple QR and barcodes simultaneously, resulting in annual savings of approximately $150,000 for the company.
+- Coordinated with the firmware team to resolve existing issues, resulting in a 15% decrease in commissioning time, and also refactored the firmware update process, improving update efficiency and duration.
+- Supported legacy Cordova applications by updating various outdated packages, which improved stability and performance, and facilitated the transition to modern technologies, resulting in a 25% reduction in maintenance time.
 
 ## Contact Me
 
