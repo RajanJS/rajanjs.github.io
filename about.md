@@ -2,7 +2,10 @@
 layout: page
 title: About Me
 permalink: /about/
+css: "/assets/css/custom.css"
 ---
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 Welcome to my personal website! I'm Rajan Maharjan, a Javascript Engineer. This page is here to tell you a bit more about me and my work.
 
@@ -33,3 +36,58 @@ Recognized for strong analytical skills, innovative problem-solving abilities, a
 Feel free to reach out to me via [email](mailto:{{ site.email }}) or connect with me on [LinkedIn](https://linkedin.com/in/{{ site.linkedin_username }}) or [Twitter](https://twitter.com/{{ site.twitter_username }}).
 
 Thanks for visiting!
+
+<style>
+
+  body {
+      font-family: 'Poppins', sans-serif;
+  }
+
+  .main-content {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  .profile-picture {
+    text-align: center; /* Center the profile picture */
+    margin-bottom: 20px; /* Space between the picture and the following content */
+  }
+
+  .profile-picture img {
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Ensure the height matches the width for a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 4px solid #d3d3d3; /* Gray border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gray shadow */
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-size: 2.5em; /* Larger font size */
+    color: #333; /* Darker color for better contrast */
+    text-align: center; /* Center align the header */
+    margin-bottom: 10px; /* Space below the header */
+    border-bottom: 2px solid #d3d3d3; /* Gray underline */
+    padding-bottom: 10px; /* Space between text and underline */
+    letter-spacing: 1px; /* Slightly increase letter spacing */
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  .follow-social-title {
+    font-size: 1em;
+    margin-top: 50px;
+   }
+
+  .social-icons img {
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+</style>

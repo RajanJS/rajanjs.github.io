@@ -44,3 +44,23 @@ defaults:
 
 # Build settings
 future: true # Display posts dated in the future
+
+# Configuration for asset paths
+assets:
+  sources:
+    - _assets/css
+    - _assets/js
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Custom stylesheets
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      css: "/assets/css/custom.css"
