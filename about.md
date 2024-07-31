@@ -9,11 +9,11 @@ Welcome to my personal website! I'm Rajan Maharjan, a Javascript Engineer. This 
 
 ## Who I Am
 
-Seasoned software developer with over 8 years of experience in the full lifecycle development of customer-facing applications and web services, with a strong focus on JavaScript technologies. Proven track record in delivering high-quality, production-ready mobile applications for over 7 years, encompassing both front-end and back-end development. Adept at leveraging JavaScript frameworks and tools to build robust solutions that meet complex requirements and deliver exceptional user experiences.
-
-Recognized for strong analytical skills, innovative problem-solving abilities, and a commitment to delivering technical solutions within demanding timelines. A collaborative team player with excellent communication and interpersonal skills, experienced in working effectively with clients, colleagues, and stakeholders to achieve project goals. I am seeking to join a dynamic organization where I can apply my JavaScript expertise and contribute to impactful projects while continuing to grow professionally.
+As a passionate JavaScript Engineer, I excel in crafting robust applications with React, React Native, and Node.js, while leveraging the power of AWS for scalable solutions. With over 8 years of experience, I have delivered impactful projects across diverse domains, including IoT, Renewable Energy, Health Tech, FinTech, and Crypto. My expertise in AI and ML Kit drives innovative solutions that transform complex challenges into opportunities for progress. I am committed to advancing sustainable technology, focusing on projects that positively impact society and foster a more sustainable future.
 
 "Wellness starts from within."
+
+> JavaScript Engineering for Impact and Innovation
 
 ## What I Do
 
