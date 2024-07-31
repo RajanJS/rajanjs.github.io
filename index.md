@@ -1,34 +1,14 @@
 ---
 layout: default
-title: "Coming Soon"
 ---
 
-<div class="coming-soon-container">
-  <h1>{{ page.title }}</h1>
-  <p>We are working hard to launch our new website. Stay tuned!</p>
-  
-  <!-- Countdown Timer -->
-  <div class="countdown">
-    <div class="time-segment">
-      <span id="days" class="time-value">00</span>
-      <span class="time-label">Days</span>
-    </div>
-    <div class="time-segment">
-      <span id="hours" class="time-value">00</span>
-      <span class="time-label">Hours</span>
-    </div>
-    <div class="time-segment">
-      <span id="minutes" class="time-value">00</span>
-      <span class="time-label">Minutes</span>
-    </div>
-    <div class="time-segment">
-      <span id="seconds" class="time-value">00</span>
-      <span class="time-label">Seconds</span>
-    </div>
-  </div>
+<div class="main-content">
+  <h1>I am Rajan Maharjan</h1>
+  <p>A Software Engineer, Crafting Cutting-Edge Web and Mobile Solutions with Expert JavaScript Engineering</p>
 
   <!-- Social Media Links -->
-  <p>Follow me for updates:</p>
+  <p class="follow-social-title">Follow me for updates:</p>
+
   <div class="social-icons">
     <a href="https://dev.to/{{ site.devto_username }}" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg" alt="Dev.to" height="30" width="40" /></a>
     <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="30" width="40" /></a>
@@ -40,75 +20,32 @@ title: "Coming Soon"
 </div>
 
 <style>
-  .coming-soon-container {
+  .main-content {
     text-align: center;
     margin-top: 50px;
     font-family: 'Arial', sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 2.5em;
+    margin-top: 50px;
     margin-bottom: 20px;
   }
 
   p {
-    font-size: 1.5em;
+    font-size: 1.1em;
   }
 
-  .countdown {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
-  }
-
-  .time-segment {
-    margin: 0 10px;
-    text-align: center;
-  }
-
-  .time-value {
-    display: block;
-    font-size: 2.5em;
-    color: #333;
-    background: #f2f2f2;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 5px;
-  }
-
-  .time-label {
+  .follow-social-title {
     font-size: 1em;
-    color: #666;
-  }
+    margin-top: 50px;
+   }
 
   .social-icons img {
-    margin: 0 10px;
+    margin: 0 5px;
     vertical-align: middle;
   }
 </style>
-
-<script>
-  function updateCountdown() {
-    const countdownDate = new Date("August 15, 2024 23:59:59").getTime();
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-    document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-    document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-    document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-    if (distance < 0) {
-      clearInterval(countdownInterval);
-      document.querySelector(".countdown").innerHTML = "EXPIRED";
-    }
-  }
-
-  const countdownInterval = setInterval(updateCountdown, 1000);
-  updateCountdown();
-</script>
