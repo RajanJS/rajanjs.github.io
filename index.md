@@ -62,14 +62,13 @@ layout: default
   }
 
   h1 {
-    font-family: 'Lora', serif;
-    font-size: 2.5em; /* Larger font size */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em; /* Larger font size */
     color: #333; /* Darker color for better contrast */
     text-align: center; /* Center align the header */
-    margin-bottom: 10px; /* Space below the header */
+    margin-bottom: 20px; /* Space below the header */
     border-bottom: 2px solid #d3d3d3; /* Gray underline */
-    padding-bottom: 10px; /* Space between text and underline */
-    letter-spacing: 1px; /* Slightly increase letter spacing */
+    padding-bottom: 20px; /* Space between text and underline */
   }
 
   p {
@@ -85,4 +84,5 @@ layout: default
     margin: 0 5px;
     vertical-align: middle;
   }
+  
 </style>

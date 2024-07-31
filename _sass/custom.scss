@@ -8,3 +8,25 @@ body {
 h1 {
   font-family: 'Lora', serif;
 }
+
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+footer .social-icons {
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+footer .social-icons img {
+  width: 30px;
+  height: 30px;
+}
