@@ -12,6 +12,7 @@ devto_username: rajanjs
 stackoverflow_userid: 5738760
 medium_username: rajanmaharjan
 hackerrank_username: maharjanrajan
+site_favicon: favicon.ico
 
 # Jekyll settings
 markdown: kramdown

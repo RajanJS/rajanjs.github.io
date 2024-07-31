@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
 <div class="main-content">
   <h1>I am Rajan Maharjan</h1>
   <p>A Software Engineer, Crafting Cutting-Edge Web and Mobile Solutions with Expert JavaScript Engineering</p>
