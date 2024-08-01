@@ -1,10 +1,8 @@
 ---
-layout: default
+layout: page
 title: Blog Posts
 permalink: /blog/
 ---
-
-# Blog Posts
 
 Welcome to my blog! Here you can find a list of all my recent posts.
 
