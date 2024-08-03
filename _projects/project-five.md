@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Project Five"
+title: "Comming Soon..."
 description: "A brief description of Project One."
 image: "/assets/img/thumb.png"
 gh-repo: "username/repository"
