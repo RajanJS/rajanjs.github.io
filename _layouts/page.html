@@ -1,82 +1,31 @@
 ---
-layout: default
+layout: base
 ---
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+{% include header.html type="page" %}
 
-<article>
-    <header>
-        <h1>{{ page.title }}</h1>
-    </header>
+<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+  <div class="row">
+    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+      {% if page.before-content %}
+        <div class="before-content">
+          {% for file in page.before-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
 
-    <div class="content">
-        {{ content }}
+      {{ content }}
+
+      {% if page.after-content %}
+        <div class="after-content">
+          {% for file in page.after-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% include comments.html %}
     </div>
-</article>
-
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .main-content {
-        text-align: center;
-        margin-top: 50px;
-        font-family: 'Poppins', sans-serif;
-        max-width: 600px;
-        margin: 50px auto;
-        padding: 20px;
-    }
-
-    .profile-picture {
-        text-align: center;
-        /* Center the profile picture */
-        margin-bottom: 20px;
-        /* Space between the picture and the following content */
-    }
-
-    .profile-picture img {
-        width: 150px;
-        /* Adjust as needed */
-        height: 150px;
-        /* Ensure the height matches the width for a perfect circle */
-        border-radius: 50%;
-        /* Makes the image circular */
-        object-fit: cover;
-        /* Ensures the image covers the area without distortion */
-        border: 4px solid #d3d3d3;
-        /* Gray border */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        /* Gray shadow */
-    }
-
-    h1 {
-        font-family: 'Poppins', sans-serif;
-        font-size: 2em;
-        /* Larger font size */
-        color: #333;
-        /* Darker color for better contrast */
-        text-align: center;
-        /* Center align the header */
-        margin-bottom: 20px;
-        /* Space below the header */
-        border-bottom: 2px solid #d3d3d3;
-        /* Gray underline */
-        padding-bottom: 20px;
-        /* Space between text and underline */
-    }
-
-    p {
-        font-size: 1.1em;
-    }
-
-    .follow-social-title {
-        font-size: 1em;
-        margin-top: 50px;
-    }
-
-    .social-icons img {
-        margin: 0 5px;
-        vertical-align: middle;
-    }
-</style>
+  </div>
+</main>

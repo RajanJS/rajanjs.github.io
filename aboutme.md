@@ -1,11 +1,10 @@
 ---
 layout: page
-title: About Me
-permalink: /about/
-css: "/assets/css/custom.css"
+title: About me
+subtitle: Why you'd want to hire me!
 ---
 
-Welcome to my personal website! I'm Rajan Maharjan, a Javascript Engineer. This page is here to tell you a bit more about me and my work.
+I'm Rajan Maharjan, a Javascript Engineer. This page is here to tell you a bit more about me and my work.
 
 ## Who I Am
 
@@ -20,8 +19,10 @@ As a passionate JavaScript Engineer, I excel in crafting robust applications wit
 #### Currently as **React Native Mobile Engineer** @ **SunPower Corporation**
 
 - As Mobile Engineer, I with my team apply our expertise to develop new improved commissioning and monitoring apps for SunPower customers, dealers, and installing partners, that streamlined workflows for over 1,000 users and cut onboarding time by 40% through intuitive design
+
   > Users now connect and configure devices directly via a smartphone using ProConnect App
   > mySunPower App offers convenient information about and control over your SunPower home solar power system
+
 - Contributed to a 20% increase in system efficiency through optimized design and integration of IoT devices during commissioning with BLE and WiFi modules
 - Teamed up with the QA team to craft test plans and validate solutions, significantly reducing production bugs and increasing app ratings by 20%.
 - Reduced deployment times by 30% and decreased billing minutes for GitHub Actions by 25% through effective use of automated testing in CI tools.
