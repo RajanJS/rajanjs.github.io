@@ -3,7 +3,7 @@
 ############################
 
 # Name of website
-title: "Rajan's Byte of Life"
+title: "Rajan's Bytes"
 
 # Your name to show in the footer
 author: Rajan Maharjan
@@ -13,13 +13,15 @@ author: Rajan Maharjan
 ###############################################
 
 navbar-links:
+  Hello World!!: 'index'
   Who's Rajan?: "aboutme"
   My Works: "portfolio"
   Thought Bytes: "posts"
   Get My CV Here:
-    - Plan Text CV: "https://mrajan.com.np/"
-    - Modern CV with PP: "https://mrajan.com.np/"
-    - Modern CV without PP: "https://mrajan.com.np/"
+    - Plan Text CV: "/assets/resources/cv/rajan-resume-plain.pdf"
+    - Modern CV: "/assets/resources/cv/rajan-resume-modern.pdf"
+    - Modern CV with PP: "/assets/resources/cv/rajan-resume-modern-pp.pdf"
+    - Modern Professional: "/assets/resources/cv/rajan-resume-professional.pdf"
 
 ################
 # --- Logo --- #

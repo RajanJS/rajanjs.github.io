@@ -30,7 +30,6 @@ full-width: true
 <style>
 
 .page-container {
-  margin: 0 15px; /* Adjust the margin as needed */
   box-sizing: border-box;
 }
 
@@ -47,15 +46,17 @@ full-width: true
 }
 
 .portfolio-item {
-  width: calc(33.333% - 30px); /* Adjusted width to account for the gap */
+  width: calc(20% - 30px); /* Adjusted width to account for the gap */
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
+  border: 1px solid #d3d3d3; /* Light grey border */
+  border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
 }
 
 .image-wrapper {
   width: 100%;
-  height: 200px; /* Set a fixed height for the image wrapper, adjust as needed */
+  height: 150px; /* Set a fixed height for the image wrapper, adjust as needed */
   overflow: hidden;
   position: relative;
 }
@@ -64,7 +65,7 @@ full-width: true
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures the image covers the entire container */
-  border-radius: 35px; /* Adjust this value for desired roundness */
+  border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
 }
 
 .portfolio-description {
@@ -74,10 +75,31 @@ full-width: true
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
-  padding: 10px;
+  padding: 14px;
   box-sizing: border-box;
   text-align: center;
-  border-radius: 35px; /* Adjust this value for desired roundness */
+  border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
+  height: 150px
+}
+
+.portfolio-description h2 {
+  font-size: 0.9em; /* Responsive font size */
+  margin: 0; /* Remove default margin */
+  margin-top: 15px; /* Remove default margin */
+  margin-bottom: 20px; /* Remove default margin */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.portfolio-description p {
+  font-size: clamp(0.8em, 1.5vw, 0.8em); /* Responsive font size */
+  margin: 0; /* Remove default margin */
+  overflow: hidden; /* Hide overflowing text */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
 }
 
 .portfolio-item a {

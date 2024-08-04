@@ -750,6 +750,12 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   bottom: 0;
   display: none;
 }
+
+.intro-header .page-heading h1 {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+}
+
 @media (min-width: 1200px) {
   .intro-header {
     margin-top: 8.125rem;
@@ -762,10 +768,11 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
     padding: 9.375rem 0;
   }
   .intro-header .page-heading h1 {
+    margin-top: 1rem;
     font-size: 2.5rem;
   }
   .intro-header .post-heading h1 {
-    font-size: 3.125rem;
+    font-size: 2.5rem;
   }
   .intro-header.big-img .img-desc {
     font-size: 0.875rem;

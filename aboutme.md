@@ -16,7 +16,7 @@ As a passionate JavaScript Engineer, I excel in crafting robust applications wit
 
 ## What I Do
 
-#### Currently as **React Native Mobile Engineer** @ **SunPower Corporation**
+Currently as **React Native Mobile Engineer** @ **SunPower Corporation**
 
 - As Mobile Engineer, I with my team apply our expertise to develop new improved commissioning and monitoring apps for SunPower customers, dealers, and installing partners, that streamlined workflows for over 1,000 users and cut onboarding time by 40% through intuitive design
 
