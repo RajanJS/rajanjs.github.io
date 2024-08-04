@@ -21,14 +21,65 @@ layout: page
       <p>No projects found.</p>
     {% endfor %}
   </div>
-  <div class="view-all">
+  <hr class="small" />
+
+  <div class="view-all-container">
     <a href="/portfolio">View All Projects > </a>
   </div>
 </div>
 
+<hr class="large" />
+
+<div class="scroll-container">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %d, %Y" }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+<hr class="small" />
+
+<div class="view-all-container">
+  <a href="/posts" class="view-all-button">View All Blogs ></a>
+</div>
 
 
 <style>
+
+  .scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center; /* Center-align the scroll container */
+    margin-top: 30px; /* Space above the button */
+
+  }
+
+  .post-list {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  .post-list li {
+    display: inline;
+    margin: 0 20px; /* Adjust spacing between items */
+  }
+
+  .post-list a {
+    text-decoration: none;
+    color: #007bff; /* Customize link color */
+  }
+
+  .view-all-container {
+    text-align: center; /* Center-align the button container */
+    margin-top: 20px; /* Space above the button */
+  }
+
 
   .page-container {
     position: relative;
