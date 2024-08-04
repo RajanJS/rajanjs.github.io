@@ -1,12 +1,19 @@
 ---
 layout: post
 title: Setting Up a Basic Server for the MEAN Stack
-subtitle: Running a Node.js Server and AngularJS Application on a Single Ubuntu Server
+subtitle: A Comprehensive Guide to Configuring Your MEAN Stack Environment
 tags: [Node.js, MEAN Stack, MongoDB, Express.js, Angular,js]
+thumbnail-img: /assets/img/post/mean/MEAN-tech-stack.png
+share-img: /assets/img/post/mean/MEAN-tech-stack.png
 comments: true
 mathjax: true
+tags: [MEAN Stack, MongoDB, Tech STack, Express.js, Angular.js, Node.js]
 author: Rajan Maharjan
 ---
+
+![MEAN Tech Stack](/assets/img/post/mean/MEAN-tech-stack.png)
+
+Running a Node.js Server and AngularJS Application on a Single Ubuntu Server
 
 In this guide, we will cover two main sections:
 
@@ -36,9 +43,6 @@ Will be installing following;
 
 6. **Git**  
   Git `(/ɡɪt/)` is a version control system
-
-
-
 
 
 <p>&nbsp;</p>
