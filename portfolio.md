@@ -1,13 +1,11 @@
 ---
 layout: page
 title: What I’ve Built
+subtitle: Here you can find a showcase of all my recent projects.
 full-width: true
 ---
 
 <div class="page-container">
-  <div class="text-center">
-    <p>Welcome to my portfolio! Here you can find a showcase of all my recent projects.</p>
-  </div>
   <div class="portfolio-gallery">
     {% assign sorted_projects = site.projects | sort: 'sort_order' %}
     {% for project in sorted_projects %}
@@ -31,6 +29,7 @@ full-width: true
 
 .page-container {
   box-sizing: border-box;
+  margin-top: 30px;
 }
 
 .text-center {
