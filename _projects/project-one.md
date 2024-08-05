@@ -17,6 +17,7 @@ tags:
   - Web Development
 ---
 
+## Project Overview
 
 SunPower has been developing record-breaking solar technology since the 1970s. Our history over these decades has been marked by creativity, craftsmanship – and confidence.
 

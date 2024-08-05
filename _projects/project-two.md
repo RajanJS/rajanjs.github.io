@@ -79,7 +79,7 @@ Offer multiple payment methods by sending payment links to your customers and di
 
 - Digital collections and payments
   - Enable multiple payment methods for your clients with preferential commissions.
-  - Disperse payments to your suppliers through digital channels. 
+  - Disperse payments to your suppliers through digital channels.
 - Digital onboarding process
   - Fully digital customer and supplier registration process
   - Simplification of document management and validation.
