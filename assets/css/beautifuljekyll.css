@@ -543,7 +543,7 @@ footer .footer-custom-content {
 .post-preview .post-image {
   float: right;
   margin-left: 0.625rem;
-  height: 12rem;
+  /* height: 12rem; */
   width: 12rem;
 }
 .post-preview .post-image {
@@ -571,7 +571,6 @@ footer .footer-custom-content {
 }
 .post-preview .post-image-small {
   width: 100%;
-  height: 100%;
   text-align: center;
   display: none;
 }
@@ -1140,4 +1139,245 @@ pre {
   #nav-search-text {
     display: inline-block;
   }
+}
+
+
+
+/* ---Home Page style------ */
+
+/* Portfolio  */
+
+.page-container {
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 20px;
+  flex-direction: column;
+  padding: 50px; /* Padding around the container */
+  width: 100%; /* Full width of the viewport */
+  box-sizing: border-box; /* Ensure padding and border are included in width calculations */
+}
+
+.text-center {
+  text-align: center; /* Center-aligns the text */
+  margin-bottom: 30px; /* Optional: adds spacing below the text */
+}
+
+.portfolio-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px; /* Space between items */
+  justify-content: center; /* Center-align items horizontally */
+}
+
+.portfolio-item {
+  position: relative; /* Required for absolute positioning of description */
+  width: calc(28% - 40px); /* Adjust width with gap */
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #d3d3d3; /* Light grey border */
+  border-radius: 15px;
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.portfolio-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9); /* Light white background with slight transparency */
+  color: #404040; /* Original text color */
+  padding: 14px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 150px; /* Maintain the original height */
+  transition: opacity 0.3s ease, background 0.3s ease; /* Smooth transitions */
+  display: flex; /* Use flexbox to center content */
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  opacity: 1; /* Initially visible */
+}
+
+.portfolio-item:hover .portfolio-description {
+  height: 100%; /* Cover the full height of the item */
+  background: rgba(255, 255, 255, 0.9); /* Slightly more opaque background on hover */
+  opacity: 1; /* Ensure it’s visible */
+}
+
+.portfolio-item:hover {
+  color: #0085A1; /* Change text color on hover */
+  transform: scale(1.05); /* Scale the portfolio item slightly on hover */
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 150px; /* Set a fixed height for the image wrapper, adjust as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+  border-radius: 15px;
+}
+
+.portfolio-description h2 {
+  font-size: 0.9em; /* Responsive font size */
+  margin: 0; /* Remove default margin */
+  margin-top: 15px; /* Remove default margin */
+  margin-bottom: 20px; /* Remove default margin */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.portfolio-description p {
+  font-size: clamp(0.8em, 1.5vw, 0.8em); /* Responsive font size */
+  margin: 0; /* Remove default margin */
+  overflow: hidden; /* Hide overflowing text */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  line-clamp: inherit;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.portfolio-item:hover .portfolio-description {
+  color: #0085A1; /* Change description text color on hover */
+  background:  rgba(255, 255, 255, 0.9);
+}
+
+.portfolio-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .portfolio-item {
+    width: calc(50% - 30px); /* 2 items per row on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item {
+    width: calc(100% - 30px); /* 1 item per row on small screens */
+  }
+}
+
+
+/* Post scrollview list  */
+
+/* View all container */
+
+.view-all-container {
+  text-align: center; /* Center-align the button container */
+  margin-top: 30px; /* Space above the button */
+}
+
+.view-all-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600; /* Increase font weight */
+  color: var(--page-col); /* Text color for good contrast */
+  background: var(--link-col); /* Solid background color */
+  border: none;
+  border-radius: 15px; /* Rounded corners */
+  text-decoration: none;
+  transition: all 0.3s ease-in-out; /* Smooth transition for effects */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: relative; /* For pseudo-element positioning */
+  overflow: hidden; /* Hide the pseudo-element overflow */
+  letter-spacing: 0.5px; /* Slightly increase letter spacing for readability */
+}
+
+.view-all-button:hover {
+  background: var(--hover-col); /* Change background color on hover */
+  color: var(--page-col); /* Ensure text color contrasts well */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.view-all-button:focus, 
+.view-all-button:active {
+  outline: none; /* Remove default focus outline */
+}
+
+.view-all-button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.view-all-button:hover:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* Post container */
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically within the container */
+  align-items: center; /* Center content horizontally within the container */
+  width: 100%; /* Full width of the viewport */
+  box-sizing: border-box; /* Ensure padding and border are included in width calculations */
+}
+
+.posts-inner {
+  max-width: 900px; /* Limit width of the content */
+  width: 100%; /* Full width up to the max-width */
+}
+
+.posts-container hr.small {
+  border: 0;
+  height: 1px; /* Adjust the height of the line */
+  background: var(--border-col, #eaeaea); /* Use a light color for the line */
+  width: 100%; /* Full width of the container */
+  max-width: 500px; /* Match the max-width of the inner container */
+  margin: 20px 0; /* Space above and below the line */
+}
+
+.posts-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-preview {
+  margin-bottom: 20px; /* Space between posts */
+}
+
+/* Pagination styles */
+.pagination.main-pager {
+  margin-top: 20px; /* Space above pagination */
+  text-align: center; /* Center pagination controls */
+}
+
+.page-item {
+  display: inline; /* Inline for pagination controls */
+}
+
+.page-link {
+  text-decoration: none;
+  color: var(--link-col); /* Use theme link color */
+}
+
+.page-link:hover {
+  color: var(--hover-col); /* Use theme hover color */
 }

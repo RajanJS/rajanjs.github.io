@@ -1,16 +1,10 @@
 ---
 layout: project
 title: "SunPower Pro Connect"
-description: "Commissioning and
-monitoring apps for SunPower customers Commissioning and
-monitoring apps for SunPower customers Commissioning and
-monitoring apps for SunPower customers"
+description: "Commissioning and monitoring apps for SunPower customers"
 image: "/assets/img/project/sunpower/proconnect.png"
-# gh-repo: "username/repository"
 sort_order: 1
-# gh-badge:
-#   - star
-#   - fork
+
 tags:
   - JavaScript
   - React
