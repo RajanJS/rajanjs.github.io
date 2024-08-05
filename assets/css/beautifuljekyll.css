@@ -1266,8 +1266,12 @@ pre {
 }
 
 @media (max-width: 480px) {
+  .page-container {
+    padding: 10px;
+  }
+  
   .portfolio-item {
-    width: calc(100% - 30px); /* 1 item per row on small screens */
+    width: calc(100%); /* 1 item per row on small screens */
   }
 }
 
