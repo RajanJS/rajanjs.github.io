@@ -1152,7 +1152,7 @@ pre {
   box-sizing: border-box;
   margin-top: 20px;
   flex-direction: column;
-  padding: 50px; /* Padding around the container */
+  padding: 30px; /* Padding around the container */
   width: 100%; /* Full width of the viewport */
   box-sizing: border-box; /* Ensure padding and border are included in width calculations */
 }
@@ -1260,6 +1260,11 @@ pre {
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
+  .page-container {
+    padding: 10px;
+  }
+  
+
   .portfolio-item {
     width: calc(50% - 30px); /* 2 items per row on medium screens */
   }
