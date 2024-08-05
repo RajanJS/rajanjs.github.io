@@ -50,7 +50,7 @@ full-width: true
   overflow: hidden;
   position: relative;
   border: 1px solid #d3d3d3; /* Light grey border */
-  border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
+  border-radius: 15px;
 }
 
 .image-wrapper {
@@ -64,7 +64,7 @@ full-width: true
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures the image covers the entire container */
-  border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
+  border-radius: 15px;
 }
 
 .portfolio-description {
@@ -77,7 +77,6 @@ full-width: true
   padding: 14px;
   box-sizing: border-box;
   text-align: center;
-  border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
   height: 150px
 }
 

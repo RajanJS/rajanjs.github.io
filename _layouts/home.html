@@ -53,23 +53,27 @@ layout: page
     white-space: nowrap;
     padding: 10px 0;
     display: flex;
-    justify-content: center; /* Center-align the scroll container */
+    justify-content: center; /* Center the content on larger screens */
     margin-top: 30px; /* Space above the button */
-
+    width: 100%; /* Ensure it takes the full width of the parent */
+    box-sizing: border-box;
   }
-
+  
   .post-list {
     display: inline-block;
     padding: 0;
-    margin: 0;
+    margin: 0 auto; /* Center the list itself */
     list-style-type: none;
+    width: 100%; /* Allow the list to take full width for centering */
+    max-width: 1000px; /* Optional: set a max-width for larger screens */
+    text-align: center; /* Center-align the list items */
   }
-
+  
   .post-list li {
-    display: inline;
-    margin: 0 20px; /* Adjust spacing between items */
+    display: inline-block; /* Use inline-block to ensure full display */
+    margin: 0 10px; /* Adjust spacing between items */
   }
-
+  
   .post-list a {
     text-decoration: none;
     color: #007bff; /* Customize link color */
@@ -105,7 +109,7 @@ layout: page
     overflow: hidden;
     position: relative;
     border: 1px solid #d3d3d3; /* Light grey border */
-    border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
+    border-radius: 15px;
   }
   
   .image-wrapper {
@@ -119,7 +123,7 @@ layout: page
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the image covers the entire container */
-    border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
+    border-radius: 15px;
   }
   
   .portfolio-description {
@@ -132,7 +136,6 @@ layout: page
     padding: 14px;
     box-sizing: border-box;
     text-align: center;
-    border-radius: 15px 15px 0 0; /* top-left, top-right, bottom-right, bottom-left */
     height: 150px
   }
   
@@ -152,6 +155,7 @@ layout: page
     overflow: hidden; /* Hide overflowing text */
     display: -webkit-box;
     -webkit-line-clamp: 2; /* Number of lines to show */
+    line-clamp: inherit;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis; /* Add ellipsis if text overflows */
   }
