@@ -13,7 +13,7 @@ author: Rajan Maharjan
 ###############################################
 
 navbar-links:
-  Hello World!!: 'index'
+  # Hello World!!: 'index'
   Who's Rajan?: "aboutme"
   My Works: "portfolio"
   Thought Bytes: "posts"
