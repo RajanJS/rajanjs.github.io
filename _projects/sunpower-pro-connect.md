@@ -4,11 +4,17 @@ title: "SunPower Pro Connect"
 description: "Commissioning and monitoring apps for SunPower customers"
 image: "/assets/img/project/sunpower/proconnect.png"
 sort_order: 1
-
 tags:
-  - JavaScript
   - React
+  - React Native
+  - JavaScript
+  - IoT
+  - Bluetooth Moduel
+  - WiFi Module
   - Web Development
+  - Solar Panels
+  - Battery
+  - Renewable Energy / Clean Energy
 ---
 
 ## Project Overview
