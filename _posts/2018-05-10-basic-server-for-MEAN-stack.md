@@ -202,3 +202,5 @@ What am I missing here? Let me know in the comments and I’ll add it in!
 - **Code Blocks** contain commands and configurations.
 - **Notes** clarify details for commands and configuration.
 - **Instructions** are presented in a clear, step-by-step format.
+
+[Medium Article Link](https://medium.com/@rajanmaharjan/basic-server-for-mean-stack-212ab7a13cf9)

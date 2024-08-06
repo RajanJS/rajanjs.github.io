@@ -558,6 +558,7 @@ footer .footer-custom-content {
 .post-preview .post-image img {
   max-height: 100%;
   max-width: 100%;
+  border: 1px solid #d3d3d3; /* Light grey border */
   border-radius: 10px;
 }
 

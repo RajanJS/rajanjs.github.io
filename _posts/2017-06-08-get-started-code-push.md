@@ -291,3 +291,5 @@ If you are not getting the update,
 - make sure the keys are correct, and you deploy production/staging correctly
 
 Anyway thanks to the official guide and http://samwize.com/2017/01/19/guide-to-integrating-codepush-for-ios-react-native-project/ for their effort.
+
+[Medium Article Link](https://medium.com/@rajanmaharjan/get-started-with-wonderful-technology-d838aafdc2d3)
