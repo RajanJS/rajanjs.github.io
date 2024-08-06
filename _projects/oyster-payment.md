@@ -11,7 +11,9 @@ tags:
   - Web Development
   - React Native
   - Mobile App
+  - Node.js
   - Finance
+  - Fintech
   - Payment
   - Digital Blatform
   - Credit
