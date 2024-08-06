@@ -4,7 +4,7 @@ title: "Patan Heritage Walk"
 description: "The official tourist information of Patan which has been endorsed by the Lalitpur Metropolitan city and the locals of Patan"
 image: "/assets/img/project/patanheritage/patan-heritage-walk.png"
 # gh-repo: "username/repository"
-sort_order: 5
+sort_order: 6
 gh-badge:
   # - star
   # - fork

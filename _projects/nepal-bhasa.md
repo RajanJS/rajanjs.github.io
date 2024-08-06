@@ -4,7 +4,7 @@ title: "NepalBhasa App"
 description: "NepalBhasa Dictionary and Learning Tools: Finding Nepalbhasa word meanings in English and vice versa. Phase 1 includes 10K word meanings."
 image: "/assets/img/project/nepalbhasa/nepalbhasa.jpg"
 gh-repo: "username/repository"
-sort_order: 4
+sort_order: 6
 tags:
   - JavaScript
   - React
