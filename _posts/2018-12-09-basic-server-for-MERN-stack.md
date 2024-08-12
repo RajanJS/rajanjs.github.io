@@ -1,0 +1,238 @@
+---
+layout: post
+title: "Setting Up a Basic Server for the MERN Stack"
+subtitle: "A Comprehensive Guide to Configuring Your MERN Stack Environment"
+tags: [MERN Stack, MongoDB, Tech Stack, Express.js, React.js, Node.js, React]
+thumbnail-img: /assets/img/post/MERN/MERN-stack.png
+share-img: /assets/img/post/MERN/MERN-stack.png
+comments: true
+---
+
+![MERN Tech Stack](/assets/img/post/MERN/MERN-stack.png)
+
+Running a Node.js server and React application on a single Ubuntu server.
+
+## Introduction
+
+The MERN stack, consisting of MongoDB, Express.js, React, and Node.js, is a powerful combination of technologies that allows developers to create robust and dynamic web applications. In this guide, we will walk you through the steps to set up a basic server for your MERN stack application on an Ubuntu server.
+
+## Prerequisites
+
+Before we dive into the setup, make sure you have the following:
+
+- **An Ubuntu server**: This can be a physical server or a virtual machine.
+- **Basic knowledge of command-line interface**: Familiarity with Linux commands will be beneficial.
+- **Access to a terminal**: You'll be executing various commands to install and configure the necessary components.
+
+## Step 1: Update and Upgrade the System
+
+Start by updating your package lists and upgrading your existing packages to ensure everything is up-to-date.
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+## Step 2: Install Node.js and NPM
+
+Node.js is the backbone of your server, allowing you to run JavaScript code on the server side. NPM (Node Package Manager) comes bundled with Node.js and is essential for managing your project's dependencies.
+
+```bash
+sudo apt install -y nodejs npm
+```
+
+Verify the installation by checking the versions:
+
+```bash
+node -v
+npm -v
+```
+
+## Step 3: Install MongoDB
+
+MongoDB is a NoSQL database that stores data in JSON-like documents. It's highly scalable and flexible, making it a great choice for modern applications.
+
+To install MongoDB, follow these steps:
+
+1. Import the public key used by the package management system:
+
+    ```bash
+    wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+    ```
+
+2. Create a list file for MongoDB:
+
+    ```bash
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+    ```
+
+3. Reload the local package database:
+
+    ```bash
+    sudo apt update
+    ```
+
+4. Install MongoDB:
+
+    ```bash
+    sudo apt install -y mongodb-org
+    ```
+
+5. Start MongoDB:
+
+    ```bash
+    sudo systemctl start mongod
+    ```
+
+6. Verify that MongoDB has started successfully:
+
+    ```bash
+    sudo systemctl status mongod
+    ```
+
+7. (Optional) Enable MongoDB to start on boot:
+
+    ```bash
+    sudo systemctl enable mongod
+    ```
+
+## Step 4: Install PM2 to Manage Node.js Applications
+
+PM2 is a process manager that will help you manage your Node.js application processes, making it easier to keep your application running smoothly.
+
+Install PM2 globally using NPM:
+
+```bash
+sudo npm install -g pm2
+```
+
+You can now start your Node.js application with PM2:
+
+```bash
+pm2 start app.js
+```
+
+To make sure PM2 starts on boot, run:
+
+```bash
+pm2 startup systemd
+pm2 save
+```
+
+## Step 5: Set Up NGINX as a Reverse Proxy
+
+NGINX can act as a reverse proxy, forwarding client requests to your Node.js application. This adds an extra layer of security and allows you to easily manage multiple applications.
+
+1. Install NGINX:
+
+    ```bash
+    sudo apt install nginx
+    ```
+
+2. Configure NGINX to proxy requests to your Node.js application. Open the default configuration file:
+
+    ```bash
+    sudo nano /etc/nginx/sites-available/default
+    ```
+
+    Replace the contents with the following configuration:
+
+    ```nginx
+    server {
+        listen 80;
+
+        server_name your_domain_or_IP;
+
+        location / {
+            proxy_pass http://localhost:3000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+    }
+    ```
+
+3. Save and exit the file, then test the configuration:
+
+    ```bash
+    sudo nginx -t
+    ```
+
+4. If there are no errors, reload NGINX:
+
+    ```bash
+    sudo systemctl reload nginx
+    ```
+
+## Step 6: Deploy Your React Application
+
+Now that your server is set up, it's time to deploy your React application. Follow these steps:
+
+### Build the React Application
+
+1. Navigate to your React application directory and build the application for production:
+
+    ```bash
+    npm run build
+    ```
+
+    This will create a \`build\` directory containing the optimized production version of your React app.
+
+### Configure NGINX to Serve the React App
+
+2. Configure NGINX to serve the static files generated by your React app. Edit the NGINX configuration file:
+
+    ```bash
+    sudo nano /etc/nginx/sites-available/default
+    ```
+
+    Update the configuration to look like this:
+
+    ```nginx
+    server {
+        listen 80;
+        server_name your_domain_or_IP;
+
+        location / {
+            root /path/to/your/build;
+            try_files $uri /index.html;
+        }
+
+        location /api/ {
+            proxy_pass http://localhost:3000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+    }
+    ```
+
+    Replace \`/path/to/your/build\` with the actual path to the \`build\` directory of your React app.
+
+3. Save and exit the file, then test the configuration:
+
+    ```bash
+    sudo nginx -t
+    ```
+
+4. If there are no errors, reload NGINX:
+
+    ```bash
+    sudo systemctl reload nginx
+    ```
+
+Your React application is now being served by NGINX!
+
+## Step 7: Test Your Setup
+
+With everything configured, it's time to test your setup. Navigate to your server's IP address or domain name in a web browser. You should see your React application running, and any API requests should be handled by your Node.js backend.
+
+## Conclusion
+
+Congratulations! You've successfully set up a basic server for the MERN stack and deployed a React application. This setup provides a solid foundation for deploying your web applications. As you continue to develop your application, you can expand on this setup by adding SSL certificates, setting up a CI/CD pipeline, and optimizing your server's performance.
+
+Feel free to ask any questions or share your experiences in the comments below. Happy coding!
