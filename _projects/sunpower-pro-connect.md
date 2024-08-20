@@ -25,7 +25,7 @@ SunPower has been developing record-breaking solar technology since the 1970s. O
 
 ![Project Image](/assets/img/project/sunpower/proconnect1.png)
 
-[My Contributions on Installer App](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
+[My Contributions on Installer/Commmissioning App](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
 
 - Supports both Equinox® solar and SunVault® storage systems.
 
