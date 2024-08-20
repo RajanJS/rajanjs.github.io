@@ -4,11 +4,11 @@ title: About me
 subtitle: Why you'd want to hire me!
 ---
 
-I'm Rajan Maharjan, a Javascript Engineer. This page is here to tell you a bit more about me and my work.
+I'm Rajan Maharjan, a Sr. Software Engineer. This page is here to tell you a bit more about me and my work.
 
 ## Who I Am
 
-As a passionate JavaScript Engineer, I excel in crafting robust applications with React, React Native, and Node.js. With over 8 years of experience, I have delivered impactful projects across diverse domains, including IoT, Renewable Energy, Health Tech, FinTech, and Crypto. My expertise in AI and ML Kit drives innovative solutions that transform complex challenges into opportunities for progress. I am committed to advancing sustainable technology, focusing on projects that positively impact society and foster a more sustainable future.
+As a passionate Sr. JavaScript Engineer, I excel in crafting robust applications with React, React Native, and Node.js. With over 10 years of experience, I have delivered impactful projects across diverse domains, including IoT, Renewable Energy, Health Tech, FinTech, and Crypto. My expertise in AI and ML Kit drives innovative solutions that transform complex challenges into opportunities for progress. I am committed to advancing sustainable technology, focusing on projects that positively impact society and foster a more sustainable future.
 
 "Wellness starts from within."
 

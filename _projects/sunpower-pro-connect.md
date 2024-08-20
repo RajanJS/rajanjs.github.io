@@ -25,6 +25,8 @@ SunPower has been developing record-breaking solar technology since the 1970s. O
 
 ![Project Image](/assets/img/project/sunpower/proconnect1.png)
 
+[My Contributions on Installer App](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
+
 - Supports both Equinox® solar and SunVault® storage systems.
 
 - Easily connects to the PVS6 or Hub+®
@@ -53,6 +55,7 @@ A SunPower Pro account is required in order to use SunPower Pro Connect.
 
 - Stay up to date on system status, connectivity and changing weather conditions with live in-app alerts.
 
+[My Contribution Highlights Presentation](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
 
 ## Learn More
 
