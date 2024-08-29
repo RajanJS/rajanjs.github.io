@@ -23,6 +23,7 @@ Currently as **React Native Mobile Engineer** @ **SunPower Corporation**
   > Users now connect and configure devices directly via a smartphone using ProConnect App
   > mySunPower App offers convenient information and control over your SunPower home solar power system
 
+- Key contributor to the new ProConnect (CM3) project, developing it from scratch, including creating the boilerplate base for the project structure and implementing reusable design components for efficient feature development.
 - Contributed to a 20% increase in system efficiency through optimized design and integration of IoT devices during commissioning with BLE and WiFi modules
 - Teamed up with the QA team to craft test plans and validate solutions, significantly reducing production bugs and increasing app ratings by 20%.
 - Reduced deployment times by 30% and decreased billing minutes for GitHub Actions by 25% through effective use of automated testing in CI tools.
