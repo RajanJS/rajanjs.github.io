@@ -31,7 +31,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(135deg, #ff4b2b 0%, #AF1919 100%);
+            background: linear-gradient(135deg, #b73030 0%, #efd1d1 250%);
             color: white;
             flex-grow: 1;
             padding: 0 120px;
@@ -84,6 +84,12 @@
             padding: 15px;
             background-color: white;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero .phones img.phone-front:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .phones img.phone-behind {
@@ -96,6 +102,12 @@
             padding: 10px;
             background-color: white;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .phones img.phone-behind:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         /* Curved Shape */
@@ -119,9 +131,8 @@
 
         .download-buttons a img {
             width: 150px;
-            border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .download-buttons a img:hover {
@@ -133,7 +144,7 @@
         /* Adjust the brand logo to prevent overlap */
         .brand-logo {
             position: absolute;
-            top: 40px;
+            top: 70px;
             left: 120px;
             color: #1E88E5;
             border-radius: 30px;
@@ -145,7 +156,11 @@
         }
 
         .brand-logo img {
-            width: 200px;
+            width: 250px;
+        }
+
+        .brand-logo img:hover {
+            transform: scale(1.05);
         }
 
         /* CTA Button at Top Right */
@@ -168,7 +183,7 @@
 
         /* Footer */
         footer {
-            background-color: #AF1919;
+            background: linear-gradient(135deg, #b73030 0%, #efd1d1 350%);
             color: white;
             text-align: center;
             padding: 20px;
@@ -355,9 +370,16 @@
 
     <!-- Footer at the bottom of the page -->
     <footer>
-        <p>&copy; 2024 Marriage Card Game Point Calculator. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Marriage Card Game Point Calculator. All rights reserved.</p>
     </footer>
 
 </body>
+
+<script>
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+    // Set the year in the span with id "year"
+    document.getElementById('year').textContent = currentYear;
+</script>
 
 </html>
