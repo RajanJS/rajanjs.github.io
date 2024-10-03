@@ -1,5 +1,6 @@
 {
     "showBanner": true,
     "message": "Wishing you a Happy Dashain! May this festive season bring joy, prosperity, and good health to you and your family. - MGPC Team",
-    "imgURL": "https://mrajan.com.np/assets/img/notificationBanner/Happy-Dashain2.png"
+    "imgURL": "https://mrajan.com.np/assets/img/notificationBanner/Happy-Dashain2.png",
+    "bannerDismissed": true
 }
