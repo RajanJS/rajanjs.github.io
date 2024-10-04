@@ -46,7 +46,7 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #FFFFFF;
             font-weight: 700;
@@ -131,6 +131,22 @@
             margin-top: 70px;
         }
 
+        .qr-code {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .qr-code img {
+            width: 180px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .qr-code img:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
         .download-buttons a img {
             width: 150px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -158,7 +174,7 @@
         }
 
         .brand-logo img {
-            width: 250px;
+            width: 200px;
         }
 
         .brand-logo img:hover {
@@ -222,8 +238,17 @@
                 top: 50px;
             }
 
+            .qr-code {
+                display: flex;
+                justify-content: center;
+                /* Center the QR code */
+                margin-top: 40px;
+                text-align: center;
+            }
+
             .download-buttons {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: center;
                 align-items: center;
             }
 
@@ -268,8 +293,17 @@
             }
 
             .download-buttons {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
+                justify-content: center;
+            }
+
+            .qr-code {
+                display: flex;
+                justify-content: center;
+                /* Center the QR code */
+                margin-top: 40px;
+                text-align: center;
             }
 
             .brand-logo {
@@ -308,8 +342,22 @@
                 top: 50px;
             }
 
+            .download-buttons {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
             .brand-logo {
                 left: 0px;
+            }
+
+            .qr-code {
+                display: flex;
+                justify-content: center;
+                /* Center the QR code */
+                margin-top: 40px;
+                text-align: center;
             }
 
             .brand-logo img {
@@ -341,6 +389,20 @@
                 top: 50px;
             }
 
+            .download-buttons {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .qr-code {
+                display: flex;
+                justify-content: center;
+                /* Center the QR code */
+                margin-top: 40px;
+                text-align: center;
+            }
+
             .brand-logo {
                 left: 0px;
             }
@@ -367,6 +429,10 @@
             <br>
             <p>Say farewell to pen-and-paper scorekeeping as this app effortlessly records, calculates, and updates
                 player scores in real-time.</p>
+            <!-- QR Code -->
+            <div class="qr-code">
+                <img src="assets/img/project/mgpc/url_qrcodecreator.com.png" alt="QR Code" class="phone-behind">
+            </div>
             <!-- Download Buttons -->
             <div class="download-buttons">
                 <a href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator&hl=en_US">
