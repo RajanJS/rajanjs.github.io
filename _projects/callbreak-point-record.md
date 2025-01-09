@@ -5,13 +5,12 @@ description: "Your Ultimate Card Game Companion for Call break Card Game Point R
 image: "/assets/img/project/callbreak/callbreak-logo.png"
 # cover-img: "assets/img/project/mgpc/feature-graphic.png"
 # gh-repo: "username/repository"
-sort_order: 8
+sort_order: 9
 gh-badge:
   # - star
   # - fork
 tags:
   - Card Game
-  - React Native
   - React Native
   - Point Calculator
   - Marriage Card Game
