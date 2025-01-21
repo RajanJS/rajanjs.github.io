@@ -84,7 +84,7 @@ social-network-links:
 # The URL for the feed will be https://<your_website>/feed.xml
 rss-description: This website is a virtual proof that I'm awesome
 
-############################
+###########################
 # --- General options --- #
 ###########################
 
@@ -97,7 +97,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "🇳🇵www.mrajan.com.np🇳🇵"
+url-pretty: "www.mrajan.com.np"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
