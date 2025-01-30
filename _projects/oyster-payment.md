@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "OYSTER Mobile and Web application"
+title: "OYSTER Mobile & Web App"
 description: "The Digital Payment Platform for Mexican Business OwnersOyster® is the solution created to integrate into your operation, E-Commerce, ERP or your custom-made software with our digital platform."
 image: "/assets/img/project/oyster/oyster-cards.png"
 gh-repo: "username/repository"
