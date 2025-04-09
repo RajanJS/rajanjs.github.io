@@ -59,8 +59,6 @@ The development of a system designed to provide immersive educational experience
 
 For more details, visit the [xri.kent.edu](https://xr.kent.edu/).
 
-© 204 Rajan Maharjan
-
 <style>
 .video-thumbnail-container {
   position: relative;
