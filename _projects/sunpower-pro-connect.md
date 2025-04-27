@@ -1,8 +1,8 @@
 ---
 layout: project
-title: "SunPower Pro Connect"
+title: "SunPower Mobile & Web Apps"
 description: "Commissioning and monitoring apps for SunPower customers"
-image: "/assets/img/project/sunpower/proconnect.png"
+image: "/assets/img/project/sunpower/snpwr-apps.png"
 sort_order: 1
 tags:
   - React
@@ -19,44 +19,60 @@ tags:
 
 ## Project Overview
 
-SunPower has been developing record-breaking solar technology since the 1970s. Our history over these decades has been marked by creativity, craftsmanship – and confidence.
+SunPower has been pushing the boundaries of solar technology since the 1970s, driven by creativity, craftsmanship, and a commitment to excellence.
 
-[**mySunPower (SunStrong Connect)**](https://us.sunpower.com/products/software/mysunpower) now SunStrong Connect offers convenient information about and control over your SunPower home solar power system. Designed to integrate seamlessly with SunPower solar and battery storage solutions, mySunPower puts the power to monitor system performance and control battery settings in the palm of your hand. The app is an extension of the mySunPower web portal.
+## [**mySunPower (now SunStrong Connect)**](https://us.sunpower.com/products/software/mysunpower)
 
-![Project Image](/assets/img/project/sunpower/mysunpower.png)
+Designed to integrate seamlessly with SunPower’s solar and battery storage solutions, **mySunPower** empowers homeowners to monitor and manage their solar energy systems easily. It serves as a mobile extension of the [mySunPower web portal](https://us.sunpower.com/products/software/mysunpower).
 
-![Project Image](/assets/img/project/sunpower/web.png)
-> mySunPower web
+Today, **mySunPower** is trusted by over **65,000+ users** to monitor and optimize their solar and storage systems.
 
-- Monitor your entire solar + storage system with a holistic view of electricity generated, energy consumed* and available battery power.
+![mySunPower App](/assets/img/project/sunpower/mysunpower.png)
 
-- Review your electricity use by day, month or year and easily monitor system performance with real-time reporting and graphs.
+![mySunPower Web](/assets/img/project/sunpower/web.png)
 
-- Track your electricity generation in all conditions with our integrated weather API.
+**Key Features:**
+- View solar production, home energy consumption\*, and available battery storage with a real-time, holistic dashboard.
+- Analyze electricity use trends by day, month, or year with detailed graphs and reports.
+- Access weather-integrated data to track system performance under various conditions.
+- Receive live system updates and alerts for connectivity or weather-related issues.
 
-- Stay up to date on system status, connectivity and changing weather conditions with live in-app alerts.
+---
 
-[**SunPower Pro Connect**](https://us.sunpower.com/products/software/sunpower-pro-connect) is a new and improved commissioning app for SunPower dealers and installing partners. Users now connect and configure devices directly via a smartphone and the Pro Connect app. 
+## [**SunPower Pro Connect**](https://us.sunpower.com/products/software/sunpower-pro-connect)
 
-![Project Image](/assets/img/project/sunpower/proconnect1.png)
+**SunPower Pro Connect** is a next-generation commissioning app for SunPower dealers and installation partners. It streamlines the installation process by allowing direct device configuration via smartphone, removing the need for traditional laptops or wired connections.
 
-[My Contributions on Installer/Commmissioning App](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
+Currently, **Pro Connect** is used by over **5,000+ dealer technicians** across the U.S. to streamline solar and storage system commissioning.
 
-- Supports both Equinox® solar and SunVault® storage systems.
+![ProConnect App](/assets/img/project/sunpower/proconnect1.png)
 
-- Easily connects to the PVS6 or Hub+®
+**Key Features:**
+- Supports commissioning for **Equinox® solar** and **SunVault® storage** systems.
+- Directly connects to **PVS6** and **Hub+®** devices.
+- Enables rapid QR and barcode scanning for PVS6, Hub+, and AC module types.
+- Allows over-the-air firmware upgrades directly from the installer’s smartphone.
+- Provides real-time data visualization to verify system health and functionality.
 
-- Rapidly scans QR codes and barcodes for PVS6, Hub+, Type E, and Type G AC modules.
+> *Note: A SunPower Pro account is required to use Pro Connect.*
 
-- Downloads firmware upgrades directly to your smartphone—hardwired LAN connection or laptop no longer required!
+---
 
-- Provides real time data visualization to enable installers to verify system functionality.
+## [My Contributions](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
 
-A SunPower Pro account is required in order to use SunPower Pro Connect.
+- Contributed to the development and enhancement of both **mySunPower** and **ProConnect** mobile applications.
+- Led key integrations with **GraphQL** APIs for efficient data handling and real-time system updates.
+- Improved commissioning workflows, enabling faster, more reliable installer experiences.
+- Focused on user-centric designs and performance optimizations for mobile and web platforms.
 
+👉 [View Contribution Highlights](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
 
-[My Contribution Highlights Presentation](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
+---
 
 ## Learn More
 
-For more details, visit the [SunPower Website](https://us.sunpower.com/).
+For more about these products and SunPower’s innovations, visit the [SunPower Website](https://us.sunpower.com/).
+
+---
+
+\* Energy consumption monitoring requires additional compatible hardware.

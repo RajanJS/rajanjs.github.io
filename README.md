@@ -26,6 +26,8 @@ Welcome to my personal website, built using [Jekyll](https://jekyllrb.com/) and 
 
 <!-- https://beautifuljekyll.com/ -->
 
+<!-- Run locally (jekyll serve --livereload --host localhost) -->
+
 License
 This project is licensed under the MIT License.
 
