@@ -41,6 +41,9 @@ Today, **mySunPower** is trusted by over **65,000+ users** to monitor and optimi
 
 ## [**SunPower Pro Connect**](https://us.sunpower.com/products/software/sunpower-pro-connect)
 
+
+![ProConnect App](/assets/img/project/sunpower/proconnect-banner.png)
+
 **SunPower Pro Connect** is a next-generation commissioning app for SunPower dealers and installation partners. It streamlines the installation process by allowing direct device configuration via smartphone, removing the need for traditional laptops or wired connections.
 
 Currently, **Pro Connect** is used by over **5,000+ dealer technicians** across the U.S. to streamline solar and storage system commissioning.
@@ -53,6 +56,7 @@ Currently, **Pro Connect** is used by over **5,000+ dealer technicians** across 
 - Enables rapid QR and barcode scanning for PVS6, Hub+, and AC module types.
 - Allows over-the-air firmware upgrades directly from the installer’s smartphone.
 - Provides real-time data visualization to verify system health and functionality.
+
 
 > *Note: A SunPower Pro account is required to use Pro Connect.*
 
