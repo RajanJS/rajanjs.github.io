@@ -64,10 +64,13 @@ Currently, **Pro Connect** is used by over **5,000+ dealer technicians** across 
 
 ## [My Contributions](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
 
-- Contributed to the development and enhancement of both **mySunPower** and **ProConnect** mobile applications.
-- Led key integrations with **GraphQL** APIs for efficient data handling and real-time system updates.
-- Improved commissioning workflows, enabling faster, more reliable installer experiences.
-- Focused on user-centric designs and performance optimizations for mobile and web platforms.
+- Contributed to the development and enhancement of the **mySunPower** mobile and web applications.
+- Led the development and advancement of the **ProConnect** mobile application for dealer and installer workflows.
+- Participated in early design brainstorming sessions and contributed to Figma prototypes to finalize user experience flows.
+- Spearheaded key **GraphQL** API integrations to enable efficient data handling and real-time system updates.
+- Led CI/CD automation initiatives to streamline deployment and testing processes.
+- Optimized commissioning workflows, resulting in faster and more reliable system installations.
+- Prioritized user-centric design and performance optimization across both mobile and web platforms.
 
 👉 [View Contribution Highlights](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
 
