@@ -17,6 +17,7 @@ navbar-links:
   Who's Rajan?: "aboutme"
   My Works: "portfolio"
   Thought Bytes: "posts"
+  Cert Bytes: "certs"
   Get My CV Here:
     - Plan Text CV: "/cv/plain-text"
     - Digital CV: "/cv/digital-cv"
@@ -298,3 +299,6 @@ collections:
   projects:
     output: true
     permalink: /projects/:title/
+  certs:
+    output: true
+    permalink: /certs/:title/

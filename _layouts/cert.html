@@ -1,0 +1,39 @@
+---
+layout: base
+---
+
+{% include header.html type="cert" %}
+
+<main class="container-md">
+    <div class="row">
+        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+            <div class="project-content text-center">
+                {% if page.image %}
+                <img src="{{ page.image }}" alt="{{ page.title }}"
+                    style="max-width: 100%; margin: 20px 0; border-radius: 8px;" />
+                {% endif %}
+                <p class="text-muted">{{ page.date | date: "%B %d, %Y" }}</p>
+
+                <p>{{ page.description }}</p>
+
+                <!-- <p class="lead text-muted">{{ page.description }}</p> -->
+
+                <hr style="margin: 2rem 0;" />
+
+                <div class="cert-details text-left">
+                    {{ content }}
+                </div>
+
+                <!-- {% if page.pdf_url %}
+                <div class="cert-actions text-center">
+                    <a href="{{ page.pdf_url }}" class="cert-button">
+                        📄 View Full Certificate
+                    </a>
+                </div>
+                {% endif %} -->
+
+            </div>
+
+        </div>
+    </div>
+</main>

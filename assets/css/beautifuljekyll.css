@@ -1399,3 +1399,102 @@ pre {
 .page-link:hover {
   color: var(--hover-col); /* Use theme hover color */
 }
+
+/* Certs Styles */
+
+/* === Certificate Grid Styles === */
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.cert-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+}
+
+.cert-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+  object-fit: contain;
+}
+
+.cert-info {
+  padding: 1rem;
+}
+
+.cert-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.cert-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.cert-info small {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.cert-link {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.cert-link:hover {
+  text-decoration: underline;
+}
+
+/* --- PDF Link Styles --- */
+.pdf-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #007acc;
+  text-decoration: underline;
+}
+
+.pdf-link:hover {
+  color: #005f99;
+}
+
+.cert-actions {
+  margin-top: 2rem;
+}
+
+.cert-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #007acc;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cert-button:hover {
+  background-color: #005f99;
+  transform: translateY(-2px);
+}
