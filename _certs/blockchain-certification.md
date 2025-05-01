@@ -2,7 +2,7 @@
 layout: cert
 title: "Crash Course on Blockchain Technology"
 date: 2019-08-17
-image: /assets/img/certs/blockchain-certification.png
+image: /assets/img/certs/blockchain-certification.webp
 description: "Completed a multi-week blockchain fundamentals course covering distributed systems, smart contracts, DApps, and hands-on Ethereum and Hyperledger development."
 pdf_url: /assets/certs/blockchain-certification.pdf
 permalink: /certs/blockchain-certification/

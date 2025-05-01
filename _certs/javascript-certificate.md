@@ -2,7 +2,7 @@
 layout: cert
 title: "JavaScript Tutorial"
 date: 2015-12-02
-image: /assets/img/certs/javascript_certificate_solo.png
+image: /assets/img/certs/javascript_certificate_solo.webp
 description: "Completed a foundational JavaScript course focused on syntax, control flow, functions, objects, and DOM manipulation."
 pdf_url: /assets/certs/javascript_certificate_solo.pdf
 permalink: /certs/javascript_certificate_solo/

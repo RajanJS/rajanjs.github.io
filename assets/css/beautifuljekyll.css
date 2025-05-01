@@ -1190,6 +1190,7 @@ pre {
 
 .portfolio-item:hover {
   transform: scale(1.05); /* Slight zoom effect on hover */
+  will-change: transform;
 }
 
 .portfolio-description {
@@ -1213,6 +1214,7 @@ pre {
 
 .portfolio-item:hover .portfolio-description {
   height: 100%; /* Cover the full height of the item */
+  transition: opacity 0.3s ease, transform 0.3s ease;
   background: rgba(255, 255, 255, 0.9); /* Slightly more opaque background on hover */
   opacity: 1; /* Ensure it’s visible */
 }

@@ -2,7 +2,7 @@
 layout: cert
 title: "Complete React Native Developer"
 date: 2025-04-28
-image: /assets/img/certs/complete-react-native-developer-zero-to-mastery.png
+image: /assets/img/certs/complete-react-native-developer-zero-to-mastery.webp
 description: "Mastered React Native to build cross-platform mobile apps using modern tools, native device APIs, and real-world development practices."
 pdf_url: /assets/certs/complete-react-native-developer-zero-to-mastery.pdf
 permalink: /certs/complete-react-native-developer/

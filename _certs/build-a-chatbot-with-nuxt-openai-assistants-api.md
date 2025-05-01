@@ -2,7 +2,7 @@
 layout: cert
 title: "Nuxt Project: Build a ChatGPT AI Chatbot"
 date: 2025-04-29
-image: /assets/img/certs/build-a-chatbot-with-nuxt-typescript-and-the-openai-assistants-api.png
+image: /assets/img/certs/build-a-chatbot-with-nuxt-typescript-and-the-openai-assistants-api.webp
 description: "Built a production-ready ChatGPT-style chatbot using Nuxt 3, OpenAI, and Tailwind CSS while deepening my understanding of full-stack AI integrations."
 pdf_url: /assets/certs/build-a-chatbot-with-nuxt-typescript-and-the-openai-assistants-api.pdf
 permalink: /certs/nuxt-ai-chatbot/

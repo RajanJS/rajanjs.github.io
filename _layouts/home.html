@@ -39,7 +39,7 @@ layout: page
     <div class="portfolio-item">
       <a href="{{ cert.url }}">
         <img src="{{ cert.image | default: '/assets/img/certs/default-cert.png' }}" alt="{{ cert.title }}"
-          class="portfolio-image">
+          class="portfolio-image" loading="lazy">
         <div class="portfolio-description">
           <h2>{{ cert.title }}</h2>
           <p>{{ cert.description }}</p>

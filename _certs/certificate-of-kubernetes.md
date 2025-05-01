@@ -2,7 +2,7 @@
 layout: cert
 title: "Kubernetes from A to Z™"
 date: 2018-04-03
-image: /assets/img/certs/certificate-of-kubernetes.png
+image: /assets/img/certs/certificate-of-kubernetes.webp
 description: "Gained foundational knowledge in Kubernetes architecture, pod management, and container orchestration through hands-on labs and real-world scenarios."
 pdf_url: /assets/certs/certificate-of-kubernetes.pdf
 permalink: /certs/certificate-of-kubernetes/

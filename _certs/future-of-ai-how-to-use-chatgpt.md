@@ -2,7 +2,7 @@
 layout: cert
 title: "Future of A.I. & How to Use ChatGPT"
 date: 2025-04-26
-image: /assets/img/certs/future-of-ai-how-to-use-chatgpt.png
+image: /assets/img/certs/future-of-ai-how-to-use-chatgpt.webp
 description: "Learned how to effectively use ChatGPT and other AI tools to boost productivity, automate tasks, and solve real-world problems in work and life."
 pdf_url: /assets/certs/future-of-ai-how-to-use-chatgpt.pdf
 permalink: /certs/future-of-ai-how-to-use-chatgpt/
