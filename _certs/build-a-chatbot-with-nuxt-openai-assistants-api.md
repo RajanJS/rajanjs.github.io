@@ -25,5 +25,5 @@ This certification showcases my ability to implement AI-powered features in a mo
 
 ---
 
-[🔗 View the Course](https://zerotomastery.io/courses/nuxt-project-chatbot-ai/)  
 [📄 View Certificate (PDF)](/assets/certs/build-a-chatbot-with-nuxt-typescript-and-the-openai-assistants-api.pdf)
+[🔗 Learn More About the Program](https://zerotomastery.io/courses/nuxt-project-chatbot-ai/)  

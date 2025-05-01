@@ -26,4 +26,4 @@ The certification reinforces my ability to ship performant, cross-platform mobil
 ---
 
 [📄 View Certificate (PDF)](/assets/certs/complete-react-native-developer-zero-to-mastery.pdf)
-[🔗 View the Course](https://zerotomastery.io/courses/learn-react-native/)  
+[🔗 Learn More About the Program](https://zerotomastery.io/courses/learn-react-native/)  

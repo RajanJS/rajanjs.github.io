@@ -24,4 +24,4 @@ With a strong emphasis on practical skills, the course is ideal for developers, 
 ---
 
 [📄 View Certificate (PDF)](/assets/certs/future-of-ai-how-to-use-chatgpt.pdf)
-[🔗 View the Course](https://zerotomastery.io/courses/future-of-ai/)  
+[🔗 [🔗 Learn More About the Program](https://zerotomastery.io/courses/nuxt-project-chatbot-ai/)  ](https://zerotomastery.io/courses/future-of-ai/)  
