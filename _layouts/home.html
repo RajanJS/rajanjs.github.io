@@ -10,24 +10,50 @@ layout: page
   <div class="portfolio-gallery">
     {% assign sorted_projects = site.projects | sort: 'sort_order' | slice: 0, 3 %}
     {% for project in sorted_projects %}
-      <div class="portfolio-item">
-        <a href="{{ project.url }}">
-          <img src="{{ project.image | default: '/path/to/default-image.jpg' }}" alt="{{ project.title }}" class="portfolio-image">
-          <div class="portfolio-description">
-            <h2>{{ project.title }}</h2>
-            <p>{{ project.description }}</p>
-          </div>
-        </a>
-      </div>
+    <div class="portfolio-item">
+      <a href="{{ project.url }}">
+        <img src="{{ project.image | default: '/path/to/default-image.jpg' }}" alt="{{ project.title }}"
+          class="portfolio-image">
+        <div class="portfolio-description">
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.description }}</p>
+        </div>
+      </a>
+    </div>
     {% else %}
-      <p>No projects found.</p>
+    <p>No projects found.</p>
     {% endfor %}
   </div>
-  <br/>
+  <br />
   <hr class="small" />
 
   <div class="view-all-container">
     <a href="/portfolio" class="view-all-button">View All Projects</a>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="portfolio-gallery">
+    {% assign sorted_certs = site.certs | sort: 'sort_order' | slice: 0, 3 %}
+    {% for cert in sorted_certs %}
+    <div class="portfolio-item">
+      <a href="{{ cert.url }}">
+        <img src="{{ cert.image | default: '/assets/img/certs/default-cert.png' }}" alt="{{ cert.title }}"
+          class="portfolio-image">
+        <div class="portfolio-description">
+          <h2>{{ cert.title }}</h2>
+          <p>{{ cert.description }}</p>
+        </div>
+      </a>
+    </div>
+    {% else %}
+    <p>No certifications found.</p>
+    {% endfor %}
+  </div>
+  <br />
+  <hr class="small" />
+  <div class="view-all-container">
+    <a href="/certs" class="view-all-button">View All Certifications</a>
   </div>
 </div>
 
@@ -42,16 +68,16 @@ layout: page
         <article>
 
           {%- capture thumbnail -%}
-            {% if post.thumbnail-img %}
-              {{ post.thumbnail-img }}
-            {% elsif post.cover-img %}
-              {% if post.cover-img.first %}
-                {{ post.cover-img[0].first.first }}
-              {% else %}
-                {{ post.cover-img }}
-              {% endif %}
-            {% else %}
-            {% endif %}
+          {% if post.thumbnail-img %}
+          {{ post.thumbnail-img }}
+          {% elsif post.cover-img %}
+          {% if post.cover-img.first %}
+          {{ post.cover-img[0].first.first }}
+          {% else %}
+          {{ post.cover-img }}
+          {% endif %}
+          {% else %}
+          {% endif %}
           {% endcapture %}
           {% assign thumbnail=thumbnail | strip %}
 
@@ -69,14 +95,14 @@ layout: page
             <h2 class="post-title">{{ post.title | strip_html }}</h2>
 
             {% if post.subtitle %}
-              <h3 class="post-subtitle">
+            <h3 class="post-subtitle">
               {{ post.subtitle | strip_html }}
-              </h3>
+            </h3>
             {% endif %}
           </a>
 
           {% if post.author %}
-            <span>By <strong>{{ post.author | strip_html }}</strong></span>
+          <span>By <strong>{{ post.author | strip_html }}</strong></span>
           {% endif %}
           <p class="post-meta">
             {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
@@ -105,7 +131,7 @@ layout: page
             {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
             {% assign excerpt_word_count = post.excerpt | number_of_words %}
             {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
-              <a href="{{ post.url | absolute_url }}" class="post-read-more">[Read&nbsp;More]</a>
+            <a href="{{ post.url | absolute_url }}" class="post-read-more">[Read&nbsp;More]</a>
             {% endif %}
           </div>
           {% endunless %}
@@ -150,10 +176,9 @@ layout: page
     </ul>
     {% endif %}
   </div>
-  <br/>
+  <br />
   <hr class="small" />
   <div class="view-all-container">
     <a href="/posts" class="view-all-button">View All Blogs</a>
   </div>
 </div>
-

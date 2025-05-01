@@ -6,7 +6,7 @@ image: /assets/img/certs/complete-react-native-developer-zero-to-mastery.png
 description: "Mastered React Native to build cross-platform mobile apps using modern tools, native device APIs, and real-world development practices."
 pdf_url: /assets/certs/complete-react-native-developer-zero-to-mastery.pdf
 permalink: /certs/complete-react-native-developer/
-sort_order: 3
+sort_order: 4
 ---
 
 ## Certificate Overview
