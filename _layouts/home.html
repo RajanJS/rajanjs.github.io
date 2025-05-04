@@ -34,7 +34,7 @@ layout: page
 
 <div class="page-container">
   <div class="portfolio-gallery">
-    {% assign sorted_certs = site.certs | sort: 'sort_order' | slice: 0, 3 %}
+    {% assign sorted_certs = site.certs | sort: 'date' | reverse | slice: 0, 3 %}
     {% for cert in sorted_certs %}
     <div class="portfolio-item">
       <a href="{{ cert.url }}">
