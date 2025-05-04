@@ -1307,7 +1307,7 @@ pre {
   font-size: 16px;
   font-weight: 600; /* Increase font weight */
   color: var(--page-col); /* Text color for good contrast */
-  background: var(--link-col); /* Solid background color */
+  background: var(--gray-dark); /* Solid background color #343a40 */
   border: none;
   border-radius: 15px; /* Rounded corners */
   text-decoration: none;
