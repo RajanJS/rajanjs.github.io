@@ -46,4 +46,5 @@ Thanks for downloading and please share if you find it helpful. :)
 
 ## Learn More
 
-For more details, visit the [Marriage Game Point Calculator](https://razanmaharjan.wixsite.com/mgpc).
+<!-- For more details, visit the [Marriage Game Point Calculator](https://razanmaharjan.wixsite.com/mgpc). -->
+For more details, visit the [Marriage Game Point Calculator](https://mrajan.com.np/mgpc).
