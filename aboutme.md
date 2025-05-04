@@ -10,7 +10,7 @@ I'm Rajan Maharjan, a Sr. Software Engineer. This page is here to tell you a bit
 
 As a forward-thinking Senior Software Engineer, I specialize in building scalable, high-impact applications using React, React Native, and Node.js. With over a decade of experience, I’ve led transformative projects across domains like IoT, Renewable Energy, Health Tech, FinTech, and Crypto. I’m deeply invested in AI-driven development, leveraging tools like ML Kit and TensorFlow.js to create intelligent, context-aware user experiences.
 
-I stay ahead of the curve by integrating modern trends such as edge computing, privacy-first architectures, and human-centered design into my workflow. My mission is to develop ethical, resilient software that empowers people, accelerates sustainability, and shapes a better, tech-enabled future.
+I stay ahead of the curve by integrating modern trends like edge computing, privacy-first architectures, and human-centered design into my workflow. I aim to to develop ethical, resilient software that empowers people, accelerates sustainability, and shapes a better, tech-enabled future.
 
 "Wellness starts from within."
 
