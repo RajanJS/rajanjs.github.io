@@ -3,7 +3,7 @@ layout: cert
 title: "React Native: Build a Cryptocurrency Tracker App"
 date: 2020-02-26
 image: /assets/img/certs/react-native-crypto-tracker.webp
-description: "Completed a multi-week blockchain fundamentals course covering distributed systems, smart contracts, DApps, and hands-on Ethereum and Hyperledger development."
+description: "Completed a hands-on React Native project to build a real-time cryptocurrency tracker."
 pdf_url: /assets/certs/react-native-crypto-tracker.pdf
 permalink: /certs/react-native-crypto-tracker/
 sort_order: 5
