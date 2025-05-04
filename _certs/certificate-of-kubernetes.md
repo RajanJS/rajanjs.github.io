@@ -6,7 +6,7 @@ image: /assets/img/certs/certificate-of-kubernetes.webp
 description: "Gained foundational knowledge in Kubernetes architecture, pod management, and container orchestration through hands-on labs and real-world scenarios."
 pdf_url: /assets/certs/certificate-of-kubernetes.pdf
 permalink: /certs/certificate-of-kubernetes/
-sort_order: 5
+sort_order: 6
 ---
 
 ## Certificate Overview

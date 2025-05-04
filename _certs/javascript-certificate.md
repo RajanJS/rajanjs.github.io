@@ -6,7 +6,7 @@ image: /assets/img/certs/javascript_certificate_solo.webp
 description: "Completed a foundational JavaScript course focused on syntax, control flow, functions, objects, and DOM manipulation."
 pdf_url: /assets/certs/javascript_certificate_solo.pdf
 permalink: /certs/javascript_certificate_solo/
-sort_order: 6
+sort_order: 7
 ---
 
 ## Certificate Overview
