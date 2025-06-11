@@ -208,6 +208,14 @@
             width: 100%;
         }
 
+        footer .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
         @media (max-width: 1360px) {
             .hero {
                 flex-direction: column;
@@ -463,14 +471,9 @@
 
     <!-- Footer at the bottom of the page -->
     <footer>
-        <p>&copy; <span id="year"></span> Marriage Card Game Point Calculator. All rights reserved.</p>
-        <div style="
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    font-size: 0.9rem;
-  ">
-            <a href="/mgpc-privacy-terms" style="color: #90CAF9; margin-right: 15px; text-decoration: none;">
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Marriage Card Game Point Calculator. All rights reserved.</p>
+            <a href="/mgpc-privacy-terms" style="color: #90CAF9; text-decoration: none; font-size: 0.95rem;">
                 App Privacy & Terms
             </a>
         </div>
