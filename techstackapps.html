@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tech Stack Apps Landing Page">
-    <title>Tech Stack Apps</title>
+    <meta name="description" content="MGPC App Landing Page">
+    <title>MGPC - Record Your Game</title>
 
     <!-- Import Poppins Font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
@@ -174,7 +174,7 @@
         }
 
         .brand-logo img {
-            width: 200px;
+            width: 150px;
         }
 
         .brand-logo img:hover {
@@ -206,6 +206,14 @@
             text-align: center;
             padding: 20px;
             width: 100%;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         @media (max-width: 1360px) {
@@ -361,7 +369,7 @@
             }
 
             .brand-logo img {
-                width: 150px;
+                width: 120px;
             }
         }
 
@@ -408,7 +416,7 @@
             }
 
             .brand-logo img {
-                width: 150px;
+                width: 120px;
             }
         }
     </style>
@@ -442,6 +450,15 @@
                     <img src="assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on Apple App Store">
                 </a>
             </div>
+            <!-- ⬇️ Add Contact Info here -->
+            <div style="margin-top: 60px; text-align: left; color: white;">
+                <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Contact Us</h3>
+                <p style="font-size: 1rem;">Have feedback, questions, or suggestions?</p>
+                <p style="margin-top: 10px; font-size: 1rem;">
+                    📧 <a href="mailto:techstackapps@gmail.com"
+                        style="color: #90CAF9; text-decoration: none;">techstackapps@gmail.com</a>
+                </p>
+            </div>
         </div>
 
         <div class="phones">
@@ -454,7 +471,12 @@
 
     <!-- Footer at the bottom of the page -->
     <footer>
-        <p>&copy; <span id="year"></span> Marriage Card Game Point Calculator. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Marriage Card Game Point Calculator. All rights reserved.</p>
+            <a href="/mgpc-privacy-terms" style="color: #90CAF9; text-decoration: none; font-size: 0.95rem;">
+                App Privacy & Terms
+            </a>
+        </div>
     </footer>
 
 </body>
