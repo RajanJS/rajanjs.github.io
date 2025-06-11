@@ -17,7 +17,6 @@
             box-sizing: border-box;
         }
 
-        /* Make the body a flex container */
         body,
         html {
             height: 100%;
@@ -32,14 +31,12 @@
             align-items: center;
             justify-content: space-between;
             background: linear-gradient(135deg, #AF1919 0%, #2C3E50 100%);
-            /* Light Sky Blue */
             color: white;
             flex-grow: 1;
             padding: 0 120px;
             position: relative;
         }
 
-        /* Left Section (Text and Button) */
         .hero .text {
             max-width: 600px;
             margin-top: 150px;
@@ -73,13 +70,16 @@
             background-color: #1565C0;
         }
 
-        /* Right Section (Phone Mockup) */
-        .hero .phones {
+        /* Phones Section */
+        .phones {
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
         }
 
-        /* Main phone with border effect */
-        .hero .phones img.phone-front {
+        .phones img.phone-front {
             width: 300px;
             height: auto;
             border-radius: 40px;
@@ -87,34 +87,35 @@
             background-color: white;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 2;
         }
 
-        .hero .phones img.phone-front:hover {
+        .phones img.phone-front:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .phones img.phone-behind {
             position: absolute;
-            left: -250px;
-            top: 100px;
-            width: 300px;
-            transform: rotate(-10deg);
+            top: 80px;
+            left: 0;
+            transform: translateX(-60%) rotate(-10deg);
+            width: 280px;
             border-radius: 40px;
             padding: 10px;
             background-color: white;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1;
         }
 
         .phones img.phone-behind:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(-10deg);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        /* Curved Shape */
         .hero::before {
-            /*content: '';*/
             position: absolute;
             top: -100px;
             left: -300px;
@@ -158,19 +159,11 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        /* CTA Button at Top Left */
-        /* Adjust the brand logo to prevent overlap */
         .brand-logo {
             position: absolute;
             top: 20px;
             left: 100px;
-            color: #1E88E5;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
             z-index: 2;
-            /* Make sure the logo stays on top */
         }
 
         .brand-logo img {
@@ -181,7 +174,6 @@
             transform: scale(1.05);
         }
 
-        /* CTA Button at Top Right */
         .join-waitlist {
             position: absolute;
             top: 50px;
@@ -199,7 +191,6 @@
             background-color: #EEEEEE;
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(100deg, #AF1919 0%, #2C3E50 100%);
             color: white;
@@ -216,6 +207,8 @@
             gap: 8px;
         }
 
+        /* ───────────── Responsive ───────────── */
+
         @media (max-width: 1360px) {
             .hero {
                 flex-direction: column;
@@ -227,102 +220,66 @@
                 margin-top: 50px;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
             .hero .phones {
                 margin-top: 50px;
             }
 
-            .hero .phones img.phone-front {
-                position: relative;
-                width: 250px;
+            .phones img.phone-front {
+                width: 260px;
             }
 
             .phones img.phone-behind {
-                width: 250px;
-                left: -150px;
-                top: 50px;
-            }
-
-            .qr-code {
-                display: flex;
-                justify-content: center;
-                /* Center the QR code */
-                margin-top: 40px;
-                text-align: center;
-            }
-
-            .download-buttons {
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
+                width: 240px;
+                transform: translateX(-55%) rotate(-10deg);
             }
 
             .brand-logo {
                 top: 10px;
                 position: relative;
-                left: 0px;
+                left: 0;
             }
 
+            .download-buttons,
+            .qr-code {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                padding: 50px 20px;
-                text-align: center;
-            }
-
-            .hero .text {
-                margin-top: 50px;
-            }
-
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
-            .hero .phones {
-                margin-top: 50px;
+            .phones {
+                justify-content: center;
+                align-items: center;
+                margin-top: 40px;
             }
 
-            .hero .phones img.phone-front {
-                position: relative;
-                width: 250px;
-                right: -20px;
+            .phones img.phone-front {
+                width: 240px;
             }
 
             .phones img.phone-behind {
-                position: absolute;
-                width: 250px;
-                left: -120px;
-                top: 50px;
+                width: 220px;
+                top: 60px;
+                left: 50%;
+                transform: translateX(-130%) rotate(-10deg);
             }
 
-            .download-buttons {
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-            }
-
+            .download-buttons,
             .qr-code {
-                display: flex;
+                flex-direction: row;
                 justify-content: center;
-                /* Center the QR code */
-                margin-top: 40px;
-                text-align: center;
             }
 
-            .brand-logo {
-                top: 10px;
-                position: relative;
-                left: 0px;
+            .brand-logo img {
+                width: 120px;
             }
 
             .join-waitlist {
-                right: 20px;
                 top: 20px;
+                right: 20px;
             }
         }
 
@@ -331,92 +288,31 @@
                 font-size: 2rem;
             }
 
-            .hero .text {
-                margin-top: 50px;
-            }
-
             .hero p {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
             }
 
-            .hero .phones img.phone-front {
+            .phones img.phone-front {
                 width: 220px;
-                right: -20px;
             }
 
             .phones img.phone-behind {
                 width: 200px;
-                left: -150px;
                 top: 50px;
+                left: 50%;
+                transform: translateX(-120%) rotate(-10deg);
             }
 
-            .download-buttons {
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
+            .qr-code img {
+                width: 140px;
             }
 
-            .brand-logo {
-                left: 0px;
-            }
-
-            .qr-code {
-                display: flex;
-                justify-content: center;
-                /* Center the QR code */
-                margin-top: 40px;
-                text-align: center;
+            .download-buttons a img {
+                width: 130px;
             }
 
             .brand-logo img {
-                width: 120px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .text {
-                margin-top: 50px;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-            }
-
-            .hero .phones img.phone-front {
-                width: 220px;
-                right: -20px;
-            }
-
-            .phones img.phone-behind {
-                width: 200px;
-                left: -150px;
-                top: 50px;
-            }
-
-            .download-buttons {
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .qr-code {
-                display: flex;
-                justify-content: center;
-                /* Center the QR code */
-                margin-top: 40px;
-                text-align: center;
-            }
-
-            .brand-logo {
-                left: 0px;
-            }
-
-            .brand-logo img {
-                width: 120px;
+                width: 100px;
             }
         }
     </style>
