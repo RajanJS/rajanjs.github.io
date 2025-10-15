@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MGPC - Marriage Game Point Calculator">
+    <title>MGPC - Marriage Game Point Calculator</title>
+    
+    <!-- Import Poppins Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #AF1919 0%, #2C3E50 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #AF1919 0%, #2C3E50 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .loading {
+            color: #666;
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #f5c6cb;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #AF1919;
+            color: white;
+            border: 2px solid #AF1919;
+        }
+
+        .btn-primary:hover {
+            background: #8B1414;
+            border-color: #8B1414;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(175, 25, 25, 0.3);
+        }
+
+        .download-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .download-section h3 {
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .download-btn.ios {
+            background: #000;
+        }
+
+        .download-btn.ios:hover {
+            background: #333;
+        }
+
+        .download-btn.android {
+            background: #01875f;
+        }
+
+        .download-btn.android:hover {
+            background: #016b4a;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            .title {
+                font-size: 24px;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🎮</div>
+        <h1 class="title">MGPC</h1>
+        <p class="subtitle">Marriage Game Point Calculator</p>
+        
+        <div id="content">
+            <div class="loading">
+                <p>🔄 Processing your request...</p>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h3>Download the MGPC App</h3>
+            <p style="color: #666; margin-bottom: 15px;">Record your card game scores with ease!</p>
+            <div class="download-buttons">
+                <a href="https://apps.apple.com/cn/app/mgpc/id1546733404" class="download-btn ios">
+                    🍎 Download for iOS
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator&hl=en_US" class="download-btn android">
+                    🤖 Download for Android
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('gameId');
+        const code = urlParams.get('code');
+        const view = urlParams.get('view');
+        const path = window.location.pathname;
+
+        // Determine which page to redirect to
+        function redirectToAppropriatePage() {
+            if (path.includes('/join') || gameId) {
+                // Join game or view leaderboard
+                if (gameId) {
+                    if (view === 'leaderboard') {
+                        window.location.href = `leaderboard.html?gameId=${gameId}`;
+                    } else {
+                        window.location.href = `join.html?gameId=${gameId}`;
+                    }
+                } else {
+                    showError('Invalid game link. Please check the QR code or link.');
+                }
+            } else if (path.includes('/transfer') || code) {
+                // Transfer host
+                if (code) {
+                    window.location.href = `transfer.html?code=${code}`;
+                } else {
+                    showError('Invalid transfer code. Please check the QR code or link.');
+                }
+            } else {
+                // Default - show main page
+                showMainPage();
+            }
+        }
+
+        function showMainPage() {
+            document.getElementById('content').innerHTML = `
+                <div class="buttons">
+                    <a href="https://apps.apple.com/cn/app/mgpc/id1546733404" class="btn btn-primary">
+                        📱 Download MGPC App
+                    </a>
+                </div>
+                <p style="color: #666; margin-top: 20px;">
+                    Scan a QR code from the MGPC app to join a game or transfer host access.
+                </p>
+            `;
+        }
+
+        function showError(message) {
+            document.getElementById('content').innerHTML = `
+                <div class="error">
+                    <h3>❌ Error</h3>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+
+        // Redirect on page load
+        redirectToAppropriatePage();
+    </script>
+</body>
+</html>

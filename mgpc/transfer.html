@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transfer Host - MGPC Marriage Game Point Calculator">
+    <title>Transfer Host - MGPC</title>
+    
+    <!-- Import Poppins Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #AF1919 0%, #2C3E50 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #AF1919 0%, #2C3E50 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .transfer-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #e9ecef;
+        }
+
+        .transfer-code-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .transfer-code {
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            font-weight: 700;
+            color: #AF1919;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        .transfer-status {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #AF1919;
+            color: white;
+            border: 2px solid #AF1919;
+        }
+
+        .btn-primary:hover {
+            background: #8B1414;
+            border-color: #8B1414;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(175, 25, 25, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #AF1919;
+            border: 2px solid #AF1919;
+        }
+
+        .btn-secondary:hover {
+            background: #AF1919;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(175, 25, 25, 0.3);
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+            border-color: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .download-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .download-section h3 {
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .download-btn.ios {
+            background: #000;
+        }
+
+        .download-btn.ios:hover {
+            background: #333;
+        }
+
+        .download-btn.android {
+            background: #01875f;
+        }
+
+        .download-btn.android:hover {
+            background: #016b4a;
+        }
+
+        .instructions {
+            background: #e3f2fd;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .instructions h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin: 8px 0;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .loading {
+            display: none;
+            color: #666;
+            font-style: italic;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #f5c6cb;
+        }
+
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #ffeaa7;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            .title {
+                font-size: 24px;
+            }
+            
+            .transfer-code {
+                font-size: 18px;
+                padding: 10px 15px;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">👑</div>
+        <h1 class="title">Transfer Host Access</h1>
+        <p class="subtitle">Take control of the MGPC game</p>
+        
+        <div class="transfer-info">
+            <div class="transfer-code-label">Transfer Code</div>
+            <div class="transfer-code" id="transferCode">Loading...</div>
+            <div class="transfer-status" id="transferStatus">Connecting to game...</div>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Important:</strong> This code allows you to take control of the game as the host. Only share this with trusted players.
+        </div>
+
+        <div class="loading" id="loading">
+            <p>🔄 Attempting to open MGPC app...</p>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-primary" onclick="downloadApp()" id="downloadAppBtn">
+                👑 Download App to Become Host
+            </button>
+            <button class="btn btn-success" onclick="viewScoreboard()" id="viewScoreboardBtn">
+                📊 View Scoreboard
+            </button>
+        </div>
+
+        <div class="download-section">
+            <h3>Don't have the app?</h3>
+            <div class="download-buttons">
+                <a href="https://apps.apple.com/cn/app/mgpc/id1546733404" class="download-btn ios">
+                    🍎 Download for iOS
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator&hl=en_US" class="download-btn android">
+                    🤖 Download for Android
+                </a>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to become host:</h3>
+            <ol>
+                <li>Download the MGPC app using the buttons above</li>
+                <li>Open the app and tap "Join as Host"</li>
+                <li>Enter the Transfer Code: <strong id="transferCodeCopy">Loading...</strong></li>
+                <li>You will become the new host and can control the game</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const transferCode = urlParams.get('code');
+        const token = urlParams.get('token');
+        
+        // Update UI with transfer code information
+        if (transferCode) {
+            document.getElementById('transferCode').textContent = transferCode;
+            document.getElementById('transferCodeCopy').textContent = transferCode;
+        } else {
+            document.getElementById('transferCode').textContent = 'Invalid Code';
+            document.getElementById('transferStatus').textContent = 'Transfer code not found';
+            document.getElementById('transferStatus').style.color = '#dc3545';
+        }
+
+        // Download app to become host
+        function downloadApp() {
+            // Try to open the app first
+            const appScheme = 'mgpc://transfer?code=' + transferCode;
+            if (token) {
+                appScheme += '&token=' + token;
+            }
+            
+            // Try to open the app
+            window.location.href = appScheme;
+            
+            // If app doesn't open within 2 seconds, show download options
+            setTimeout(() => {
+                document.getElementById('transferStatus').textContent = 'App not installed. Please download the MGPC app to become host.';
+                document.getElementById('transferStatus').style.color = '#dc3545';
+            }, 2000);
+        }
+
+        // View live scoreboard
+        function viewScoreboard() {
+            if (transferCode) {
+                window.location.href = `scoreboard.html?code=${transferCode}`;
+            } else {
+                alert('Invalid Transfer Code');
+            }
+        }
+
+        // Show download message immediately
+        if (transferCode) {
+            document.getElementById('transferStatus').textContent = 'Download the MGPC app to become the host of this game.';
+        }
+    </script>
+</body>
+</html>
