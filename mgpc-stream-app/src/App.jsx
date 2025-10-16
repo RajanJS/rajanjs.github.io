@@ -9,7 +9,7 @@ import Home from './components/Home'
 function App() {
   return (
     <Router
-      basename="/mgpc-stream"
+      basename="/mgpc/stream"
       future={{
         v7_startTransition: true,
         v7_relativeSplatPath: true

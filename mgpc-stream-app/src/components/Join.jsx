@@ -21,7 +21,7 @@ const Join = () => {
 
   const handleViewScoreboard = () => {
     if (gameId) {
-      window.location.href = `/mgpc-stream/scoreboard?gameId=${gameId}`
+      window.location.href = `/mgpc/stream/scoreboard?gameId=${gameId}`
     }
   }
 
