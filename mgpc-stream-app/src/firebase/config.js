@@ -29,9 +29,7 @@ if (typeof window !== 'undefined') {
     initializeAppCheck(app, {
       provider: new ReCaptchaV3Provider('6LdnH-wrAAAAANDZzD0zgUzW20xB2NjVPCDuHKRW'),
       isTokenAutoRefreshEnabled: true
-    })
-    
-    // console.log('✅ Web App Check initialized')
+    })    
   } catch (error) {
     console.warn('App Check initialization failed:', error)
   }
