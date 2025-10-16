@@ -31,7 +31,7 @@ if (typeof window !== 'undefined') {
       isTokenAutoRefreshEnabled: true
     })
     
-    console.log('✅ Web App Check initialized')
+    // console.log('✅ Web App Check initialized')
   } catch (error) {
     console.warn('App Check initialization failed:', error)
   }
