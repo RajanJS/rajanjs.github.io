@@ -11,14 +11,3 @@ permalink: /404.html
 
   <img src="{{ 'assets/img/404-southpark.jpg' | relative_url }}" alt="Not found" />
 </div>
-
-<script>
-  // Preserve the path & query params
-  (function() {
-    var path = window.location.pathname.replace("/mgpc-stream", "");
-    var search = window.location.search || "";
-    var hash = "#";
-    // Redirect /join or /scoreboard to hash version
-    window.location.replace("/mgpc-stream/" + hash + path + search);
-  })();
-</script>
