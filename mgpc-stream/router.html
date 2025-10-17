@@ -3,18 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <title>Redirecting…</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0f172a;
+        color: #f8fafc;
+        font-family: system-ui, sans-serif;
+      }
+      .fade {
+        animation: fadein 0.4s ease;
+      }
+      @keyframes fadein {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fade">Redirecting…</div>
     <script>
       (function () {
         const params = new URLSearchParams(window.location.search);
         const original = params.get("path");
         if (original) {
-          const search = window.location.search.replace("?path=" + encodeURIComponent(original), "");
-          const rel = original.replace(/^\/mgpc-stream/, "");
-          window.location.replace("/mgpc-stream/#" + rel + search);
+          const decoded = decodeURIComponent(original);
+          const rel = decoded.replace(/^\/mgpc-stream/, "");
+          window.location.replace("/mgpc-stream/#" + rel);
         } else {
           window.location.replace("/mgpc-stream/#/");
         }
       })();
     </script>
-  </head>
+  </body>
 </html>
