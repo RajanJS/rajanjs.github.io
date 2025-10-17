@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "XD2J9BG753.com.quiver.mgpc2",
+        "paths": ["/mgpc/*", "/mgpc-stream/*"]
+      }
+    ]
+  }
+}

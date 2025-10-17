@@ -1,0 +1,10 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.marriagecardgamepointcalculator",
+        "sha256_cert_fingerprints": ["F3:60:22:47:53:8E:51:44:4D:56:43:0C:65:58:4F:14:72:34:71:65:37:4F:61:07:3E:6F:5D:49:4E:41:75:06", "c7:b7:c9:a3:92:27:ab:30:cc:cd:1b:2c:7e:71:46:d4:52:8a:c6:6a:be:46:8b:4f:1f:c2:36:9e:1b:85:b6:32","fa:c6:17:45:dc:09:03:78:6f:b9:ed:e6:2a:96:2b:39:9f:73:48:f0:bb:6f:89:9b:83:32:66:75:91:03:3b:9c"]
+      }
+    }
+  ]
