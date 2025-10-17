@@ -1,5 +1,16 @@
 <!doctype html>
 <html lang="en">
+  <script>
+    // If user loads a direct /join path on GitHub Pages,
+    // GitHub will show the main site’s 404.html, not this.
+    // So manually handle deep paths within mgpc-stream.
+    if (window.location.pathname.startsWith("/mgpc-stream/") &&
+        !window.location.pathname.endsWith("index.html") &&
+        !window.location.hash) {
+      // Serve the router page instead
+      window.location.replace("/mgpc-stream/router.html?path=" + window.location.pathname);
+    }
+  </script>
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/mgpc-stream/vite.svg" />

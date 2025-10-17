@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const original = params.get("path");
+        if (original) {
+          const search = window.location.search.replace("?path=" + encodeURIComponent(original), "");
+          const rel = original.replace(/^\/mgpc-stream/, "");
+          window.location.replace("/mgpc-stream/#" + rel + search);
+        } else {
+          window.location.replace("/mgpc-stream/#/");
+        }
+      })();
+    </script>
+  </head>
+</html>
