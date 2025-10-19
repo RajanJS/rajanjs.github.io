@@ -4,6 +4,70 @@ title: 404 - Page not found
 permalink: /404.html
 ---
 
+<!-- Deep Link Redirect Handler -->
+<script>
+  (function() {
+    const path = window.location.pathname;
+    
+    // Check if this is a deep link path
+    if (path.includes('/mgpc/join/')) {
+      // Extract game ID from path
+      const pathParts = path.split('/').filter(Boolean);
+      const gameId = pathParts[pathParts.length - 1];
+      
+      if (gameId && gameId !== 'join') {
+        // Extract token from query if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        
+        // Redirect to web app with hash routing
+        let webAppUrl = `https://mrajan.com.np/mgpc-stream/#/join?gameId=${gameId}`;
+        if (token) webAppUrl += `&token=${token}`;
+        
+        // Try custom scheme first (will fail silently if app not installed)
+        const customSchemeUrl = `mgpc://join?gameId=${gameId}${token ? `&token=${token}` : ''}`;
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = customSchemeUrl;
+        document.body.appendChild(iframe);
+        
+        // Redirect to web app after short delay
+        setTimeout(() => {
+          window.location.href = webAppUrl;
+        }, 1000);
+        
+        return;
+      }
+    }
+    
+    // Check for transfer-host paths
+    if (path.includes('/mgpc/transfer-host/') || path.includes('/mgpc/transfer/')) {
+      const pathParts = path.split('/').filter(Boolean);
+      const transferCode = pathParts[pathParts.length - 1];
+      
+      if (transferCode && !['transfer-host', 'transfer'].includes(transferCode)) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        
+        let webAppUrl = `https://mrajan.com.np/mgpc-stream/#/transfer?code=${transferCode}`;
+        if (token) webAppUrl += `&token=${token}`;
+        
+        const customSchemeUrl = `mgpc://transfer?code=${transferCode}${token ? `&token=${token}` : ''}`;
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = customSchemeUrl;
+        document.body.appendChild(iframe);
+        
+        setTimeout(() => {
+          window.location.href = webAppUrl;
+        }, 1000);
+        
+        return;
+      }
+    }
+  })();
+</script>
+
 <div class="text-center">
   <h1>Whoops, this page doesn't exist.</h1>
   <h1>Move along. (404 error)</h1>
