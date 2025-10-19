@@ -291,6 +291,10 @@ exclude:
   - README.md
   - docs/
 
+# Include hidden files/folders for Universal Links
+include:
+  - .well-known
+
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
