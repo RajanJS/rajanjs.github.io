@@ -220,13 +220,84 @@ img {
 /* Bootstrap's navbar-expand-xl handles default behavior, we only override when needed */
 @media (min-width: 1200px) {
   /* When overlap detected, hide nav links */
-  .navbar-collapse.force-hide {
+  .navbar-collapse.force-hide:not(.show) {
     display: none !important;
   }
 
   /* When overlap detected, show toggler (overrides Bootstrap's default hide) */
   .navbar-toggler.force-show {
     display: block !important;
+  }
+  
+  /* When force-show is active and menu is expanded, create sidebar menu */
+  .navbar-collapse.force-hide.show {
+    display: block !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: var(--navbar-col);
+    z-index: 1055;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    padding: 1rem;
+    margin: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Override Bootstrap's navbar-expand-xl flex direction to stack vertically */
+  .navbar-collapse.force-hide.show .navbar-nav {
+    flex-direction: column !important;
+    padding: 0;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-top: 2rem;
+  }
+  
+  /* Make nav items stack vertically */
+  .navbar-collapse.force-hide.show .navbar-nav .nav-item {
+    display: block !important;
+    width: 100%;
+  }
+  
+  .navbar-collapse.force-hide.show .navbar-nav .nav-link {
+    padding: 0.875rem 1rem;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-collapse.force-hide.show .nav-item.dropdown.show {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-collapse.force-hide.show .nav-item.dropdown .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    margin-top: 0;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .navbar-collapse.force-hide.show .nav-item.dropdown .dropdown-menu .dropdown-item {
+    padding-left: 2rem;
+  }
+  
+  /* Add overlay when sidebar is open */
+  body:has(.navbar-collapse.force-hide.show)::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1054;
+    pointer-events: auto;
   }
 }
 
@@ -239,6 +310,10 @@ img {
 .navbar-toggler {
   font-size: 1rem;
   margin: 0.5rem 0;
+  position: relative;
+  z-index: 1051;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .navbar-toggler.ml-auto {
@@ -372,6 +447,8 @@ img {
   transition: opacity 0.5s ease-in-out;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
 }
 .navbar-custom.top-nav-short .avatar-container {
   opacity: 0;
@@ -385,6 +462,7 @@ img {
   width: 100%;
   margin-left: -50%;
   border: 2px solid var(--page-col);
+  pointer-events: auto;
   {% unless site.round-avatar == false %}
     border-radius: 50%;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);

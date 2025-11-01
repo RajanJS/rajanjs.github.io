@@ -29,16 +29,60 @@ let BeautifulJekyllJS = {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function() {
         BeautifulJekyllJS.checkAvatarOverlap();
-      }, 100);
+      }, 50);
     });
 
     // On mobile, hide the avatar when expanding the navbar menu
     $('#main-navbar').on('show.bs.collapse', function () {
-      $(".navbar").addClass("top-nav-expanded");
+      const navbar = $(".navbar");
+      const navbarToggler = $('.navbar-toggler');
+      navbar.addClass("top-nav-expanded");
+      
+      // Remove force-hide when menu is shown to allow Bootstrap to control display
+      // But re-add it if force-show is active to maintain sidebar style
+      const navbarCollapse = $(this);
+      if (navbarToggler.hasClass('force-show') && $(window).width() >= 1200) {
+        // Keep force-hide for sidebar styling, Bootstrap will add .show
+        setTimeout(function() {
+          navbarCollapse.addClass('force-hide');
+        }, 10);
+      } else {
+        navbarCollapse.removeClass('force-hide');
+      }
     });
-    $('#main-navbar').on('hidden.bs.collapse', function () {
-      $(".navbar").removeClass("top-nav-expanded");
+    
+    $('#main-navbar').on('shown.bs.collapse', function () {
+      // Re-check overlap after menu is shown
       BeautifulJekyllJS.checkAvatarOverlap();
+    });
+    
+    $('#main-navbar').on('hide.bs.collapse', function () {
+      // Allow Bootstrap to hide the menu
+      const navbarToggler = $('.navbar-toggler');
+      if (!navbarToggler.hasClass('force-show') || $(window).width() < 1200) {
+        $('.navbar-collapse').removeClass('force-hide');
+      }
+    });
+    
+    $('#main-navbar').on('hidden.bs.collapse', function () {
+      const navbar = $(".navbar");
+      navbar.removeClass("top-nav-expanded");
+      
+      // Re-check overlap after menu is hidden
+      BeautifulJekyllJS.checkAvatarOverlap();
+    });
+    
+    // Close sidebar when clicking overlay
+    $(document).on('click', function(e) {
+      const navbarCollapse = $('#main-navbar');
+      const navbarToggler = $('.navbar-toggler');
+      
+      if (navbarCollapse.hasClass('show') && 
+          navbarToggler.hasClass('force-show') && 
+          $(window).width() >= 1200 &&
+          !$(e.target).closest('#main-navbar, .navbar-toggler').length) {
+        navbarToggler.click();
+      }
     });
 
     // show the big header image
