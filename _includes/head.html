@@ -64,11 +64,14 @@
   {% include cloudflare_analytics.html %}
   {% include mathjax.html %}
 
-  <!-- Google AdSense - Only loaded on blog post pages -->
+  <!-- Google AdSense - Currently loads on all pages -->
+  <!-- To limit AdSense to blog posts only, uncomment the if/endif below and remove the standalone script -->
+  {% comment %}
   {% if page.layout == 'post' %}
+  {% endif %}
+  {% endcomment %}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4166647782860352"
      crossorigin="anonymous"></script>
-  {% endif %}
 
   {% if layout.common-ext-css %}
     {% for css in layout.common-ext-css %}
