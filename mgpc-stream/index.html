@@ -7,6 +7,32 @@
     <meta name="description" content="MGPC - Marriage Game Point Calculator">
     <title>MGPC - Marriage Game Point Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense -->
+    <!-- Note: Publisher ID is configured in src/config/adsense.js -->
+    <!-- Script will be loaded dynamically by the app to use correct publisher ID for dev/prod -->
+    <script>
+      // Load AdSense script dynamically based on environment
+      // This allows using test publisher ID in dev mode
+      (function() {
+        // Check if we're in dev mode (localhost or 127.0.0.1)
+        const isDev = window.location.hostname === 'localhost' || 
+                     window.location.hostname === '127.0.0.1' || 
+                     window.location.hostname === '';
+        
+        // Use test publisher ID in dev, production ID otherwise
+        const publisherId = isDev 
+          ? 'ca-pub-3940256099942544'  // Google's test publisher ID
+          : 'ca-pub-4166647782860352';  // Production publisher ID
+        
+        // Load AdSense script
+        const script = document.createElement('script');
+        script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}`;
+        script.async = true;
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+      })();
+    </script>
 
     <script>
       // If user loads a direct /join path on GitHub Pages,
@@ -24,8 +50,8 @@
       }
     </script>
     
-    <script type="module" crossorigin src="/mgpc-stream/assets/index-uzF1n2ZV.js"></script>
-    <link rel="stylesheet" crossorigin href="/mgpc-stream/assets/index-CIYAlu6J.css">
+    <script type="module" crossorigin src="/mgpc-stream/assets/index-FzSCPuoV.js"></script>
+    <link rel="stylesheet" crossorigin href="/mgpc-stream/assets/index-WrRaFc-d.css">
   </head>
   <body>
     <div id="root"></div>
