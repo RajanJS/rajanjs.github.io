@@ -64,6 +64,12 @@
   {% include cloudflare_analytics.html %}
   {% include mathjax.html %}
 
+  <!-- Google AdSense -->
+  {% if site.adsense_client %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}{% if site.adsense_test_mode %}&test=true{% endif %}"
+     crossorigin="anonymous"></script>
+  {% endif %}
+
   {% if layout.common-ext-css %}
     {% for css in layout.common-ext-css %}
       {% include ext-css.html css=css %}

@@ -175,6 +175,12 @@ gtag: "G-L72V2H2TC1"
 # Google Tag Manager ID
 gtm: "GTM-W5PT3ZB4"
 
+# Google AdSense Configuration
+# Set adsense_client to your AdSense publisher ID (e.g., "ca-pub-4166647782860352")
+# Set adsense_test_mode to true when testing locally to avoid invalid click activity
+adsense_client: "ca-pub-4166647782860352"
+adsense_test_mode: false  # Set to true for local testing
+
 # Matomo (aka Piwik) Web statistics
 # Uncomment the following section to enable Matomo. The opt-out parameter controls
 # whether or not you want to allow users to opt out of tracking.
