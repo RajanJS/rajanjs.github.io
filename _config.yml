@@ -176,10 +176,11 @@ gtag: "G-L72V2H2TC1"
 gtm: "GTM-W5PT3ZB4"
 
 # Google AdSense Configuration
-# Set adsense_client to your AdSense publisher ID (e.g., "ca-pub-4166647782860352")
-# Set adsense_test_mode to true when testing locally to avoid invalid click activity
+# AdSense is ONLY loaded on blog post pages (layout: post), keeping the main
+# portfolio site compliant with GitHub Pages ToS. This limits monetization to
+# content pages (blog posts) rather than the entire personal website.
 adsense_client: "ca-pub-4166647782860352"
-adsense_test_mode: false  # Set to true for local testing
+adsense_test_mode: false  # Set to true for local testing (would need to add &test=true parameter)
 
 # Matomo (aka Piwik) Web statistics
 # Uncomment the following section to enable Matomo. The opt-out parameter controls

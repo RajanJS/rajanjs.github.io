@@ -64,9 +64,9 @@
   {% include cloudflare_analytics.html %}
   {% include mathjax.html %}
 
-  <!-- Google AdSense -->
-  {% if site.adsense_client %}
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}{% if site.adsense_test_mode %}&test=true{% endif %}"
+  <!-- Google AdSense - Only loaded on blog post pages -->
+  {% if page.layout == 'post' %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4166647782860352"
      crossorigin="anonymous"></script>
   {% endif %}
 
