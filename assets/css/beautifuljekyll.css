@@ -1163,6 +1163,9 @@ pre {
   flex-direction: column;
   padding: 30px; /* Padding around the container */
   width: 100%; /* Full width of the viewport */
+  max-width: 1400px; /* Limit max width for better readability on large screens */
+  margin-left: auto; /* Center the container */
+  margin-right: auto; /* Center the container */
   box-sizing: border-box; /* Ensure padding and border are included in width calculations */
 }
 
@@ -1176,16 +1179,18 @@ pre {
   flex-wrap: wrap;
   gap: 40px; /* Space between items */
   justify-content: center; /* Center-align items horizontally */
+  max-width: 100%; /* Ensure gallery respects container width */
 }
 
 .portfolio-item {
   position: relative; /* Required for absolute positioning of description */
-  width: calc(28% - 40px); /* Adjust width with gap */
+  width: calc((100% - 80px) / 3); /* 3 items per row, accounting for 2 gaps (40px each) */
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid #d3d3d3; /* Light grey border */
   border-radius: 15px;
   transition: transform 0.3s ease; /* Smooth zoom effect */
+  flex-shrink: 0; /* Prevent items from shrinking */
 }
 
 .portfolio-item:hover {
@@ -1208,8 +1213,10 @@ pre {
   display: flex; /* Use flexbox to center content */
   flex-direction: column;
   justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
+  align-items: stretch; /* Stretch children to full width for proper ellipsis */
   opacity: 1; /* Initially visible */
+  min-width: 0; /* Allow flex children to shrink properly */
+  overflow: hidden; /* Prevent content overflow */
 }
 
 .portfolio-item:hover .portfolio-description {
@@ -1246,6 +1253,13 @@ pre {
   overflow: hidden; /* Hide overflowing text */
   text-overflow: ellipsis; /* Add ellipsis if text overflows */
   white-space: nowrap; /* Prevent text wrapping */
+  width: 100%; /* Full width for ellipsis to work */
+  max-width: 100%; /* Ensure it doesn't exceed container */
+  min-width: 0; /* Critical for ellipsis to work in flex containers */
+  flex-shrink: 1; /* Allow the element to shrink */
+  box-sizing: border-box; /* Include padding in width calculation */
+  color: #404040; /* Ensure text color is visible */
+  display: block; /* Ensure it displays as block */
 }
 
 .portfolio-description p {
@@ -1254,14 +1268,24 @@ pre {
   overflow: hidden; /* Hide overflowing text */
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Number of lines to show */
-  line-clamp: inherit;
+  line-clamp: 2; /* Standard property for line clamp */
   -webkit-box-orient: vertical;
   text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  width: 100%; /* Full width for ellipsis to work */
+  max-width: 100%; /* Ensure it doesn't exceed container */
+  min-width: 0; /* Critical for ellipsis to work in flex containers */
+  flex-shrink: 1; /* Allow the element to shrink */
+  box-sizing: border-box; /* Include padding in width calculation */
+  color: #404040; /* Ensure text color is visible */
 }
 
 .portfolio-item:hover .portfolio-description {
-  color: #0085A1; /* Change description text color on hover */
   background:  rgba(255, 255, 255, 0.9);
+}
+
+.portfolio-item:hover .portfolio-description h2,
+.portfolio-item:hover .portfolio-description p {
+  color: #0085A1 !important; /* Change text color on hover */
 }
 
 .portfolio-item a {
@@ -1269,15 +1293,44 @@ pre {
   color: inherit;
 }
 
+/* Ensure text inside links within portfolio items is visible */
+.portfolio-item a .portfolio-description,
+.portfolio-item a .portfolio-description h2,
+.portfolio-item a .portfolio-description p {
+  color: #404040 !important; /* Force text color to be visible */
+}
+
 /* Media queries for responsive design */
+/* Switch to 2 columns at larger screens to prevent text truncation */
+@media (max-width: 1200px) {
+  .portfolio-gallery {
+    gap: 30px; /* Slightly reduce gap for better spacing */
+  }
+
+  .portfolio-item {
+    width: calc((100% - 30px) / 2); /* 2 items per row, accounting for 1 gap */
+  }
+}
+
 @media (max-width: 768px) {
   .page-container {
     padding: 10px;
   }
-  
+
+  .portfolio-gallery {
+    gap: 20px; /* Reduce gap on medium screens */
+  }
 
   .portfolio-item {
-    width: calc(50% - 30px); /* 2 items per row on medium screens */
+    width: calc((100% - 20px) / 2); /* 2 items per row on medium screens */
+  }
+
+  .portfolio-description {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .portfolio-description h2 {
+    font-size: 0.85em; /* Slightly smaller font on medium screens */
   }
 }
 
@@ -1285,9 +1338,27 @@ pre {
   .page-container {
     padding: 10px;
   }
+
+  .portfolio-gallery {
+    gap: 20px; /* Maintain gap on small screens */
+  }
   
   .portfolio-item {
-    width: calc(100%); /* 1 item per row on small screens */
+    width: 100%; /* 1 item per row on small screens */
+  }
+
+  .portfolio-description {
+    padding: 8px; /* Further reduce padding on small screens */
+  }
+
+  .portfolio-description h2 {
+    font-size: 0.8em; /* Smaller font on small screens */
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .portfolio-description p {
+    font-size: 0.75em; /* Smaller description text on small screens */
   }
 }
 
