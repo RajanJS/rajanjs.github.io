@@ -47,6 +47,7 @@ body {
 }
 body > main {
   flex: 1;
+  /* Padding handled dynamically by JavaScript to prevent navbar overlap */
 }
 p {
   line-height: 1.5;
@@ -215,6 +216,20 @@ img {
   padding-bottom: 0.9375rem;
 }
 
+/* Force hide/show for avatar overlap detection - only on xl screens and above */
+/* Bootstrap's navbar-expand-xl handles default behavior, we only override when needed */
+@media (min-width: 1200px) {
+  /* When overlap detected, hide nav links */
+  .navbar-collapse.force-hide {
+    display: none !important;
+  }
+
+  /* When overlap detected, show toggler (overrides Bootstrap's default hide) */
+  .navbar-toggler.force-show {
+    display: block !important;
+  }
+}
+
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav .nav-link {
   font-weight: 800;
@@ -224,6 +239,10 @@ img {
 .navbar-toggler {
   font-size: 1rem;
   margin: 0.5rem 0;
+}
+
+.navbar-toggler.ml-auto {
+  margin-left: auto;
 }
 .navbar-custom .navbar-toggler:focus,
 .navbar-custom .navbar-toggler:hover {
@@ -257,7 +276,7 @@ img {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
   }
-
+  
   .navbar-expand-xl .navbar-nav .nav-item:not(.dropdown):last-child .nav-link {
     padding-right: 0;
   }
@@ -365,7 +384,7 @@ img {
 .navbar-custom .avatar-container .avatar-img-border {
   width: 100%;
   margin-left: -50%;
-  border: 2px solid var(--page-col); /* Add this line */
+  border: 2px solid var(--page-col);
   {% unless site.round-avatar == false %}
     border-radius: 50%;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);

@@ -7,6 +7,11 @@ let BeautifulJekyllJS = {
 
   init : function() {
     setTimeout(BeautifulJekyllJS.initNavbar, 10);
+    
+    // Check avatar overlap for navbar
+    setTimeout(function() {
+      BeautifulJekyllJS.checkAvatarOverlap();
+    }, 50);
 
     // Shorten the navbar after scrolling a little bit down
     $(window).scroll(function() {
@@ -15,6 +20,16 @@ let BeautifulJekyllJS = {
         } else {
             $(".navbar").removeClass("top-nav-short");
         }
+        BeautifulJekyllJS.checkAvatarOverlap();
+    });
+
+    // Recalculate on window resize (with debounce for performance)
+    let resizeTimer;
+    $(window).on('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        BeautifulJekyllJS.checkAvatarOverlap();
+      }, 100);
     });
 
     // On mobile, hide the avatar when expanding the navbar menu
@@ -23,6 +38,7 @@ let BeautifulJekyllJS = {
     });
     $('#main-navbar').on('hidden.bs.collapse', function () {
       $(".navbar").removeClass("top-nav-expanded");
+      BeautifulJekyllJS.checkAvatarOverlap();
     });
 
     // show the big header image
@@ -43,6 +59,89 @@ let BeautifulJekyllJS = {
       $(".navbar").removeClass("navbar-light").addClass("navbar-dark");
     } else {
       $(".navbar").removeClass("navbar-dark").addClass("navbar-light");
+    }
+  },
+
+
+  checkAvatarOverlap : function() {
+    const navbar = $('.navbar-custom');
+    const avatarContainer = navbar.find('.avatar-container');
+    const navbarCollapse = navbar.find('.navbar-collapse');
+    const navbarToggler = navbar.find('.navbar-toggler');
+    
+    if (navbarCollapse.length === 0 || navbarToggler.length === 0) return;
+
+    const windowWidth = $(window).width();
+    
+    // On small screens (< 1200px), let Bootstrap handle responsive behavior
+    if (windowWidth < 1200) {
+      // Remove force classes to let Bootstrap handle it
+      navbarCollapse.removeClass('force-hide');
+      navbarToggler.removeClass('force-show');
+      return;
+    }
+
+    // On large screens (>= 1200px), check for avatar overlap
+    if (avatarContainer.length === 0) {
+      // No avatar, restore Bootstrap default behavior
+      navbarCollapse.removeClass('force-hide');
+      navbarToggler.removeClass('force-show');
+      return;
+    }
+
+    // Check if avatar is visible
+    const isAvatarVisible = avatarContainer.is(':visible') && 
+                           avatarContainer.css('opacity') !== '0' && 
+                           avatarContainer.css('visibility') !== 'hidden';
+
+    if (!isAvatarVisible) {
+      // Avatar not visible, restore Bootstrap default behavior
+      navbarCollapse.removeClass('force-hide');
+      navbarToggler.removeClass('force-show');
+      return;
+    }
+
+    // Get avatar dimensions and position
+    const avatarOffset = avatarContainer.offset();
+    const avatarWidth = avatarContainer.outerWidth(false);
+    const avatarRight = avatarOffset.left + avatarWidth;
+
+    // Get first nav link position on the right side
+    const rightNavLinks = navbar.find('.navbar-nav.ml-auto');
+    if (rightNavLinks.length === 0) {
+      navbarCollapse.removeClass('force-hide');
+      navbarToggler.removeClass('force-show');
+      return;
+    }
+    
+    const firstNavLink = rightNavLinks.find('.nav-link').first();
+    if (firstNavLink.length === 0) {
+      navbarCollapse.removeClass('force-hide');
+      navbarToggler.removeClass('force-show');
+      return;
+    }
+    
+    const navLinkOffset = firstNavLink.offset();
+    if (!navLinkOffset) {
+      navbarCollapse.removeClass('force-hide');
+      navbarToggler.removeClass('force-show');
+      return;
+    }
+    
+    const navLinkLeft = navLinkOffset.left;
+
+    // Check for overlap with buffer
+    const overlapBuffer = 20;
+    const hasOverlap = navLinkLeft < (avatarRight + overlapBuffer);
+
+    if (hasOverlap) {
+      // Hide nav links, show toggler
+      navbarCollapse.addClass('force-hide');
+      navbarToggler.addClass('force-show');
+    } else {
+      // Show nav links, hide toggler
+      navbarCollapse.removeClass('force-hide');
+      navbarToggler.removeClass('force-show');
     }
   },
 
