@@ -43,6 +43,21 @@ layout: base
         {{ content }}
       </div>
 
+      {% if site.adsense_client %}
+      <!-- AdSense Ad Unit - After Content -->
+      <div style="margin: 30px 0; text-align: center; clear: both;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="{{ site.adsense_client }}"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      {% endif %}
+
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
           <span>Tags:</span>
