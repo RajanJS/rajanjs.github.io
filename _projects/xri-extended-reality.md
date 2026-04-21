@@ -1,110 +1,63 @@
 ---
 layout: project
 title: "Extended Reality Initiative (XRi)"
-description: "Focused on developing immersive educational experiences in the realm of extended reality."
+description: "NSF-funded immersive learning platform for educational research, analytics, and interactive video experiences."
 image: "/assets/img/project/xri/xri-thumbnail.png"
-# gh-repo: "username/repository"
 sort_order: 4
-gh-badge:
-  # - star
-  # - fork
 tags:
-  - JavaScript
-  - React.js, 
-  - React Native, 
+  - React
+  - React Native
   - Node.js
-  - Python, 
+  - Python
   - Babylon.js
   - Research
-  - Teaching and Learning
+  - Education
 ---
 
-## Project Overview
+## Context
 
-The Extended Reality Initiative (XRi) at Kent State is focused on developing immersive educational experiences in the realm of extended reality. The initiative was recently awarded funding from the National Science Foundation to design and study immersive 360 video experiences incorporating single and multi-perspective video to facilitate teacher education of future elementary mathematics teachers. Materials from this funded project and related initiatives will be shared here as they become available.
+XRi was part of NSF-funded research at Kent State focused on immersive educational experiences. The platform used interactive and multi-perspective video experiences to support teacher education and research into classroom observation and learning behavior.
 
-![Project Image](/assets/img/project/xri/extended-reality.jpeg)
+## My Role
 
-This project is funded by the National Science Foundation, [Grant # 1908159](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1908159). Any opinions, findings, and conclusions or recommendations expressed on this website are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+As a Graduate Student Developer, I helped build full-stack web and mobile experiences that translated research goals into usable product workflows.
 
-### Immersive Educational Experience
+My contributions included:
 
-<div class="video-thumbnail-container" onclick="playVideo(this)">
-  <img src="/assets/img/project/xri/praxi-video-viewer.png" alt="Video Thumbnail" class="video-thumbnail">
-  <div class="play-button">&#9658;</div>
-</div>
+- building application features for immersive educational experiences
+- supporting secure authentication and multi-role access patterns
+- contributing to video management and viewer experiences
+- helping turn research requirements into working software for real academic use
 
-<div class="video-container" style="display: none;">
-  <iframe src="https://www.youtube.com/embed/6nh1CCHtFZo?autoplay=1" frameborder="0" allowfullscreen></iframe>
-</div>
+## Technical Challenges
 
+The challenge here was not just media playback. It was building a system that could support:
 
-NSF funded the XRi project; a system designed to provide immersive educational experiences using extended reality technology.
+- immersive 360-degree educational experiences
+- role-based access for different user types
+- video management and shared access controls
+- usage tracking and analytics that supported research outcomes
 
-The development of a system designed to provide immersive educational experiences using extended reality technology. The platform utilizes 360-degree video experiences, incorporating both single and multi-perspective views, to enhance the training of future elementary school teachers. By integrating 360o video footage in a spherical format, the application immerses users in a classroom environment, allowing them to explore the space in all directions. This comprehensive virtual reality experience enables future educators to hone their teaching skills and identify students who may require additional support. While users interact with the 360o videos, we will record and analyze their behavior and perspectives. The analysis of these recordings will inform a summary report that identifies the most effective educational strategies for classroom instruction. These reports will offer educators new insights into effective student interactions and engagement
+This work required moving comfortably between product thinking, implementation detail, and research-driven constraints.
 
-## Key Features
+## Stack
 
-- Secure authentication login system
-- Different types of users (admin, instructor, student and guest)
-- Easy registration for students
-- Easy application explores as guest
-- Easy video management (upload and access)
-- 360o Video Viewer with multi perspective
-- Video access management using shared codes
-- Watch logs analysis and summary report
+- React
+- React Native
+- Node.js
+- Python
+- Babylon.js
 
+## Outcomes
+
+- Contributed to an NSF-funded platform supporting immersive teacher education workflows
+- Helped bridge academic research goals with production-minded application development
+- Strengthened my experience building systems with analytics, interactive media, and structured user roles
+
+## What This Proves
+
+XRi shows breadth beyond commercial apps. It demonstrates that I can work on technically interesting products in ambiguous environments, collaborate with interdisciplinary teams, and build software that supports both users and institutional goals.
 
 ## Learn More
 
-For more details, visit the [xri.kent.edu](https://xr.kent.edu/).
-
-<style>
-.video-thumbnail-container {
-  position: relative;
-  width: 100%;
-  /* max-width: 640px; */
-  cursor: pointer;
-}
-
-.video-thumbnail {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  pointer-events: none;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-</style>
-
-<script>
-function playVideo(container) {
-  container.style.display = 'none';
-  const videoContainer = container.nextElementSibling;
-  videoContainer.style.display = 'block';
-}
-</script>
+For more details, visit [xri.kent.edu](https://xr.kent.edu/).

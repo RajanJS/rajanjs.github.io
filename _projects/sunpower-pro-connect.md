@@ -1,85 +1,83 @@
 ---
 layout: project
-title: "SunPower Mobile & Web Apps"
-description: "Commissioning and monitoring apps for SunPower customers"
+title: "SunPower and SunStrong Mobile Apps"
+description: "React Native commissioning and monitoring apps for clean-energy customers, dealers, and field technicians."
 image: "/assets/img/project/sunpower/snpwr-apps.png"
 sort_order: 1
 tags:
+  - React Native & React
   - React
-  - React Native
-  - JavaScript
+  - GraphQL
   - IoT
-  - Bluetooth Moduel
-  - WiFi Module
-  - Web Development
-  - Solar Panels
-  - Battery
-  - Renewable Energy / Clean Energy
+  - BLE
+  - WiFi
+  - CI/CD
+  - Renewable Energy
+  - Mobile Architecture
 ---
-
-## Project Overview
-
-SunPower has been pushing the boundaries of solar technology since the 1970s, driven by creativity, craftsmanship, and a commitment to excellence.
-
-## [**mySunPower (now SunStrong Connect)**](https://us.sunpower.com/products/software/mysunpower)
-
-Designed to integrate seamlessly with SunPower’s solar and battery storage solutions, **mySunPower** empowers homeowners to monitor and manage their solar energy systems easily. It serves as a mobile extension of the [mySunPower web portal](https://us.sunpower.com/products/software/mysunpower).
-
-Today, **mySunPower** is trusted by over **65,000+ users** to monitor and optimize their solar and storage systems.
 
 ![mySunPower App](/assets/img/project/sunpower/mysunpower.png)
 
-![mySunPower Web](/assets/img/project/sunpower/web.png)
+## Context
 
-**Key Features:**
-- View solar production, home energy consumption\*, and available battery storage with a real-time, holistic dashboard.
-- Analyze electricity use trends by day, month, or year with detailed graphs and reports.
-- Access weather-integrated data to track system performance under various conditions.
-- Receive live system updates and alerts for connectivity or weather-related issues.
-
----
-
-## [**SunPower Pro Connect**](https://us.sunpower.com/products/software/sunpower-pro-connect)
-
+At SunPower and later SunStrong, I worked on mobile products used by both homeowners and field technicians across the solar and storage ecosystem. These apps needed to balance clean user experience with device connectivity, commissioning reliability, production support, and release discipline.
 
 ![ProConnect App](/assets/img/project/sunpower/proconnect-banner.png)
 
-**SunPower Pro Connect** is a next-generation commissioning app for SunPower dealers and installation partners. It streamlines the installation process by allowing direct device configuration via smartphone, removing the need for traditional laptops or wired connections.
 
-Currently, **Pro Connect** is used by over **5,000+ dealer technicians** across the U.S. to streamline solar and storage system commissioning.
+The two flagship products were:
 
-![ProConnect App](/assets/img/project/sunpower/proconnect1.png)
+- **mySunPower / SunStrong Connect**, a customer-facing app for monitoring and managing solar and storage systems
+- **Pro Connect**, a technician-facing app for commissioning, configuring, and validating systems in the field
 
-**Key Features:**
-- Supports commissioning for **Equinox® solar** and **SunVault® storage** systems.
-- Directly connects to **PVS6** and **Hub+®** devices.
-- Enables rapid QR and barcode scanning for PVS6, Hub+, and AC module types.
-- Allows over-the-air firmware upgrades directly from the installer’s smartphone.
-- Provides real-time data visualization to verify system health and functionality.
+## My Role
 
 
-> *Note: A SunPower Pro account is required to use Pro Connect.*
+I was a key React Native engineer across product delivery, platform reliability, and workflow optimization.
 
----
+My work included:
 
-## [My Contributions](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
+- building and improving commissioning and monitoring workflows
+- integrating BLE and Wi-Fi connected device flows
+- supporting GraphQL-powered product features
+- improving CI/CD with Fastlane and GitHub Actions
+- collaborating with firmware, backend, design, QA, and product teams
+- modernizing legacy mobile systems and reducing maintenance overhead
 
-- Contributed to the development and enhancement of the **mySunPower** mobile and web applications.
-- Led the development and advancement of the **ProConnect** mobile application for dealer and installer workflows.
-- Participated in early design brainstorming sessions and contributed to Figma prototypes to finalize user experience flows.
-- Spearheaded key **GraphQL** API integrations to enable efficient data handling and real-time system updates.
-- Led CI/CD automation initiatives to streamline deployment and testing processes.
-- Optimized commissioning workflows, resulting in faster and more reliable system installations.
-- Prioritized user-centric design and performance optimization across both mobile and web platforms.
+## Technical Challenges
 
-👉 [View Contribution Highlights](https://docs.google.com/presentation/d/1dhzb-CT_R2O5teSJE4FiKXfH-Jq0KFiQGb4fyYiWD-Q/edit?usp=sharing)
+This product space had real operational constraints:
 
----
+- device setup had to work reliably in field conditions
+- connectivity was intermittent and hardware-dependent
+- technician workflows needed to be fast and low-friction
+- customer apps needed clear data visualization and stable performance
+- release quality mattered because product issues affected real installations and support operations
 
-## Learn More
+One especially meaningful technical win was building a high-performance multi-code scanning workflow in React Native, which removed hardware dependencies and saved approximately **$150K annually**.
 
-For more about these products and SunPower’s innovations, visit the [SunPower Website](https://us.sunpower.com/).
+## Stack
+![mySunPower Web](/assets/img/project/sunpower/web.png)
 
----
+- React Native
+- React
+- GraphQL
+- BLE and Wi-Fi device communication
+- Fastlane
+- GitHub Actions
+- Mixpanel
+- Sentry
 
-\* Energy consumption monitoring requires additional compatible hardware.
+## Outcomes
+
+
+
+- Supported products used by **65K+ homeowners** and **5K+ dealer technicians**
+- Improved overall system efficiency by **20%** through stronger IoT commissioning flows
+- Reduced deployment time by **30%**
+- Reduced CI billing minutes by **25%**
+- Modernized older mobile code paths to reduce maintenance effort and improve reliability
+
+## What This Proves
+
+This work shows my strength in mobile systems that sit close to real operations. It combines React Native product delivery with device integration, release engineering, performance work, and cross-functional execution in a domain where reliability matters.

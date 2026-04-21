@@ -18,12 +18,7 @@ navbar-links:
   My Works: "portfolio"
   Thought Bytes: "posts"
   Cert Bytes: "certs"
-  Get My CV Here:
-    - Plan Text CV: "/cv/plain-text"
-    - Digital CV: "/cv/digital-cv"
-    - Modern CV: "/cv/modern-cv"
-    - Modern CV with PP: "/cv/modern-cv-pp"
-    - Modern Professional: "/cv/modern-professional"
+  Resume: "/cv/resume"
 
 ################
 # --- Logo --- #
@@ -124,7 +119,7 @@ edit_page_button: false
 navbar-var-length: false
 
 # The keywords to associate with your website, for SEO purposes
-keywords: "JavaScript Engineer,React,React Developer,React Native, Node.js, IoT, Angular, AngularJs, JavaScript Develper, Senior Mobile Developer, Senior React Native Developer"
+keywords: "Senior React Native Engineer, Mobile Architect, React Native, TypeScript, Swift, Kotlin, AI-assisted products, mobile architecture, CI/CD, IoT, fintech, payments, React, Node.js"
 
 ######################################
 # --- Colours / background image --- #

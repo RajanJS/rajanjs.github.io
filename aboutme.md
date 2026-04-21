@@ -1,56 +1,78 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to hire me!
+title: About
+subtitle: Senior React Native engineer, mobile architect, and AI-assisted product builder
 ---
 
-I'm Rajan Maharjan, a Sr. Software Engineer. This page is here to tell you a bit more about me and my work.
-
-## Who I Am
-
-As a forward-thinking Senior Software Engineer, I specialize in building scalable, high-impact applications using React, React Native, and Node.js. With over a decade of experience, I’ve led transformative projects across domains like IoT, Renewable Energy, Health Tech, FinTech, and Crypto. I’m deeply invested in AI-driven development, leveraging tools like ML Kit and TensorFlow.js to create intelligent, context-aware user experiences.
-
-I stay ahead of the curve by integrating modern trends like edge computing, privacy-first architectures, and human-centered design into my workflow. I aim to to develop ethical, resilient software that empowers people, accelerates sustainability, and shapes a better, tech-enabled future.
-
-"Wellness starts from within."
-
-> Software Engineering for Impact and Innovation
+I'm Rajan Maharjan, a senior mobile engineer focused on building reliable products where mobile is core to the business, not an afterthought.
 
 ## What I Do
 
-As a Senior Software Engineer - Mobile at SunStrong Management, I lead full-cycle development of mobile solutions that empower SunPower’s solar and storage ecosystem. I architect and deliver user-centric apps that streamline commissioning and monitoring for over 5,000+ field technicians and offer 65,000+ homeowners intuitive control over their energy systems.
+I work at the intersection of mobile architecture, product delivery, and operational reliability. My recent work spans React Native platform modernization, native iOS and Android integration, AI-assisted workflows, IoT-connected experiences, and payment-enabled mobile systems.
 
-- Contributed extensively to **mySunPower**, a customer-facing app that provides real-time insights and system control, improving energy engagement and satisfaction.
-- Key engineer behind **ProConnect (CM3)**, developed from the ground up with a modular architecture and reusable design system to accelerate future development.
-- Automated mobile DevOps workflows using **Fastlane** and **GitHub Actions**, optimizing builds and enabling consistent releases on both the **Google Play Store** and **Apple App Store**.
-- Engineered a React Native **Scanner Component** for multi-code scanning, eliminating hardware dependencies and saving ~$150,000 annually.
-- Optimized IoT commissioning via **BLE and WiFi**, boosting system efficiency by 20%.
-- Collaborated with QA to develop test strategies that reduced production bugs and improved app ratings by 20%.
-- Reduced CI pipeline billing minutes by 25% and cut deployment times by 30% through test automation and build optimization.
-- Improved firmware update workflows in coordination with hardware teams, decreasing update time and enhancing reliability.
-- Modernized legacy **Cordova** applications, improving performance and cutting maintenance time by 25%, facilitating a smoother transition to modern tech.
-- Integrated and maintained **GraphQL APIs** to streamline data fetching, reduce over-fetching, and improve mobile and web app performance.
-- Contributed to cross-platform consistency by supporting a companion **web application**, ensuring cohesive features and responsive design across web and mobile experiences.
-- Implemented **Mixpanel** to monitor user behavior and feature adoption, enabling data-driven decisions that enhanced user engagement and retention.
-- Integrated **Sentry** for real-time crash and error tracking, significantly improving incident response times and overall app stability across platforms.
+I’m strongest when a product needs both hands-on execution and long-term technical direction:
 
-I specialize in building resilient, scalable mobile and web platforms that drive measurable impact and user satisfaction.
+- React Native architecture and modernization
+- Swift and Kotlin integration for platform-specific and performance-critical features
+- AI-assisted product workflows and real-time streaming experiences
+- CI/CD, Fastlane, GitHub Actions, and release readiness
+- production debugging, crash stability, and performance profiling
+- cross-functional ownership across product, backend, QA, and design
+
+## What I'm Strongest At
+
+### Mobile Architecture
+
+I enjoy turning growing React Native codebases into platforms that are easier to extend, test, release, and maintain over time. That includes architecture decisions, modernization work, and helping teams avoid short-term choices that become long-term friction.
+
+### Native Integration
+
+When a product needs more than a pure JavaScript solution, I’m comfortable bridging into native iOS and Android work. That includes Swift and Kotlin integrations for performance-sensitive features, platform-specific behavior, and product workflows that sit close to the operating system or device layer.
+
+### AI-Assisted Products
+
+I’m especially interested in AI-assisted product experiences that solve real workflow problems. My focus here is practical: streaming experiences, agent-assisted user flows, and engineering patterns that use AI to reduce manual work while keeping the product reliable and understandable.
+
+### Payments, Delivery, and Production Reliability
+
+I’ve worked on products where reliability matters as much as feature velocity, including payment-enabled systems, IoT-connected apps, and production release pipelines. I care about observability, release quality, crash reduction, and delivery systems that support teams at scale.
+
+## Recent Experience
+
+### Solo Technologies
+
+I currently work as a Senior Mobile Engineer, leading mobile architecture and platform modernization work across iOS and Android. My recent focus includes AI-assisted customer workflows, real-time streaming experiences, subscription and payment flows, observability, release readiness, and performance-focused native integrations.
+
+### SunStrong and SunPower
+
+Before that, I helped build and evolve mobile products in the solar and storage space for both field technicians and homeowners. That work included commissioning flows, BLE and Wi-Fi device integration, scanner workflows, firmware-adjacent coordination, CI/CD automation, and production support for systems used at meaningful scale.
+
+### Oyster, XRi, and Earlier Product Work
+
+Earlier in my career, I led and contributed to fintech, education, nonprofit, healthcare-adjacent, and GPS-connected products. Those projects strengthened my ability to move between product strategy, implementation, and delivery while adapting to different industries and technical constraints.
+
+## How I Work
+
+I care about shipping quickly, but I care just as much about maintainability, observability, and trust after release. I like building systems that teams can operate confidently months later, not just demo successfully once.
+
+I’m also at my best in collaborative environments where engineering is expected to contribute to product direction. I enjoy mentoring, reviewing architecture, improving release processes, and helping teams raise the quality bar without slowing down momentum.
+
+## Outside of Work
+
+Outside of my day job, I build personal and community-oriented products, write about React Native and modern development workflows, and keep investing in tools that help me ship better software. I’m especially interested in AI-assisted product experiences, social-impact technology, and mobile systems that solve real operational problems.
 
 ## Projects Beyond Work
 
-Outside of my professional role, I actively build and maintain personal and open-source projects that align with my interests in technology and societal impact:
+Outside of my professional role, I also build and support projects that reflect my interests in community impact, learning, and everyday utility.
 
-- **Marriage Game Point Calculator**: A cross-platform mobile app used by thousands to score a traditional Nepali card game. Available on [Google Play](https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator) and [App Store](https://apps.apple.com/us/app/mgpc-marriage-point-calculator/id1546733404).
-- **Immersive Learning Platform** (in-progress): A web app for education using AI-powered video summarization and MongoDB-backed analytics, part of a broader research initiative.
-- **NepalBhasa App**: Collaborated with Dabuli, a US-based nonprofit, to build a platform that hosts a rich Nepalbhasa dictionary and cultural resources aimed at preserving the Newar language. This project reflects my commitment to giving back to my roots and promoting cultural awareness through technology.
-- **Hamro Blood Bank**: Developed a solution to help address the critical issue of blood shortage in Nepal by streamlining access to compatible blood donors. This app focuses on saving lives through rapid donor-matching in time-sensitive medical situations.
-- **BLE Utilities & Firmware Tools**: Built utilities for scanning, pairing, and secure communication with IoT devices using React Native and AES encryption.
-- Regularly contribute to open-source projects and mentor early-stage developers.
+- **Marriage Game Point Calculator**: A cross-platform app used by thousands to simplify scorekeeping for a traditional Nepali card game.
+- **NepalBhasa App**: A cultural and language-preservation platform built with Dabuli to support the Nepalbhasa community.
+- **Hamro Blood Bank**: A product focused on improving donor matching and access during time-sensitive medical situations.
+- **Immersive learning tools**: Ongoing work exploring AI-assisted educational experiences and research-oriented product workflows.
+- **Open-source and mentoring**: I regularly invest time in sharing knowledge, mentoring earlier-career developers, and building tools that solve practical problems.
 
-These projects reflect my commitment to lifelong learning, community involvement, and technical leadership.
+These projects reflect the kind of work I’m naturally drawn to: useful software, cultural connection, and products that help people in tangible ways.
 
-## Contact Me
+## Contact
 
-Feel free to reach out to me via [email](mailto:{{ site.email }}) or connect with me on [LinkedIn](https://linkedin.com/in/{{ site.linkedin_username }}) or [Twitter](https://twitter.com/{{ site.twitter_username }}).
-
-Thanks for visiting!
+You can reach me via [email](mailto:rajanmaharjanmails@gmail.com), connect on [LinkedIn](https://www.linkedin.com/in/rajanmaharjn/), or explore the rest of my [portfolio](/portfolio) and [resume](/cv/resume).
