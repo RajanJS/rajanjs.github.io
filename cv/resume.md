@@ -3,6 +3,8 @@ layout: page
 title: Resume
 subtitle: Senior React Native Engineer and Mobile Architect
 permalink: /cv/resume
+share-title: Rajan Maharjan Resume | Senior React Native Engineer
+share-description: Resume of Rajan Maharjan, Senior React Native Engineer and Mobile Architect with experience in AI-assisted mobile products, native integration, payments, and real-time systems.
 ---
 
 <section class="resume-page-intro">

@@ -2,6 +2,8 @@
 layout: page
 title: About
 subtitle: Senior React Native engineer, mobile architect, and AI-assisted product builder
+share-title: About Rajan Maharjan | Senior React Native Engineer
+share-description: Learn more about Rajan Maharjan, a Senior React Native Engineer and Mobile Architect focused on AI-assisted workflows, native integration, and reliable mobile product delivery.
 ---
 
 I'm Rajan Maharjan, a senior mobile engineer focused on building reliable products where mobile is core to the business, not an afterthought.

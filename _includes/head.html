@@ -14,7 +14,11 @@
 
   {% capture title %}
     {%- if site.title and site.title-on-all-pages and (site.title != pagetitle) -%}
-      {{ pagetitle }} | {{ site.title }}
+      {%- if pagetitle contains site.title -%}
+        {{ pagetitle }}
+      {%- else -%}
+        {{ pagetitle }} | {{ site.title }}
+      {%- endif -%}
     {%- else -%}
       {{ pagetitle }}
     {%- endif -%}
@@ -110,6 +114,34 @@
   {% if site.title %}
   <meta property="og:site_name" content="{{ site.title }}">
   {% endif %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": {{ site.title | jsonify }},
+    "url": {{ site.url | jsonify }}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.author | jsonify }},
+    "url": {{ site.url | jsonify }},
+    "image": {{ site.avatar | absolute_url | jsonify }},
+    "jobTitle": "Senior React Native Engineer and Mobile Architect",
+    "sameAs": [
+      "https://www.linkedin.com/in/{{ site.social-network-links.linkedin }}",
+      "https://github.com/{{ site.social-network-links.github }}",
+      "https://stackoverflow.com/users/{{ site.social-network-links.stackoverflow }}",
+      "https://medium.com/@{{ site.social-network-links.medium }}",
+      "https://dev.to/{{ site.social-network-links.devto }}",
+      "https://twitter.com/{{ site.social-network-links.twitter }}"
+    ]
+  }
+  </script>
 
   {%- capture img -%}
     {%- if page.share-img -%}
