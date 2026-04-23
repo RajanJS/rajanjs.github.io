@@ -111,7 +111,7 @@ let BeautifulJekyllJS = {
 
     const themeColorMeta = document.querySelector('meta[name="theme-color"][data-dynamic-theme-color]');
     if (themeColorMeta) {
-      themeColorMeta.setAttribute('content', normalizedTheme === 'dark' ? '#0f2533' : '#0085A1');
+      themeColorMeta.setAttribute('content', normalizedTheme === 'dark' ? '#0C1F2C' : '#EAEAEA');
     }
 
     BeautifulJekyllJS.updateThemeToggle(normalizedTheme);
