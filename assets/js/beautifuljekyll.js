@@ -6,6 +6,8 @@ let BeautifulJekyllJS = {
   numImgs : null,
 
   init : function() {
+    BeautifulJekyllJS.initThemeToggle();
+
     setTimeout(BeautifulJekyllJS.initNavbar, 10);
     
     // Check avatar overlap for navbar
@@ -89,6 +91,88 @@ let BeautifulJekyllJS = {
     BeautifulJekyllJS.initImgs();
 
     BeautifulJekyllJS.initSearch();
+  },
+
+  getPreferredTheme : function() {
+    let storedTheme = null;
+    try {
+      storedTheme = localStorage.getItem('theme');
+    } catch (e) {}
+
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      return storedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  },
+
+  applyTheme : function(theme) {
+    const normalizedTheme = theme === 'dark' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', normalizedTheme);
+
+    const themeColorMeta = document.querySelector('meta[name="theme-color"][data-dynamic-theme-color]');
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', normalizedTheme === 'dark' ? '#0f2533' : '#0085A1');
+    }
+
+    BeautifulJekyllJS.updateThemeToggle(normalizedTheme);
+
+    setTimeout(function() {
+      BeautifulJekyllJS.initNavbar();
+    }, 10);
+  },
+
+  updateThemeToggle : function(theme) {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    const isDark = theme === 'dark';
+    const icon = toggle.querySelector('.theme-toggle-icon');
+
+    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    if (icon) {
+      icon.classList.toggle('fa-sun', isDark);
+      icon.classList.toggle('fa-moon', !isDark);
+    }
+  },
+
+  initThemeToggle : function() {
+    const applyInitialTheme = function() {
+      BeautifulJekyllJS.applyTheme(BeautifulJekyllJS.getPreferredTheme());
+    };
+
+    applyInitialTheme();
+
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        const currentTheme = BeautifulJekyllJS.getPreferredTheme();
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        try {
+          localStorage.setItem('theme', nextTheme);
+        } catch (e) {}
+        BeautifulJekyllJS.applyTheme(nextTheme);
+        toggle.blur();
+      });
+    }
+
+    const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = function() {
+      let storedTheme = null;
+      try {
+        storedTheme = localStorage.getItem('theme');
+      } catch (e) {}
+
+      if (storedTheme !== 'light' && storedTheme !== 'dark') {
+        applyInitialTheme();
+      }
+    };
+
+    if (systemThemeQuery.addEventListener) {
+      systemThemeQuery.addEventListener('change', handleSystemThemeChange);
+    } else if (systemThemeQuery.addListener) {
+      systemThemeQuery.addListener(handleSystemThemeChange);
+    }
   },
 
   initNavbar : function() {
