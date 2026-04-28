@@ -5,7 +5,7 @@ description: "MGPC is for easy and quick center point calculations during marria
 image: "/assets/img/project/mgpc/thumbnail.png"
 # cover-img: "assets/img/project/mgpc/feature-graphic.png"
 # gh-repo: "username/repository"
-sort_order: 8
+sort_order: 9
 gh-badge:
   # - star
   # - fork

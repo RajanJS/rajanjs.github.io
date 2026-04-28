@@ -5,7 +5,7 @@ description: "Your Ultimate Card Game Companion for Call break Card Game Point R
 image: "/assets/img/project/callbreak/callbreak-banner.png"
 # cover-img: "assets/img/project/mgpc/feature-graphic.png"
 # gh-repo: "username/repository"
-sort_order: 10
+sort_order: 12
 gh-badge:
   # - star
   # - fork

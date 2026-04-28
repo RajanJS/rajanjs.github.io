@@ -3,7 +3,7 @@ layout: project
 title: "Oyster Mobile and Web Platform"
 description: "Fintech product delivery across credit, payments, onboarding, and customer-facing mobile and web experiences."
 image: "/assets/img/project/oyster/oyster-cards.png"
-sort_order: 2
+sort_order: 3
 tags:
   - React Native
   - React

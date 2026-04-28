@@ -4,7 +4,7 @@ title: "XcelPay Crypto Wallet"
 description: "XcelPay Wallet is your digital companion for the crypto age. The power to buy, store, swap and pay with cryptocurrencies, all at your fingertips."
 image: "/assets/img/project/xcelpay/xcelpay-wallet.jpeg"
 # gh-repo: "username/repository"
-sort_order: 3
+sort_order: 5
 tags:
   - JavaScript
   - React Native

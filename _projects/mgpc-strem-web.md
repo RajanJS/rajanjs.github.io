@@ -3,7 +3,7 @@ layout: project
 title: "MGPC Stream"
 description: "A real-time web scoreboard and leaderboard for MGPC games, built to share live Marriage, CallBreak, and Kitti scoring beyond the mobile app."
 image: "/assets/img/project/mgpc/mgpc-stream-banner.png"
-sort_order: 9
+sort_order: 11
 tags:
   - React
   - Firebase

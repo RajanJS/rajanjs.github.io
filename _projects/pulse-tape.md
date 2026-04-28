@@ -3,7 +3,7 @@ layout: project
 title: "PulseTape ECG monitoring"
 description: "PulseTape is a medical ECG monitoring app connecting patients, clinics, and BLE hardware through mobile recording, secure sync, and report workflows."
 image: "/assets/img/project/pulse-tape/pulse-tape-thumbnail.png"
-sort_order: 1
+sort_order: 2
 tags:
   - React Native
   - Django
