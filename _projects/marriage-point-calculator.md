@@ -2,7 +2,7 @@
 layout: project
 title: "Marriage Game Point Calculator"
 description: "MGPC is for easy and quick center point calculations during marriage card game."
-image: "/assets/img/project/mgpc/mgpc-logo.png"
+image: "/assets/img/project/mgpc/thumbnail.png"
 # cover-img: "assets/img/project/mgpc/feature-graphic.png"
 # gh-repo: "username/repository"
 sort_order: 8
@@ -20,7 +20,7 @@ tags:
 
 MGPC is a mobile score calculator designed to speed up point tracking in Marriage card game sessions and similar games like CallBreak and Kitti (Rummy). The app replaces manual calculations with quick, reliable in-game scoring so players can focus on gameplay.
 
-![Project Image](/assets/img/project/mgpc/1x.png)
+![Project Image](/assets/img/project/mgpc/feature-banner.png)
 
 ## My Role
 
