@@ -18,30 +18,53 @@ tags:
 
 ## Context
 
-MGPC - Marriage Game Point Calculator is developed for easy and quick center point calculations during [marriage game](https://en.wikipedia.org/wiki/Marriage_(card_game)) and other card games like "CallBreak" and "Kitti (Rummy)". We can save time and play more.
-
-<div style="width: 100%;">
-  <img src="/assets/img/project/mgpc/feature-graphic.png" alt="Project Image" style="width: 100%; height: auto;">
-</div>
-
-
-#### List of card point calculators available in app;
-- Marriage Card Game Point Calculator for Marriage Card Game
-- Callbreak Point Calculator/ Record for CallBreak Card Game
-- 13 Kitti Point Calculator / Record for Kitti(Rummy) Card Game
+MGPC is a mobile score calculator designed to speed up point tracking in Marriage card game sessions and similar games like CallBreak and Kitti (Rummy). The app replaces manual calculations with quick, reliable in-game scoring so players can focus on gameplay.
 
 ![Project Image](/assets/img/project/mgpc/1x.png)
 
-## Key Features
+## My Role
 
-1. Customize the game modes, point,s and rates in the settings 
-2. User-friendly interface
-3. Precise and fast calculations
-4. Store previous game records for future reference
-5. Overall summary; can view total win-loss for overall games
+I built and refined the score calculation workflows with a focus on correctness, speed, and game-session usability.
 
+My contributions included:
 
-Thanks for downloading and please share if you find it helpful. :)
+- implementing calculator logic for Marriage, CallBreak, and Kitti scoring variants
+- building configurable settings for points, rates, and game modes
+- adding persistent game records and summary-level win/loss views
+- designing a lightweight interface optimized for fast round-by-round updates
+
+## Technical Challenges
+
+- handling scoring differences across multiple card game variants
+- ensuring calculation accuracy under rapid repeated user input
+- keeping configuration flexibility without making the UI complex
+- presenting historical game data in a compact, easy-to-review format
+
+## Stack
+
+- React Native
+- JavaScript
+- local data persistence for game history
+- mobile-first utility app UX
+
+## Outcomes
+
+- Reduced manual math and score disputes during multiplayer card sessions
+- Enabled faster game flow through instant score calculations
+- Added reusable score history for post-game review and tracking
+- Improved user control with customizable game and scoring settings
+
+## Extra Feature Details
+
+The app includes dedicated calculators for multiple game formats:
+
+- Marriage Card Game point calculator
+- CallBreak point calculator/record
+- 13 Kitti (Rummy) point calculator/record
+
+## What This Proves
+
+This project demonstrates my ability to build practical utility apps that solve frequent real-world friction points. It highlights focus on accuracy, interaction speed, and long-term usability in consumer mobile workflows.
 
 ## Learn More
 

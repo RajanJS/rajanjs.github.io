@@ -14,90 +14,36 @@ tags:
   - Product Leadership
 ---
 
-## Project Overview
-
-Oyster® is the solution created to integrate into your operation, E-Commerce, ERP or your custom-made software with our digital platform.
-
-It simplifies your business finances so you can focus on doing what you love. With the app, you can activate your smart account to make and accept payments and request your Oyster Mastercard debit card that you ca>
-
 ## Context
 
-Oyster was a digital financial platform built for freelancers, startups, and SMBs in Mexico. The product combined payments, onboarding, account management, and credit workflows across both mobile and web surfaces.
+Oyster was a digital financial platform built for freelancers, startups, and SMBs in Mexico. The product combined onboarding, payments, account management, and credit workflows across web and mobile. In a high-trust fintech domain, the user experience needed to be clear, reliable, and operationally correct.
 
-## Oyster Customer Life Cycle
 ![Oyster Customer Life Cycle](/assets/img/project/oyster/life-cycle.png)
 
-
-## Architecture
 ![Oyster Information Architecture](/assets/img/project/oyster/info-architecture.jpg)
-
-### Digital platform (Web Application)
-Offer multiple payment methods by sending payment links to your customers and disperse your accounts payable. All in one place!
-
-![Digital platform: Web App](/assets/img/project/oyster/plataforma-digita.svg)
-
-
-<p>&nbsp;</p>
-### Digital Mobile platform (Oyster Mobile App)
-
-#### Navigation & Wireframing
-
-![Oyster Mobile App](/assets/img/project/oyster/mobiile-app-wireframe.jpg)
-
-#### Design Components
-
-![Oyster Mobile App](/assets/img/project/oyster/design-components.jpg)
-
-
-#### Execution
-
-##### Three main sections: Payments / Dashboard / Cards
-
-![Oyster Mobile App](/assets/img/project/oyster/mobile-app-implemented.jpg)
-
-##### Card management and digital card creation
-
-![Oyster Mobile App](/assets/img/project/oyster/cards-dashboard.jpg)
-
-##### Profile section / Transaction list / Transaction detail
-
-![Oyster Mobile App](/assets/img/project/oyster/transtaion-details.jpg)
-
-##### Oyster products Line of credit / Instant credit / Credit card
-
-![Oyster Mobile App](/assets/img/project/oyster/credit-card-transation.jpg)
-
-##### Oyster products Line of credit / Instant credit / Credit card / Dark mode option
-
-![Oyster Mobile App](/assets/img/project/oyster/credit-line-of-credit-dark-mode.jpg)
 
 ## My Role
 
-I worked as a senior engineer and lead developer for the Credit Frontend team, helping drive the delivery of both the web application and mobile application. This role required close coordination with product, design, backend engineering, and leadership.
+I worked as a senior engineer and lead developer for the Credit Frontend team, helping drive delivery across both web and mobile products.
 
 My contributions included:
 
-- leading customer-facing web and mobile implementation
-- helping shape delivery plans and frontend priorities
-- partnering with design to ship polished, user-centered experiences
-- working closely with backend teams on API integration and product behavior
-- improving engineering quality through reviews, mentoring, and execution standards
+- leading customer-facing implementation for mobile and web experiences
+- shaping frontend delivery plans and technical priorities with product teams
+- partnering with design to ship polished, user-centered financial workflows
+- collaborating closely with backend teams for reliable API integration
+- improving engineering quality through code reviews, mentoring, and execution standards
 
-![Oyster Mobile App](/assets/img/project/oyster/credit-line-of-credit-dark-mode.jpg)
+![Oyster Mobile App](/assets/img/project/oyster/mobile-app-implemented.jpg)
 
 ## Technical Challenges
 
-Fintech products place a premium on trust, clarity, and operational accuracy. The interface had to make complex financial workflows feel approachable while still supporting real business transactions, onboarding flows, reconciliation, and card-related product experiences.
+- making complex credit and payments flows understandable for first-time users
+- maintaining data consistency across onboarding, transaction, and card workflows
+- balancing rapid iteration with fintech-grade correctness and trust
+- coordinating multi-team delivery across product, design, and backend engineering
+- supporting web and mobile parity without slowing release velocity
 
-On the delivery side, that meant balancing:
-
-- high-quality UI and interaction design
-- data consistency across products
-- reliable API integration
-- cross-team coordination
-- fast iteration without sacrificing confidence
-
-##### Usability Testing
 ![Usability Testing](/assets/img/project/oyster/usability-test.png)
 
 ## Stack
@@ -106,30 +52,29 @@ On the delivery side, that meant balancing:
 - React Native
 - JavaScript
 - Node.js-backed APIs
-- product analytics and customer experience workflows
+- product analytics and customer-experience workflows
 
 ## Outcomes
 
-- Helped launch and evolve a customer-facing fintech platform across web and mobile
-- Supported an app experience that maintained strong user sentiment and business traction
+- Helped launch and evolve a customer-facing fintech platform across mobile and web
 - Contributed to a product serving **50K+ acquired users** and **50M+ pesos transacted**
-- Helped the team maintain a strong quality bar while shipping quickly in a high-trust product domain
+- Supported app quality that maintained **4.5+ store ratings** (with peaks around **4.8**)
+- Helped sustain fast delivery while maintaining a strong quality bar in a high-trust product space
+- Contributed to customer experience tracking with an **8 CSAT** operating signal
 
-# Business Impact
-- 4.8 ‍star rating in stores
--  > App was launched in Q4 2019 for iOS and Android Devices, maintaining a rating  above 4.5 in both stores.
+## Extra Feature Details
 
--- 50k+ acquired users in a year
--  > Users find value in the product and we've been keeping a constant pace acquiring users. Also our customers have transacted more than 50M pesos using the platform
-
--- 8 CSAT (Customer Satisfaction Score) score
-- > We hear our customers, and we are constantly evaluating their experience using CSAT surveys to know how they rank the App and also to keep track of any issues or requests they might have
+- core mobile experience centered on payments, dashboard, and cards workflows
+- card management included digital card creation and transaction visibility
+- supported product surfaces across onboarding, profile, and transaction detail flows
+- web and mobile architecture assets were used to align delivery across teams
 
 ## What This Proves
 
-Oyster demonstrates my ability to work in fintech environments where product clarity, quality, and cross-functional execution are essential. It is also one of the clearest examples of me operating as both an engineer and a delivery partner, not just an implementer.
+Oyster demonstrates my ability to deliver in fintech environments where clarity, reliability, and cross-functional execution are all required. It also highlights my ability to operate as both an implementation engineer and a delivery partner.
 
-For more details, visit the [oyster.io](https://oyster.io/).
+## Learn More
+
+For more details, visit [oyster.io](https://oyster.io/).
 
 <small style="color: #6c757d; font-size: 0.5em;">Design Credit: [Arturo Castillo](https://dribbble.com/ErreDos_DeDos)</small>
-<!-- https://www.arturoc.com/work/oyster-app -->

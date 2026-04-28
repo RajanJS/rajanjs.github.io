@@ -18,34 +18,52 @@ tags:
 
 ## Context
 
-
-We are introducing CallBreak Point Record App, the ultimate mobile app for card game enthusiasts! 
-
-<div style="width: 100%;">
-  <img src="/assets/img/project/callbreak/feature.png" alt="Project Image" style="width: 100%; height: auto;">
-</div>
-
-
-It helps to record scores for Call Break / Call Bridge Card Game - Spades.
-
-Say farewell to pen-and-paper scorekeeping as this app effortlessly records, calculates, and updates player scores in real-time.
-
-The app offers a user-friendly interface for easy input and automatic total calculations. Dive into a comprehensive game history, monitor leaderboard stats showcasing win-loss amounts, and customize settings to match your game rules.
-
-Callbreak Point Record App ensures accuracy, eliminates disputes, and motivates improvement, making it the go-to solution for hassle-free, precise scorekeeping, and competitive gaming experiences.
-
-Download now and elevate your card game sessions!
+CallBreak Point Record is a utility app for players who want fast and accurate score tracking during Call Break sessions. It replaces manual pen-and-paper tracking with automatic calculations and persistent game history. The goal was to make gameplay smoother by reducing disputes and bookkeeping effort.
 
 ![Project Image](/assets/img/project/callbreak/1_en-US.png)
 
-## Key Features
+## My Role
 
-- Easy-to-use user-friendly interface for easy input and automatic total calculations.
-- Comprehensive game history, monitor leaderboard stats showcasing win-loss amounts
-- Customizable game settings to mactch rule variations.
+I designed and built the mobile score-recording workflows with an emphasis on speed, clarity, and reliability during live play.
 
+My contributions included:
 
-Thanks for downloading and please share if you find it helpful. :)
+- implementing round-by-round score entry and automatic total calculation
+- building game history and leaderboard-style win/loss tracking
+- supporting configurable game settings for rule variations
+- optimizing the UX for fast in-game updates with minimal input friction
+
+## Technical Challenges
+
+- handling score logic correctly across multiple rounds and custom rules
+- keeping game flow fast so the app did not interrupt play
+- presenting historical data in a lightweight, useful format
+- maintaining consistent behavior across different scoring scenarios
+
+## Stack
+
+- React Native
+- JavaScript
+- local persistence for game records
+- mobile-first UX for rapid score input
+
+## Outcomes
+
+- Replaced manual scorekeeping with a faster and more reliable digital workflow
+- Improved score transparency during games through instant total updates
+- Added historical records that help players review performance over time
+- Increased usability through rule customization and low-friction input design
+
+## Extra Feature Details
+
+- automatic score calculations for live rounds
+- game history with win/loss leaderboard-style tracking
+- customizable settings for rule variations
+- streamlined input designed to replace pen-and-paper scorekeeping
+
+## What This Proves
+
+This project demonstrates product thinking on small but high-frequency user problems. It shows I can build focused mobile utilities that prioritize speed, correctness, and day-to-day usefulness.
 
 ## Learn More
 

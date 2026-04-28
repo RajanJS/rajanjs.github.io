@@ -19,29 +19,66 @@ tags:
 
 ## Context
 
-
-The Patan Heritage Walk Digital Media provides the official tourist information of Patan which has been endorsed by the Lalitpur Metropolitan city and the locals of Patan. The media is available in the form of IOS App, Android and Information Kiosk. In this App, you will find tourist information which has been collected in every corner of Patan. It gives information about the temples, monasteries, architecture, arts, crafts and culture of Patan. The sources of information are locals and it tells stories about local customs, values, cultures and way of life.
+Patan Heritage Walk is an official digital tourism platform for Patan, endorsed by Lalitpur Metropolitan City and local stakeholders. The product delivers local stories, cultural context, and place-based information through mobile apps and an information kiosk. It helps visitors explore heritage sites with structured, trustworthy guidance.
 
 ![Project Image](/assets/img/project/patanheritage/mobile.png)
 
+The mobile experience supports both self-guided exploration and guided tours, including the ability to connect with local guides for personalized journeys.
 
-With the help of this Mobile Apps, you can also book a local tour guide if you want to get the personalized information about Patan from a local. If you want to experience Patan on your own, the Mobile Apps would be a perfect partner for you.
+## My Role
 
+I contributed to the digital product experience used for both tourism discovery and on-site cultural storytelling.
 
-## Key Features
+My contributions included:
+
+- building and refining mobile user flows for category-based heritage exploration
+- supporting content-rich screens for temples, monasteries, arts, crafts, and local culture
+- implementing location-focused experiences for site discovery
+- contributing to delivery across mobile and kiosk-oriented product surfaces
+
+## Technical Challenges
+
+- structuring a large cultural content set into an intuitive navigation model
+- balancing storytelling depth with mobile usability for first-time visitors
+- ensuring consistency between mobile and kiosk presentation formats
+- supporting local context and authenticity while keeping content discoverable
+
+## Stack
+
+- JavaScript
+- React
+- React Native
+- content-driven mobile information architecture
+
+## Outcomes
+
+- Delivered a structured digital guide experience for official Patan heritage information
+- Improved visitor self-navigation through category and location-driven discovery
+- Supported local storytelling and cultural visibility through accessible digital media
+- Enabled both independent exploration and local guide-assisted experiences
+
+## Extra Feature Details
+
+The app includes curated exploration paths so visitors can choose experiences based on interest area:
+
+- Fine Arts
+- Spiritual Walk
+- Healers
+- Foodie
+- Business
+
+It also provides category-level detail pages and location-specific views for landmarks and route discovery.
 
 ![Project Image](/assets/img/project/patanheritage/sc1.png)
-- Choose your trip selecting on avaiable categories matching your interest ( Fine Arts, Spiritual Walk, Healers, Foodie, Business)
-
 ![Project Image](/assets/img/project/patanheritage/sc2.png)
-- Detail information on all categories of all the avaialble 
-
 ![Project Image](/assets/img/project/patanheritage/sc3.png)
 ![Project Image](/assets/img/project/patanheritage/sc4.png)
-- All location details
 
-## Kiosk App
-The Patan Heritage Walk Digital Media provides the official tourist information of Patan which has been endorsed by the Lalitpur Metropolitan city and the locals of Patan. The media is available in the form of IOS App, Android and Information Kiosk. In this App, you will find tourist information which has been collected in every corner of Patan. It gives information about the temples, monasteries, architecture, arts, crafts and culture of Patan. The sources of information are locals and it tells stories about local customs, values, cultures and way of life.
+In addition to mobile delivery, the same content model supports kiosk-based access for on-site discovery and tourism information.
+
+## What This Proves
+
+This project shows my ability to build user-friendly products in content-heavy domains where clarity and trust matter. It also demonstrates cross-platform delivery for real public-facing use cases.
 
 ## Learn More
 

@@ -19,44 +19,52 @@ tags:
 
 ## Context
 
+Nepal Ambulance System is a fleet-tracking and dispatch-support web platform for emergency medical services. The system gives operations teams real-time ambulance visibility so they can coordinate faster and make better dispatch decisions under time pressure.
 
-The Ambulance Tracking Management Web Application is a state-of-the-art platform designed to enhance the efficiency and effectiveness of emergency medical services. By providing real-time monitoring of ambulances, the application empowers back-office staff to make informed decisions, optimize dispatching, and improve overall response times. The system integrates advanced GPS technology with an intuitive user interface, ensuring seamless coordination between dispatchers and ambulance crews.
+![Project Image](/assets/img/project/nepalambulancesystem/nepal-ambulance-system.jpeg)
 
-<div style="width: 100%;">
-  <img src="/assets/img/project/nepalambulancesystem/nepal-ambulance-system.jpeg" alt="Project Image" style="width: 100%; height: auto;">
-</div>
+## My Role
 
+I helped build the web application workflows used by back-office teams to monitor fleet status and respond to emergencies more effectively.
 
-This web application aims to revolutionize ambulance fleet management by providing tools that enhance visibility, communication, and efficiency. By leveraging real-time data and advanced analytics, emergency services can respond faster, save more lives, and optimize their operations for better patient outcomes.
+My contributions included:
 
+- implementing map-based real-time GPS tracking for active ambulances
+- supporting status monitoring workflows (available, en route, at hospital, and related states)
+- enabling dispatch-oriented views to identify the nearest suitable ambulance
+- integrating route and traffic-aware operational decision support
+- building alert and notification patterns for operational exceptions
 
-![Project Image](/assets/img/project/nepalambulancesystem/ambulance-real-time-GPS.webp)
+## Technical Challenges
 
-## Key Features
+- handling real-time location updates in a way that stayed clear and actionable for operators
+- reducing decision latency during emergency dispatch workflows
+- maintaining system usability for high-pressure operations teams
+- supporting route adjustments when traffic or road conditions changed
+- balancing operational visibility with secure communication of sensitive information
 
-#### Real-Time GPS Tracking:
-- Monitor the live location of all ambulances on an interactive map.
-- View movement patterns and predict arrival times based on current traffic conditions.
+## Stack
 
-#### Efficient Dispatch Management:
-- Assign the nearest available ambulance to an emergency call.
-- Prioritize dispatches based on urgency and resource availability.
+- Node.js
+- AngularJS
+- Mapbox
+- GPS and map-based fleet monitoring
 
-#### Status Updates and Monitoring:
-- Track the operational status of each ambulance (e.g., available, en route, at the hospital).
-- Receive instant updates on patient pickups and drop-offs.
+## Outcomes
 
-#### Interactive Communication:
-- Enable direct messaging between the back office and ambulance personnel.
-- Share critical information such as patient details and route changes securely.
+- Improved real-time fleet visibility for emergency response operations
+- Enabled faster dispatch coordination through location and status-aware workflows
+- Reduced manual communication overhead with centralized operational tracking
+- Strengthened day-to-day reliability for ambulance monitoring and routing decisions
 
-#### Route Optimization:
-- Provide ambulance drivers with the fastest routes using real-time traffic data.
-- Adjust routes dynamically in response to road closures or heavy traffic.
+## Extra Feature Details
 
-#### Custom Alerts and Notifications:
-- Set up alerts for specific events like delayed arrivals or unscheduled stops.
-- Receive notifications via email, SMS, or in-app messages.
+- live GPS tracking on interactive maps for all active ambulances
+- dispatch support for nearest-available ambulance selection
+- status tracking for operational ambulance states (available, en route, hospital)
+- route optimization support based on real-time traffic and road conditions
+- alerting for delays, unscheduled stops, and related operational exceptions
 
+## What This Proves
 
-This web application aims to revolutionize ambulance fleet management by providing tools that enhance visibility, communication, and efficiency. By leveraging real-time data and advanced analytics, emergency services can respond faster, save more lives, and optimize their operations for better patient outcomes.
+This project shows my ability to build systems in high-urgency domains where response speed and clarity matter. It demonstrates practical execution across geospatial interfaces, backend-driven operations, and workflow reliability.
