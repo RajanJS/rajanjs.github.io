@@ -16,11 +16,11 @@ tags:
   - Helping Blood Search
   - Web Development
   - Node.js
-  - Postgress
+  - PostgreSQL
   - Express.js
 ---
 
-## Project Overview
+## Context
 
 
 The Hamro Blood Bank aims to address the life-threatening condition of blood deficiency, particularly in Nepal, where finding matching blood can be a traumatic and time-sensitive process. Their mission is to eliminate blood deficiency by facilitating easier and quicker access to matching blood donors.

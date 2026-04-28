@@ -17,7 +17,7 @@ tags:
   - Web Development
 ---
 
-## Project Overview
+## Context
 
 
 The Patan Heritage Walk Digital Media provides the official tourist information of Patan which has been endorsed by the Lalitpur Metropolitan city and the locals of Patan. The media is available in the form of IOS App, Android and Information Kiosk. In this App, you will find tourist information which has been collected in every corner of Patan. It gives information about the temples, monasteries, architecture, arts, crafts and culture of Patan. The sources of information are locals and it tells stories about local customs, values, cultures and way of life.

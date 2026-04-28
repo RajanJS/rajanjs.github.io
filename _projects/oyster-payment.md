@@ -5,7 +5,7 @@ description: "Fintech product delivery across credit, payments, onboarding, and 
 image: "/assets/img/project/oyster/oyster-cards.png"
 sort_order: 2
 tags:
-  - React Native & React
+  - React Native
   - React
   - Fintech
   - Payments

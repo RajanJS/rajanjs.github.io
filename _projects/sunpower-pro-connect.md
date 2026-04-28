@@ -5,7 +5,7 @@ description: "React Native commissioning and monitoring apps for clean-energy cu
 image: "/assets/img/project/sunpower/snpwr-apps.png"
 sort_order: 1
 tags:
-  - React Native & React
+  - React Native
   - React
   - GraphQL
   - IoT

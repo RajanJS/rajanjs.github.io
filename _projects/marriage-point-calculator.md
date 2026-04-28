@@ -12,12 +12,11 @@ gh-badge:
 tags:
   - Card Game
   - React Native
-  - React Native
   - Point Calculator
   - Marriage Card Game
 ---
 
-## Project Overview
+## Context
 
 MGPC - Marriage Game Point Calculator is developed for easy and quick center point calculations during [marriage game](https://en.wikipedia.org/wiki/Marriage_(card_game)) and other card games like "CallBreak" and "Kitti (Rummy)". We can save time and play more.
 

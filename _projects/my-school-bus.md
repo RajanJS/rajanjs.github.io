@@ -12,16 +12,16 @@ gh-badge:
 tags:
   - React Native
   - React
-  - Node.Js
+  - Node.js
   - AWS
   - School Bus Tracking
   - Maps
   - GPS
-  - AngularJs
+  - AngularJS
   - Mapbox
 ---
 
-## Project Overview
+## Context
 
 
 The app offers a wealth of benefits. My School Bus is a tool that can help you manage time and schedule school boarding time more precisely. Your efficiency will improve once you start using My School Bus. This app makes a larger contribution to the betterment of lives.

@@ -8,7 +8,7 @@ sort_order: 3
 tags:
   - JavaScript
   - React Native
-  - React.js
+  - React
   - Node.js
   - Web3
   - Crypto
@@ -18,7 +18,7 @@ tags:
   - Ethereum
 ---
 
-## Project Overview
+## Context
 
 Enabling real-world cryptocurrency adoption by providing seamless and practical solutions that integrate cryptocurrencies into everyday transactions, fostering a decentralized economy for all.
 

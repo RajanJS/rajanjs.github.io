@@ -10,14 +10,14 @@ gh-badge:
   # - star
   # - fork
 tags:
-  - NodeJs
-  - AngularJs
+  - Node.js
+  - AngularJS
   - Maps
   - GPS
   - Mapbox
 ---
 
-## Project Overview
+## Context
 
 
 The Ambulance Tracking Management Web Application is a state-of-the-art platform designed to enhance the efficiency and effectiveness of emergency medical services. By providing real-time monitoring of ambulances, the application empowers back-office staff to make informed decisions, optimize dispatching, and improve overall response times. The system integrates advanced GPS technology with an intuitive user interface, ensuring seamless coordination between dispatchers and ambulance crews.

@@ -19,7 +19,7 @@ tags:
 ---
 
 
-## Project Overview
+## Context
 
 NepalBhasa is a dedicated online platform that not only offers an extensive Nepalbhasa dictionary but also serves as a comprehensive collection of resources aimed at the preservation and promotion of Nepalbhasa, the Newar language.
 

@@ -16,7 +16,7 @@ tags:
   - Marriage Card Game
 ---
 
-## Project Overview
+## Context
 
 
 We are introducing CallBreak Point Record App, the ultimate mobile app for card game enthusiasts! 
@@ -49,4 +49,4 @@ Thanks for downloading and please share if you find it helpful. :)
 
 ## Learn More
 
-For more details, visit the [CallBreakPointRecrod](https://razanmaharjan.wixsite.com/callbreakpointrecord).
+For more details, visit the [CallBreak Point Record](https://razanmaharjan.wixsite.com/callbreakpointrecord).
