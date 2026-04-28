@@ -2,10 +2,10 @@
 layout: project
 title: "CallBreak Point Record"
 description: "Your Ultimate Card Game Companion for Call break Card Game Point Record"
-image: "/assets/img/project/callbreak/callbreak-logo.png"
+image: "/assets/img/project/callbreak/callbreak-banner.png"
 # cover-img: "assets/img/project/mgpc/feature-graphic.png"
 # gh-repo: "username/repository"
-sort_order: 9
+sort_order: 10
 gh-badge:
   # - star
   # - fork

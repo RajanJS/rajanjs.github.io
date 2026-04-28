@@ -5,7 +5,7 @@ description: "School Bus uses connectivity and GPS-based location to track the s
 image: "/assets/img/project/myschoolbus/real-time-school-bus.webp"
 # cover-img: "assets/img/project/mgpc/feature-graphic.png"
 # gh-repo: "username/repository"
-sort_order: 10
+sort_order: 12
 gh-badge:
   # - star
   # - fork

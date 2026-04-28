@@ -14,6 +14,8 @@ tags:
 
 mgpc-stream extends the Marriage Game Point Calculator ecosystem with a browser-based live scoreboard and leaderboard. It is designed for players and spectators who need to follow active Marriage, CallBreak, or Kitti games without opening the mobile app. The web version focuses on shareable game links, TV-friendly scoreboard views, and simple recovery paths when a game has ended or cannot be found.
 
+![Project Image](/assets/img/project/mgpc/mgpc-tv-scoreboard-1.png)
+
 ## My Role
 
 I built the web streaming experience around the existing MGPC scoring domain and Firebase-backed game state. I focused on turning mobile game data into a readable public scoreboard while keeping the implementation lightweight enough to deploy as a static site.
