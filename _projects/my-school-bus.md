@@ -2,7 +2,7 @@
 layout: project
 title: "MySchoolBus"
 description: "School Bus uses connectivity and GPS-based location to track the school bus to significantly improve the safety and efficiency of the child's journey."
-image: "/assets/img/project/myschoolbus/real-time-school-bus.webp"
+image: "/assets/img/project/myschoolbus/MySchoolBus.png"
 # cover-img: "assets/img/project/mgpc/feature-graphic.png"
 # gh-repo: "username/repository"
 sort_order: 13
@@ -25,7 +25,7 @@ tags:
 
 My School Bus is a school transport tracking platform designed to improve child safety and daily transport coordination for parents, schools, and transport staff. The system combines GPS location, attendance-style tracking, and alerts so families and school operations teams can make better real-time decisions.
 
-![Project Image](/assets/img/project/myschoolbus/my-school-bus.jpeg)
+![Project Image](/assets/img/project/myschoolbus/MySchoolBus.png)
 
 ## My Role
 

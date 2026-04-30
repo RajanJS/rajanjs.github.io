@@ -2,7 +2,7 @@
 layout: project
 title: "Nepal Ambulance System"
 description: "It is an ambulance tracking management web application that allows the back office to monitor ambulances in real-time."
-image: "/assets/img/project/nepalambulancesystem/ambulance-real-time-GPS.webp"
+image: "/assets/img/project/nepalambulancesystem/nepal-ambulance.png"
 # cover-img: "assets/img/project/mgpc/feature-graphic.png"
 # gh-repo: "username/repository"
 sort_order: 14
@@ -21,7 +21,7 @@ tags:
 
 Nepal Ambulance System is a fleet-tracking and dispatch-support web platform for emergency medical services. The system gives operations teams real-time ambulance visibility so they can coordinate faster and make better dispatch decisions under time pressure.
 
-![Project Image](/assets/img/project/nepalambulancesystem/nepal-ambulance-system.jpeg)
+![Project Image](/assets/img/project/nepalambulancesystem/nepal-ambulance.png)
 
 ## My Role
 

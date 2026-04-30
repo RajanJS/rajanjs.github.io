@@ -20,7 +20,7 @@ tags:
 
 CallBreak Point Record is a utility app for players who want fast and accurate score tracking during Call Break sessions. It replaces manual pen-and-paper tracking with automatic calculations and persistent game history. The goal was to make gameplay smoother by reducing disputes and bookkeeping effort.
 
-![Project Image](/assets/img/project/callbreak/1_en-US.png)
+![Project Image](/assets/img/project/callbreak/callbreak-banner.png)
 
 ## My Role
 
