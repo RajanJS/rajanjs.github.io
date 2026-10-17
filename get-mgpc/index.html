@@ -20,6 +20,7 @@
 
   <style>
     * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
     body {
       margin: 0;
       font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,12 +29,27 @@
       color: #fff;
       min-height: 100vh;
     }
+    /* One column; `order` lets mobile and desktop stack the sections differently. */
     .wrap {
       max-width: 520px;
       margin: 0 auto;
       padding: 40px 20px 48px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
     }
+    .hero { order: 1; }
+    .carousel { order: 3; }
+    .points { order: 4; }
+    .cta { order: 2; }
+    .secondary { order: 5; }
+    footer { order: 6; }
+    @media (min-width: 768px) {
+      .cta { order: 5; }
+      .secondary { order: 6; }
+      footer { order: 7; }
+    }
+
     .logo { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
     h1 { font-size: 2.1rem; line-height: 1.15; margin: 18px 0 4px; letter-spacing: .5px; }
     .sub { margin: 0 0 22px; font-size: 1.02rem; color: #FFD27A; font-weight: 500; }
@@ -48,12 +64,101 @@
       font-size: .9rem;
       font-weight: 500;
     }
-    .stores { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 8px; }
+
+    /* Carousel: full width, centred slide enlarged, neighbours dimmed, endless loop. */
+    .carousel {
+      --w: 220px;
+      --gap: 34px;
+      position: relative;
+      width: 100vw;
+      align-self: center;
+      overflow: hidden;
+      margin: 8px 0 22px;
+      padding: 52px 0 64px;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    @media (min-width: 768px) { .carousel { --w: 250px; } }
+    .track {
+      display: flex;
+      gap: var(--gap);
+      width: max-content;
+      will-change: transform;
+      transition: transform .5s cubic-bezier(.22,.8,.3,1);
+    }
+    .track.drag, .track.jump { transition: none; }
+    .slide {
+      flex: 0 0 var(--w);
+      width: var(--w);
+      transform: scale(.9);
+      opacity: .72;
+      transition: transform .5s cubic-bezier(.22,.8,.3,1), opacity .5s;
+      line-height: 0;
+    }
+    .track.drag .slide, .track.jump .slide { transition: none; }
+    .slide.active { transform: scale(1.18); opacity: 1; z-index: 2; position: relative; }
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.5);
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+    .car-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      color: #2C3E50;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,.35);
+      display: none;
+    }
+    .car-btn.prev { left: calc(50% - var(--w) / 2 - 170px); }
+    .car-btn.next { right: calc(50% - var(--w) / 2 - 170px); }
+    @media (min-width: 768px) { .car-btn { display: block; } }
+    .dots { position: absolute; left: 0; right: 0; bottom: 18px; display: flex; justify-content: center; gap: 8px; }
+    .dots button {
+      width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%;
+      background: rgba(255,255,255,.35); cursor: pointer;
+      transition: width .3s, background .3s;
+    }
+    .dots button.on { background: #FFD27A; width: 22px; border-radius: 6px; }
+
+    ul.points { list-style: none; padding: 0; margin: 0 0 26px; text-align: left; }
+    ul.points li {
+      background: rgba(0,0,0,.18);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      font-size: .95rem;
+      line-height: 1.4;
+    }
+    ul.points b { color: #FFD27A; }
+
+    /* Download block: QR (desktop only) → store badges on one line → search hint. */
+    .cta { display: flex; flex-direction: column; align-items: center; margin-bottom: 8px; }
+    .desktop-qr { display: none; margin-bottom: 18px; }
+    .desktop-qr img { width: 168px; height: 168px; border-radius: 14px; background: #fff; }
+    .desktop-qr p { margin: 8px 0 0; font-size: .9rem; opacity: .9; }
+    @media (min-width: 768px) { .desktop-qr { display: block; } }
+    .stores { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 12px; flex-wrap: nowrap; }
     .stores a { display: block; line-height: 0; }
-    .stores img { height: 56px; width: auto; }
-    .status { min-height: 1.4em; font-size: .88rem; opacity: .85; margin: 6px 0 0; }
+    .stores img { height: 46px; width: auto; }
+    @media (min-width: 768px) { .stores img { height: 54px; } }
+    .status { min-height: 1.4em; font-size: .88rem; opacity: .85; margin: 8px 0 0; }
     .search {
-      margin: 22px auto 30px;
+      margin: 14px auto 30px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -65,18 +170,7 @@
       box-shadow: 0 4px 14px rgba(0,0,0,.25);
     }
     .search small { font-weight: 400; color: #6b7785; }
-    .shot { margin: 0 auto 26px; }
-    .shot img { width: 280px; max-width: 78%; border-radius: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.45); }
-    ul.points { list-style: none; padding: 0; margin: 0 0 26px; text-align: left; }
-    ul.points li {
-      background: rgba(0,0,0,.18);
-      border-radius: 12px;
-      padding: 12px 14px;
-      margin-bottom: 10px;
-      font-size: .95rem;
-      line-height: 1.4;
-    }
-    ul.points b { color: #FFD27A; }
+
     .secondary a { color: #90CAF9; font-weight: 600; text-decoration: none; }
     .secondary a:hover { text-decoration: underline; }
     .secondary p { margin: 6px 0; font-size: .95rem; }
@@ -86,34 +180,55 @@
 </head>
 <body>
   <main class="wrap">
-    <img class="logo" src="/assets/img/project/mgpc/logo.png" alt="MGPC logo" width="104" height="104">
-    <h1>MGPC</h1>
-    <p class="sub">Marriage Point Calculator</p>
+    <section class="hero">
+      <img class="logo" src="/assets/img/project/mgpc/logo.png" alt="MGPC logo" width="104" height="104">
+      <h1>MGPC</h1>
+      <p class="sub">Marriage Point Calculator</p>
 
-    <p class="hook">Stop arguing over the score.</p>
-    <p class="lead">Track every round, point and bonus automatically.<br>No sign-up. Works offline. Watch scores live.</p>
+      <p class="hook">Stop arguing over the score.</p>
+      <p class="lead">Track every round, point and bonus automatically.<br>No sign-up. Works offline. Watch scores live.</p>
 
-    <div class="games" aria-label="Supported games">
-      <span class="chip">♠ Marriage</span>
-      <span class="chip">♥ Callbreak</span>
-      <span class="chip">♦ Kitti</span>
-    </div>
+      <div class="games" aria-label="Supported games">
+        <span class="chip">♠ Marriage</span>
+        <span class="chip">♥ Callbreak</span>
+        <span class="chip">♦ Kitti</span>
+      </div>
+    </section>
 
-    <div class="stores">
-      <a id="ios-link" href="https://apps.apple.com/app/id1546733404" rel="noopener">
-        <img src="/assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on the App Store">
-      </a>
-      <a id="android-link" href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator" rel="noopener">
-        <img src="/assets/img/Google_Play_Store_badge_EN.webp" alt="Get it on Google Play">
-      </a>
-    </div>
-    <p class="status" id="status" aria-live="polite"></p>
+    <section class="cta">
+      <div class="desktop-qr">
+        <img src="/assets/img/project/mgpc/get-mgpc-qr.png" alt="QR code to download MGPC" width="168" height="168" loading="lazy">
+        <p>On a computer? Scan with your phone to download.</p>
+      </div>
 
-    <div class="search">🔍 Search <span>“MGPC”</span> <small>in your app store</small></div>
+      <div class="stores">
+        <a id="ios-link" href="https://apps.apple.com/app/id1546733404" rel="noopener">
+          <img src="/assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on the App Store">
+        </a>
+        <a id="android-link" href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator" rel="noopener">
+          <img src="/assets/img/Google_Play_Store_badge_EN.webp" alt="Get it on Google Play">
+        </a>
+      </div>
+      <p class="status" id="status" aria-live="polite"></p>
 
-    <div class="shot">
-      <img src="/assets/img/project/mgpc/get-mgpc-games.jpg" alt="MGPC game picker: Marriage, Callbreak and Kitti" loading="lazy">
-    </div>
+      <div class="search">🔍 Search <span>“MGPC”</span> <small>in your app store</small></div>
+    </section>
+
+    <section class="carousel" id="carousel" aria-roledescription="carousel" aria-label="App screenshots">
+      <button class="car-btn prev" id="car-prev" aria-label="Previous screenshot">‹</button>
+      <div class="track" id="track">
+        <div class="slide"><img src="/assets/img/project/mgpc/get-mgpc-games.jpg" alt="MGPC game picker: Marriage, Callbreak and Kitti" width="480" height="853" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/mgpc/get-mgpc-entry.jpg" alt="MGPC score entry for a round" width="480" height="853" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/mgpc/get-mgpc-current.jpg" alt="MGPC current round result" width="480" height="853" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/mgpc/get-mgpc-rounds.jpg" alt="MGPC every round at a glance" width="480" height="853" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/mgpc/get-mgpc-live.jpg" alt="MGPC live sharing: one host, everyone watches" width="480" height="853" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/mgpc/get-mgpc-settle.jpg" alt="MGPC Settle Up: see who pays whom" width="480" height="853" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/mgpc/get-mgpc-share.jpg" alt="MGPC share the final table as an image" width="480" height="853" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/mgpc/get-mgpc-insights.jpg" alt="MGPC player insights" width="480" height="853" draggable="false"></div>
+      </div>
+      <button class="car-btn next" id="car-next" aria-label="Next screenshot">›</button>
+      <div class="dots" id="dots"></div>
+    </section>
 
     <ul class="points">
       <li><b>📴 Works with zero signal.</b> Scores stay on your phone, even on a rooftop, in a village or on a bus.</li>
@@ -162,6 +277,121 @@
       var status = document.getElementById('status');
       status.textContent = 'Taking you to ' + (isAndroid ? 'Google Play' : 'the App Store') + '…';
       setTimeout(function () { window.location.replace(target) }, 900);
+    })();
+  </script>
+
+  <script>
+    // Endless carousel: three copies of the slides, jump back to the middle copy after each move.
+    (function () {
+      var root = document.getElementById('carousel');
+      var track = document.getElementById('track');
+      var dotsEl = document.getElementById('dots');
+      var originals = Array.prototype.slice.call(track.children);
+      var N = originals.length;
+
+      [0, 1].forEach(function () {
+        originals.forEach(function (s) {
+          var c = s.cloneNode(true);
+          c.setAttribute('aria-hidden', 'true');
+          track.appendChild(c);
+        });
+      });
+      var slides = Array.prototype.slice.call(track.children);
+      var index = N, step = 0, dragging = false, startX = 0, dx = 0, lastTouch = 0, timer = null;
+
+      for (var i = 0; i < N; i++) {
+        (function (k) {
+          var b = document.createElement('button');
+          b.setAttribute('aria-label', 'Show screenshot ' + (k + 1));
+          b.addEventListener('click', function () {
+            var cur = ((index % N) + N) % N;
+            var d = k - cur;
+            if (d > N / 2) d -= N;
+            if (d < -N / 2) d += N;
+            move(d, true);
+          });
+          dotsEl.appendChild(b);
+        })(i);
+      }
+      var dots = Array.prototype.slice.call(dotsEl.children);
+
+      function measure() {
+        var w = slides[0].offsetWidth;
+        var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        step = w + gap;
+      }
+      function offsetFor(i) {
+        return root.clientWidth / 2 - (i * step + slides[0].offsetWidth / 2);
+      }
+      function paint(extra) {
+        track.style.transform = 'translate3d(' + (offsetFor(index) + (extra || 0)) + 'px,0,0)';
+        slides.forEach(function (s, k) { s.classList.toggle('active', k === index) });
+        var cur = ((index % N) + N) % N;
+        dots.forEach(function (d, k) { d.className = k === cur ? 'on' : '' });
+      }
+      function jumpTo(i) {
+        track.classList.add('jump');
+        index = i;
+        paint();
+        void track.offsetWidth;
+        track.classList.remove('jump');
+      }
+      function move(delta, byUser) {
+        if (byUser) bump();
+        index += delta;
+        paint();
+      }
+      // After the slide settles, hop back to the middle copy so there is always an image on both sides.
+      track.addEventListener('transitionend', function (e) {
+        if (e.target !== track || e.propertyName !== 'transform') return;
+        if (index >= 2 * N) jumpTo(index - N);
+        else if (index < N) jumpTo(index + N);
+      });
+
+      document.getElementById('car-prev').addEventListener('click', function () { move(-1, true) });
+      document.getElementById('car-next').addEventListener('click', function () { move(1, true) });
+
+      // Drag / swipe.
+      root.addEventListener('pointerdown', function (e) {
+        if (e.target.closest('.car-btn, .dots')) return;
+        dragging = true; startX = e.clientX; dx = 0;
+        track.classList.add('drag');
+        bump();
+      });
+      window.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        dx = e.clientX - startX;
+        paint(dx);
+      });
+      function endDrag() {
+        if (!dragging) return;
+        dragging = false;
+        track.classList.remove('drag');
+        var d = Math.abs(dx) > 40 ? (dx < 0 ? 1 : -1) : 0;
+        move(d, true);
+      }
+      window.addEventListener('pointerup', endDrag);
+      window.addEventListener('pointercancel', endDrag);
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') move(-1, true);
+        if (e.key === 'ArrowRight') move(1, true);
+      });
+
+      // Auto-advance; pauses on any interaction and resumes after a few idle seconds.
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var resumeAt = 0;
+      function bump() { resumeAt = Date.now() + 6000 }
+      if (!reduce) {
+        timer = setInterval(function () {
+          if (document.hidden || dragging || Date.now() < resumeAt) return;
+          move(1, false);
+        }, 3200);
+      }
+
+      window.addEventListener('resize', function () { measure(); jumpTo(index) });
+      measure();
+      jumpTo(index);
+      window.addEventListener('load', function () { measure(); jumpTo(index) });
     })();
   </script>
 </body>
