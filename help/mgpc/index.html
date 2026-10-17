@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <!--
-  MGPC Help & FAQ  ->  https://mrajan.com.np/mgpc/help
+  MGPC Help & FAQ  ->  https://mrajan.com.np/help/mgpc
 
-  The app opens this page from "Help & FAQ" (Settings and About) once the
-  Remote Config key `help_center_url` is set to this address.
+  The app opens this page from "Help & FAQ" (Settings and About) using the Remote
+  Config key `help_center_url`.
+
+  WHY THIS PATH: the app has claimed links on this domain that start with /mgpc
+  (iOS: /mgpc/* and /mgpc-stream/*; Android: any path starting with /mgpc, /j or /t).
+  A link like that opens the app instead of the browser. Keep help and policy pages
+  at paths that do not start with those, such as /help/mgpc and /privacy-mgpc.
 
   SWITCH: change data-status on the <body> tag below, then push.
     "live"         shows the tutorials and the FAQ
     "coming-soon"  shows a short "coming soon" message instead
 
   Each section has an id, so the app can link straight to one of them,
-  for example https://mrajan.com.np/mgpc/help#marriage-rules
+  for example https://mrajan.com.np/help/mgpc#marriage-rules
 -->
 <html lang="en">
 
@@ -156,7 +161,7 @@
 <body data-status="live">
 
     <header>
-        <a href="/mgpc"><img class="logo" src="/assets/img/project/mgpc/logo.png" alt="MGPC logo"></a>
+        <img class="logo" src="/assets/img/project/mgpc/logo.png" alt="MGPC logo">
         <div class="eyebrow">MGPC</div>
         <h1>Help &amp; FAQ</h1>
         <p>How to use the app, and answers to the questions we get most.</p>
@@ -353,7 +358,7 @@
 
                 <details>
                     <summary>How is my data used?</summary>
-                    <p>Read our <a href="/mgpc-privacy-terms">privacy policy and terms</a>.</p>
+                    <p>Read our <a href="/privacy-mgpc">privacy policy and terms</a>.</p>
                 </details>
             </section>
 
@@ -366,7 +371,7 @@
     </main>
 
     <footer>
-        <a href="/mgpc">MGPC</a> &middot; <a href="/mgpc-privacy-terms">Privacy policy &amp; terms</a> &middot; &copy; Tech Stack Apps
+        <a href="/privacy-mgpc">Privacy policy &amp; terms</a> &middot; &copy; Tech Stack Apps
     </footer>
 
 </body>
