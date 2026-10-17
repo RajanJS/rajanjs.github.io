@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download MGPC – Marriage, Callbreak &amp; Kitti Point Calculator</title>
+  <meta name="description" content="MGPC is a Marriage point calculator and score keeper for Marriage, Callbreak and Kitti. No sign-up, works offline, watch scores live. Free on iPhone and Android.">
+  <link rel="canonical" href="https://mrajan.com.np/get-mgpc/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MGPC – Marriage, Callbreak &amp; Kitti Point Calculator">
+  <meta property="og:description" content="Stop arguing over the score. No sign-up. Works offline. Watch scores live on any screen. Free on iPhone and Android.">
+  <meta property="og:url" content="https://mrajan.com.np/get-mgpc/">
+  <meta property="og:image" content="https://mrajan.com.np/assets/img/project/mgpc/get-mgpc-feature.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#2C3E50">
+
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #AF1919 0%, #2C3E50 100%);
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 40px 20px 48px;
+      text-align: center;
+    }
+    .logo { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+    h1 { font-size: 2.1rem; line-height: 1.15; margin: 18px 0 4px; letter-spacing: .5px; }
+    .sub { margin: 0 0 22px; font-size: 1.02rem; color: #FFD27A; font-weight: 500; }
+    .hook { font-size: 1.25rem; font-weight: 700; margin: 0 0 6px; }
+    .lead { margin: 0 0 22px; opacity: .92; font-size: .98rem; line-height: 1.5; }
+    .games { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; }
+    .chip {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+    .stores { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .stores a { display: block; line-height: 0; }
+    .stores img { height: 56px; width: auto; }
+    .status { min-height: 1.4em; font-size: .88rem; opacity: .85; margin: 6px 0 0; }
+    .search {
+      margin: 22px auto 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: #2C3E50;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0,0,0,.25);
+    }
+    .search small { font-weight: 400; color: #6b7785; }
+    .shot { margin: 0 auto 26px; }
+    .shot img { width: 280px; max-width: 78%; border-radius: 22px; box-shadow: 0 14px 34px rgba(0,0,0,.45); }
+    ul.points { list-style: none; padding: 0; margin: 0 0 26px; text-align: left; }
+    ul.points li {
+      background: rgba(0,0,0,.18);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      font-size: .95rem;
+      line-height: 1.4;
+    }
+    ul.points b { color: #FFD27A; }
+    .secondary a { color: #90CAF9; font-weight: 600; text-decoration: none; }
+    .secondary a:hover { text-decoration: underline; }
+    .secondary p { margin: 6px 0; font-size: .95rem; }
+    footer { margin-top: 28px; font-size: .8rem; opacity: .75; line-height: 1.6; }
+    footer a { color: #90CAF9; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <img class="logo" src="/assets/img/project/mgpc/logo.png" alt="MGPC logo" width="104" height="104">
+    <h1>MGPC</h1>
+    <p class="sub">Marriage Point Calculator</p>
+
+    <p class="hook">Stop arguing over the score.</p>
+    <p class="lead">Track every round, point and bonus automatically.<br>No sign-up. Works offline. Watch scores live.</p>
+
+    <div class="games" aria-label="Supported games">
+      <span class="chip">♠ Marriage</span>
+      <span class="chip">♥ Callbreak</span>
+      <span class="chip">♦ Kitti</span>
+    </div>
+
+    <div class="stores">
+      <a id="ios-link" href="https://apps.apple.com/app/id1546733404" rel="noopener">
+        <img src="/assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on the App Store">
+      </a>
+      <a id="android-link" href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator" rel="noopener">
+        <img src="/assets/img/Google_Play_Store_badge_EN.webp" alt="Get it on Google Play">
+      </a>
+    </div>
+    <p class="status" id="status" aria-live="polite"></p>
+
+    <div class="search">🔍 Search <span>“MGPC”</span> <small>in your app store</small></div>
+
+    <div class="shot">
+      <img src="/assets/img/project/mgpc/get-mgpc-games.jpg" alt="MGPC game picker: Marriage, Callbreak and Kitti" loading="lazy">
+    </div>
+
+    <ul class="points">
+      <li><b>📴 Works with zero signal.</b> Scores stay on your phone, even on a rooftop, in a village or on a bus.</li>
+      <li><b>📺 Let the whole room follow.</b> Start a live game, share a code or QR, and anyone can watch in a browser on a laptop, tablet or TV. No app install.</li>
+      <li><b>📤 Share the result in one tap.</b> Send the final table to your group chat as a clean image.</li>
+      <li><b>🇳🇵 Built for how we play.</b> House rules, point rates and variants as played in Nepal, India and Bhutan.</li>
+    </ul>
+
+    <div class="secondary">
+      <p>Already have a game code? <a href="/mgpc-stream/">Watch live in your browser</a></p>
+      <p>New to Marriage? <a href="/help/mgpc/">Read the help guide</a></p>
+    </div>
+
+    <footer>
+      Free to use. Found it useful? Share it with the people you play with.<br>
+      <a href="/mgpc-privacy-terms">Privacy &amp; Terms</a>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var PLAY_BASE = 'https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator';
+      var APPLE_URL = 'https://apps.apple.com/app/id1546733404';
+      var params = new URLSearchParams(window.location.search);
+
+      // Pass campaign tags through to the Play Store install referrer so story conversions are measurable.
+      var utm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+        .filter(function (k) { return params.get(k) })
+        .map(function (k) { return k + '=' + encodeURIComponent(params.get(k)) })
+        .join('&');
+      var playUrl = utm ? PLAY_BASE + '&referrer=' + encodeURIComponent(utm) : PLAY_BASE;
+
+      document.getElementById('android-link').href = playUrl;
+      document.getElementById('ios-link').href = APPLE_URL;
+
+      var ua = navigator.userAgent || '';
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+      // Mobile visitors are sent straight to their store. Add ?stay=1 to keep them on this page.
+      if (params.get('stay') === '1') return;
+      var target = isAndroid ? playUrl : isIOS ? APPLE_URL : null;
+      if (!target) return;
+
+      var status = document.getElementById('status');
+      status.textContent = 'Taking you to ' + (isAndroid ? 'Google Play' : 'the App Store') + '…';
+      setTimeout(function () { window.location.replace(target) }, 900);
+    })();
+  </script>
+</body>
+</html>
