@@ -150,6 +150,40 @@
             font-size: 0.85rem;
         }
 
+        .finder {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .finder a {
+            display: block;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 12px 14px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .finder a b { display: block; color: var(--accent); font-size: 0.95rem; }
+        .finder a span { font-size: 0.82rem; color: var(--ink-2); }
+
+        .tip {
+            background: var(--tint);
+            border-radius: 12px;
+            padding: 10px 14px;
+            color: var(--ink);
+            font-size: 0.9rem;
+        }
+
+        .where {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
         /* The coming-soon switch: only one of the two blocks shows. */
         .coming-soon-block { display: none; text-align: center; padding: 72px 0; }
         .coming-soon-block h2 { font-size: 1.6rem; margin-bottom: 8px; }
@@ -164,7 +198,7 @@
         <img class="logo" src="/assets/img/project/mgpc/logo.png" alt="MGPC logo">
         <div class="eyebrow">MGPC</div>
         <h1>Help &amp; FAQ</h1>
-        <p>How to use the app, and answers to the questions we get most.</p>
+        <p>How to use the app, including the features that are easy to miss.</p>
     </header>
 
     <main>
@@ -177,13 +211,34 @@
 
         <div class="live-block">
 
+            <section id="find-it-fast">
+                <h2>Find it fast</h2>
+                <p class="lead">The features people ask about most, and where they live in the app.</p>
+                <div class="finder">
+                    <a href="#add-player"><b>Add a player mid-game</b><span>Marriage: scoreboard menu, Add player</span></a>
+                    <a href="#change-settings"><b>Change settings mid-game</b><span>Rate per point, rules, rounds</span></a>
+                    <a href="#edit-rounds"><b>Edit a previous round</b><span>Marriage, Call Break and Kitti</span></a>
+                    <a href="#live"><b>Stream a game live</b><span>Phones, browsers and TVs</span></a>
+                    <a href="#settle-up"><b>Settle Up</b><span>Who pays whom, plus snacks and dinner</span></a>
+                    <a href="#insights"><b>Player insights</b><span>Wins, streaks and head to head</span></a>
+                    <a href="#maal-guide"><b>Maal Point Guide</b><span>Tiplu, poplu, jhiplu and more</span></a>
+                    <a href="#share-resume"><b>Share, save and resume</b><span>Score picture, history, resume</span></a>
+                </div>
+            </section>
+
             <nav class="toc" aria-label="Sections">
                 <a href="#marriage">Marriage</a>
                 <a href="#marriage-rules">Marriage rules</a>
+                <a href="#maal-guide">Maal guide</a>
+                <a href="#add-player">Add a player</a>
                 <a href="#callbreak-kitti">Call Break &amp; Kitti</a>
+                <a href="#change-settings">Change settings</a>
                 <a href="#edit-rounds">Edit a round</a>
                 <a href="#live">Live games</a>
                 <a href="#settle-up">Settle Up</a>
+                <a href="#insights">Insights</a>
+                <a href="#share-resume">Share &amp; resume</a>
+                <a href="#learn">Learn &amp; strategy</a>
                 <a href="#ad-free">Ad-free</a>
                 <a href="#faq">FAQ</a>
             </nav>
@@ -199,6 +254,7 @@
                         <li>Choose your settings (see <a href="#marriage-rules">Marriage rules</a>) and the rate per point.</li>
                         <li>Add the players, then start the first round.</li>
                     </ol>
+                    <p>To bring someone in later, see <a href="#add-player">Add a player mid-game</a>.</p>
                 </details>
 
                 <details>
@@ -213,13 +269,14 @@
 
                 <details>
                     <summary>Read the scoreboard and leaderboard</summary>
-                    <p>The scoreboard shows every round and the running total for each player. The leaderboard ranks players and turns points into money using your rate per point.</p>
+                    <p>The scoreboard has three tabs: <b>Current</b> (this round), <b>All rounds</b> and <b>Leaders</b>. All rounds shows every round and the running total for each player. The leaderboard ranks players and turns points into money using your rate per point.</p>
+                    <p>The scoreboard marks the latest round, and shows <b>x2</b> or <b>LP</b> chips on rounds played with Better or Less point.</p>
                 </details>
             </section>
 
             <section id="marriage-rules">
                 <h2>Marriage rules in the app</h2>
-                <p class="lead">What each setting and status does.</p>
+                <p class="lead">What each setting and status does. The in-app <b>Game rules</b> entry in the scoreboard menu shows the rules for your game.</p>
 
                 <details>
                     <summary>Murder or Kidnap</summary>
@@ -235,7 +292,7 @@
                         <li><b>Unseen:</b> the player has not shown, and pays the larger unseen point.</li>
                         <li><b>Dublee:</b> the player has a dublee. If the winner has one, everyone pays the dublee bonus.</li>
                         <li><b>Foul:</b> the player broke a rule. Foul points can be paid in the same round or the next one, depending on your Foul bonus setting.</li>
-                        <li><b>Hold:</b> the player sat the round out and pays or receives nothing.</li>
+                        <li><b>Hold:</b> the player sits the round out and pays or receives nothing. Hold stays on for later rounds until you change it.</li>
                     </ul>
                 </details>
 
@@ -246,7 +303,45 @@
                         <li><b>Less point:</b> there is no winner. Only the difference in maal is paid.</li>
                         <li><b>Dealing foul:</b> the dealer's mistake is charged straight away and split between the other players.</li>
                     </ul>
-                    <p>Options belong to a single round, so you can switch them on for one round and off for the next.</p>
+                    <p>Options belong to a single round, so you can switch them on for one round and off for the next. They show on the scoreboard, in All rounds and in round review.</p>
+                </details>
+            </section>
+
+            <section id="maal-guide">
+                <h2>Maal Point Guide</h2>
+                <p class="lead">A quick reference for the maal in Marriage.</p>
+
+                <details open>
+                    <summary>Where to find it</summary>
+                    <p class="where">Marriage home &rarr; Learn to Play &rarr; Maal Point Guide</p>
+                    <p>It explains the maal cards (tiplu, poplu, jhiplu and more) so you can check a hand while you play. The same Learn to Play sheet also has <b>Rules &amp; Instructions</b>, <b>How to Play Marriage</b> and <b>Strategy Tips</b>.</p>
+                </details>
+            </section>
+
+            <section id="add-player">
+                <h2>Add a player mid-game</h2>
+                <p class="lead">Someone arrives late, or you want to rotate players? You do not need to start over. This is available in Marriage.</p>
+
+                <details open>
+                    <summary>Add a new player</summary>
+                    <p class="where">Scoreboard &rarr; the ... menu &rarr; Add player</p>
+                    <ol>
+                        <li>Play at least one round first. The option appears once the game has rounds.</li>
+                        <li>Type the new player's name and add them.</li>
+                        <li>They join <b>from the next round</b>. Earlier rounds are never changed.</li>
+                    </ol>
+                    <p>Only the host (the person scoring) can add players. A name that is already in the game is rejected.</p>
+                </details>
+
+                <details>
+                    <summary>Hold and resume players</summary>
+                    <p>The same screen lets you put a player on <b>Hold</b>, or resume a player who was on Hold. A player on Hold stays on Hold in later rounds until you resume them.</p>
+                    <p>Players are never removed from a game, so everyone's earlier points and money stay correct.</p>
+                </details>
+
+                <details>
+                    <summary>"Only 6 players can be active"</summary>
+                    <p>A game can have more than 6 players in total, but only 6 can play in a round. If you see this message, put someone who is not playing on Hold first, then add or resume the player you want.</p>
                 </details>
             </section>
 
@@ -271,45 +366,217 @@
                         <li>The <b>Bonus Pnt. Round at</b> setting turns that many extra hands, added up across the whole game, into one whole point. At the default of 10, ten extra hands make a point.</li>
                     </ul>
                 </details>
+
+                <details>
+                    <summary>Kitti modes</summary>
+                    <p>Kitti has three modes, set by how many cards each player gets from a 52-card deck: <b>9 Kitti</b> (up to 5 players), <b>13 Kitti</b> (up to 4 players) and <b>17 Kitti</b> (up to 3 players). The app tells you if you have too many players for the mode you picked. You can change the mode in Game settings.</p>
+                </details>
+            </section>
+
+            <section id="change-settings">
+                <h2>Change settings mid-game</h2>
+                <p class="lead">Wrong rate per point? Want to switch a rule? You can change settings while a game is in progress.</p>
+
+                <details open>
+                    <summary>Where to change them</summary>
+                    <p class="where">Scoreboard &rarr; the ... menu &rarr; Game settings</p>
+                    <p>The screen is called <b>Current Settings</b> and says "Changes apply to the game in progress." Only the host can open it.</p>
+                </details>
+
+                <details>
+                    <summary>Marriage: what you can change</summary>
+                    <ul>
+                        <li>Murder or Kidnap</li>
+                        <li>Currency and <b>Rate Per Point</b></li>
+                        <li>Seen point and Unseen point</li>
+                        <li>Dublee, the dublee bonus point, and whether a dublee player pays the seen point</li>
+                        <li>Foul, the foul point and the Foul bonus (this game or the next)</li>
+                    </ul>
+                    <div class="tip"><b>Heads up:</b> when you save, <b>every earlier round is worked out again</b> with the new settings. Change the rate per point and the money for the whole game changes, not just future rounds.</div>
+                </details>
+
+                <details>
+                    <summary>Call Break and Kitti: what you can change</summary>
+                    <ul>
+                        <li>Number of rounds (it cannot be lower than the round you are on)</li>
+                        <li>Currency and <b>Base Rate</b></li>
+                        <li><b>Bonus Pnt. Round at</b></li>
+                        <li>Minimum and maximum calls allowed (Call Break)</li>
+                        <li><b>Double Pay on minus</b></li>
+                        <li>The Kitti mode (limited by how many players you have)</li>
+                    </ul>
+                    <p>Totals and money follow the current settings, so a changed base rate or bonus setting shows up in the whole game's totals.</p>
+                </details>
+
+                <details>
+                    <summary>Will other players see the change?</summary>
+                    <p>If you are streaming the game, the new settings are sent to everyone following it.</p>
+                </details>
             </section>
 
             <section id="edit-rounds">
-                <h2>Edit a finished round</h2>
-                <p class="lead">Made a mistake? You can fix it.</p>
+                <h2>Edit a previous round</h2>
+                <p class="lead">Made a mistake? You can fix it in any game type: Marriage, Call Break and Kitti.</p>
+
+                <details open>
+                    <summary>Edit the latest round</summary>
+                    <p class="where">Scoreboard &rarr; the Edit button at the bottom (for example "Edit R4")</p>
+                    <p>It opens the round you just finished. In Call Break and Kitti you can change the calls and the hands won. In Marriage you can change the winner, statuses and points, and the round options.</p>
+                </details>
 
                 <details>
-                    <summary>Change the points of a past round</summary>
+                    <summary>Edit any earlier round</summary>
                     <ol>
                         <li>Open the scoreboard and go to <b>All rounds</b>.</li>
-                        <li>Tap the round to review it.</li>
-                        <li>Tap <b>Edit</b>, change the entries and save. The totals update.</li>
+                        <li>Tap the round ("Tap a round to review it").</li>
+                        <li>Review it, then tap <b>Edit</b>, change the entries and save.</li>
                     </ol>
-                    <p>Rounds saved by older versions of the app may only allow editing the latest round.</p>
+                    <p>The totals, leaderboard and money update straight away, and live viewers see the change.</p>
+                    <p><b>Call Break and Kitti:</b> rounds saved by an older version of the app did not keep their calls and hands won, so only the latest round can be edited in those games. Rounds you play now can all be edited.</p>
+                </details>
+
+                <details>
+                    <summary>Who can edit?</summary>
+                    <p>The host. Players following a live game can open any round to review it, but only the host can change it.</p>
                 </details>
             </section>
 
             <section id="live">
                 <h2>Live games</h2>
-                <p class="lead">Let friends follow the scoreboard on their own phones.</p>
+                <p class="lead">Let friends follow the scoreboard on their own phones, in a browser, or on a TV. It works for Marriage, Call Break and Kitti.</p>
 
-                <details>
-                    <summary>Share a game live</summary>
-                    <p>On the scoreboard, tap the live button to start streaming. Share the game code or QR code with your friends.</p>
+                <details open>
+                    <summary>Stream your game</summary>
+                    <p class="where">Scoreboard &rarr; the ... menu &rarr; Stream live</p>
+                    <ol>
+                        <li>On <b>Stream this game</b>, pick the access mode: <b>Public</b> (anyone with the Game Code can join) or <b>Private</b> (needs an access PIN, 4 to 6 digits).</li>
+                        <li>Tap <b>Start Streaming</b>.</li>
+                        <li>Tap <b>Share Invite</b>, or show the QR code or Game Code.</li>
+                    </ol>
+                    <p>To show the code again later, open the menu and choose <b>Stream QR code</b>.</p>
                 </details>
 
                 <details>
-                    <summary>Join a game</summary>
-                    <p>From the home screen's menu choose <b>Join Live Game</b>, then enter the code or scan the QR code. You can follow the scores and review rounds, and only the host can change them.</p>
+                    <summary>Join and follow a game</summary>
+                    <p class="where">Home menu &rarr; Join Live Game</p>
+                    <ol>
+                        <li>Tap <b>Scan QR Code</b>, or type the Game Code and tap <b>Join Game</b>.</li>
+                        <li>If the game is private, enter the access PIN when asked.</li>
+                        <li>You see the scores in real time. You can open any round to review it, and open Settle Up to see who pays whom.</li>
+                    </ol>
+                    <p>Live games you hosted or joined are listed under <b>Recent live games</b> on the game's home screen, so you can go back to one.</p>
+                </details>
+
+                <details>
+                    <summary>Watch in a browser or on a TV</summary>
+                    <p>Nobody needs the app to watch. Open the web scoreboard, <b>mrajan.com.np/mgpc-stream</b>, in the browser on a laptop, tablet or smart TV, then enter the Game Code. (Type the address in rather than tapping it on a phone with the app, because the app would open instead.)</p>
+                </details>
+
+                <details>
+                    <summary>Hand over the scoring (transfer host)</summary>
+                    <ol>
+                        <li>The current host opens the menu and taps <b>Transfer host</b>. A QR code and a Transfer Host Code appear.</li>
+                        <li>The new host opens the same game, taps <b>Join as host</b> and scans the QR code or types the code.</li>
+                        <li>The game now has a new host, who can enter rounds, edit them and change settings.</li>
+                    </ol>
+                    <p>Handy when the host's battery is low.</p>
                 </details>
             </section>
 
             <section id="settle-up">
                 <h2>Settle Up</h2>
-                <p class="lead">Work out who pays whom.</p>
+                <p class="lead">At the end of the night, turn the scores into the fewest payments, and fold in snacks and dinner.</p>
+
+                <details open>
+                    <summary>Settle a game</summary>
+                    <p class="where">Scoreboard &rarr; the ... menu &rarr; Settle Up</p>
+                    <ol>
+                        <li>Play at least one round. Settle Up appears once the game has rounds.</li>
+                        <li><b>Payments</b> shows who pays whom, using the fewest payments that square everyone up.</li>
+                        <li>Tap a payment to mark it <b>Settled</b> when it is paid. Unpaid ones show "Not yet paid".</li>
+                        <li><b>Balances</b> shows what each player is up or down.</li>
+                    </ol>
+                    <p>If everyone is even, it says "Everyone is already square".</p>
+                </details>
 
                 <details>
-                    <summary>Settle a game</summary>
-                    <p>Open <b>Settle Up</b> from a game, add any shared expenses, and the app shows the fewest payments needed so everyone is square. You can share the result as a picture.</p>
+                    <summary>Add shared costs (snacks, dinner, taxi)</summary>
+                    <ol>
+                        <li>Under <b>Shared costs</b>, tap <b>Add shared cost</b>.</li>
+                        <li>Enter what it was, the amount, and who paid.</li>
+                        <li>Choose who shares it. It is <b>split equally</b> between them.</li>
+                    </ol>
+                    <p>The payments update to include the cost. Amounts are worked out to the cent, so the totals always add up.</p>
+                </details>
+
+                <details>
+                    <summary>Share the settlement</summary>
+                    <p>Tap <b>Share settlement</b> to send it to the group chat: WhatsApp, Viber, Messenger or SMS.</p>
+                </details>
+
+                <details>
+                    <summary>Settle Up in a live game</summary>
+                    <p>The host's Settle Up is shared with everyone following the game. They open <b>View Settle Up</b> (read-only), and it stays up to date as the host changes it.</p>
+                </details>
+            </section>
+
+            <section id="insights">
+                <h2>Player insights</h2>
+                <p class="lead">Who really wins most? Your game history, turned into answers. It uses only the games saved on your phone.</p>
+
+                <details open>
+                    <summary>Where to find it</summary>
+                    <p class="where">Marriage, Call Break or Kitti home &rarr; Insights</p>
+                    <p>At the top, choose <b>Marriage</b>, <b>CallBreak</b>, <b>Kitti</b> or <b>All</b>.</p>
+                </details>
+
+                <details>
+                    <summary>What it shows</summary>
+                    <ul>
+                        <li><b>Lifetime leaderboard:</b> each player's wins and games played, and the money won or lost over all their games.</li>
+                        <li><b>A player's page:</b> tap a player to see their form over recent games, their longest win streak, their toughest opponent and their recent games.</li>
+                        <li><b>Compare two players:</b> who finished ahead more often, and the last games they played together.</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Things to know</summary>
+                    <ul>
+                        <li>Only <b>finished</b> games count.</li>
+                        <li>Win rates need at least <b>5 games</b>. Until then rankings are marked "Provisional".</li>
+                        <li>Money stays separate for each game type and currency, because scoring is not comparable across games.</li>
+                        <li>Players are matched <b>by name</b>. "Ramesh", "ramesh" and "Ramesh " are the same player, but "Ram" and "Ramesh" are not. Type names the same way each time.</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section id="share-resume">
+                <h2>Share, save and resume</h2>
+                <p class="lead">Send the result, and pick a game back up later.</p>
+
+                <details>
+                    <summary>Share the score as a picture</summary>
+                    <p>In Call Break and Kitti, open the scoreboard's ... menu and tap <b>Share score</b>. In Marriage, tap <b>Share Score</b> on the leaderboard. You get a clean picture of the score table to send to the group chat.</p>
+                </details>
+
+                <details>
+                    <summary>Resume a game or look at past games</summary>
+                    <p>A game in progress shows as a <b>Resume game</b> card on that game's home screen. <b>Previous Game History</b> lists your finished games. The app keeps your most recent 100 games.</p>
+                </details>
+
+                <details>
+                    <summary>Leave the scoreboard without losing the game</summary>
+                    <p>The menu's home entry (for example <b>Marriage home</b>) leaves the scoreboard and keeps the game.</p>
+                </details>
+            </section>
+
+            <section id="learn">
+                <h2>Learn and strategy</h2>
+                <p class="lead">Guides inside the app for learning the games.</p>
+
+                <details>
+                    <summary>Learn to Play, Strategy and Tips</summary>
+                    <p>Each game's home screen has a <b>Learn to Play</b> card with guides. Marriage also has the Maal Point Guide. <b>Strategy &amp; Tips</b> is on every game home, and in the home screen's floating menu.</p>
                 </details>
             </section>
 
@@ -319,7 +586,7 @@
 
                 <details>
                     <summary>Go ad-free by watching an ad</summary>
-                    <p>In <b>Settings</b>, tap <b>Go ad-free</b> and watch one short ad. You get 30 minutes without ads. Watch another while it runs to add more time, up to 12 hours.</p>
+                    <p>In <b>Settings</b>, or the home screen's floating menu, tap <b>Go ad-free</b> and watch a short ad. You get a while without ads. Watch another while it runs to add more time.</p>
                 </details>
 
                 <details>
@@ -337,18 +604,33 @@
                 </details>
 
                 <details>
+                    <summary>I changed the rate per point halfway. Did earlier rounds change too?</summary>
+                    <p>Yes. The rate applies to the whole game's totals. In Marriage, saving new settings also works every earlier round out again. See <a href="#change-settings">Change settings mid-game</a>.</p>
+                </details>
+
+                <details>
+                    <summary>Can I add a 7th player?</summary>
+                    <p>In Marriage a game can have more than 6 players, but only 6 can be active in a round. Put someone on Hold first. See <a href="#add-player">Add a player mid-game</a>.</p>
+                </details>
+
+                <details>
                     <summary>Where are my games stored?</summary>
                     <p>Games are saved on your phone. The app keeps your most recent 100 games. Games you share live are also sent to our servers so your friends can see them.</p>
                 </details>
 
                 <details>
                     <summary>Does it work without internet?</summary>
-                    <p>Yes. Scoring works offline. Live games, ads, promo codes and Settle Up sharing need a connection.</p>
+                    <p>Yes. Scoring works offline. Live games, ads, promo codes and sharing a settlement need a connection.</p>
                 </details>
 
                 <details>
                     <summary>I entered something wrong. Can I undo it?</summary>
-                    <p>Yes, see <a href="#edit-rounds">Edit a finished round</a>.</p>
+                    <p>Yes, see <a href="#edit-rounds">Edit a previous round</a>.</p>
+                </details>
+
+                <details>
+                    <summary>Why is a feature missing from my menu?</summary>
+                    <p>Some entries only show when they apply. <b>Add player</b> and <b>Settle Up</b> appear once a game has rounds. <b>Game settings</b>, <b>Add player</b> and <b>Transfer host</b> are for the host. Players following a live game see <b>View live scoreboard</b> instead.</p>
                 </details>
 
                 <details>
