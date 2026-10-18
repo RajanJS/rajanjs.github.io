@@ -2,6 +2,6 @@
     "showBanner": true,
     "message": "Tip: Insights shows who really wins most this Dashain.",
     "imgURL": "https://mrajan.com.np/assets/img/notificationBanner/Happy-Dashain2.png",
-    "resetBanner": true,
+    "resetBanner": false,
     "isAdmobEnabled": true
 }
