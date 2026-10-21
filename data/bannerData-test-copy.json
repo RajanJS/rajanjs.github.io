@@ -1,0 +1,1 @@
+{ "showBanner": true, "message": "Test banner", "resetBanner": true, "route": "SETTINGS_SCREEN", "actionLabel": "Open settings" }
