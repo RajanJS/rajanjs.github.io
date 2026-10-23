@@ -125,12 +125,6 @@
       transform: scale(1.05);
     }
 
-    .status {
-      margin: 12px 0 0;
-      font-size: 0.9rem;
-      min-height: 1.4em;
-    }
-
     .preview {
       flex: 0 0 280px;
     }
@@ -187,7 +181,6 @@
           <img src="/assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on the App Store">
         </a>
       </div>
-      <p class="status" id="status" aria-live="polite"></p>
     </div>
     <div class="preview">
       <img src="/assets/img/project/mgpc/get-mgpc-settle.jpg" alt="MGPC Settle Up screen showing who pays whom">
@@ -215,26 +208,6 @@
         code.textContent = 'Game #' + id.toUpperCase();
         code.hidden = false;
       }
-
-      var ua = navigator.userAgent || '';
-      var isAndroid = /Android/i.test(ua);
-      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-      // Someone with the app is taken straight into it by the link, so a phone that
-      // lands here most likely does not have it: send it to its own store. Tapping
-      // "Open in the app" cancels that, and ?stay=1 keeps the page.
-      if (params.get('stay') === '1') return;
-      var target = isAndroid ? playUrl : isIOS ? APPLE_URL : null;
-      if (!target) return;
-
-      var status = document.getElementById('status');
-      status.textContent = 'Taking you to ' + (isAndroid ? 'Google Play' : 'the App Store') + '…';
-      var timer = setTimeout(function () { window.location.replace(target) }, 1500);
-      openApp.addEventListener('click', function () {
-        clearTimeout(timer);
-        status.textContent = '';
-      });
     })();
   </script>
 </body>
