@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callbreak Point Record – Call Break Score Keeper</title>
+  <meta name="description" content="Callbreak Point Record keeps score for Call Break (Call Bridge, Spades). Round-by-round entry, automatic totals, game history and a win/loss leaderboard. Free on iPhone and Android.">
+  <link rel="canonical" href="https://mrajan.com.np/get-callbreak/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Callbreak Point Record – Call Break Score Keeper">
+  <meta property="og:description" content="Say goodbye to pen-and-paper scorekeeping. Automatic totals, game history and a win/loss leaderboard. Free on iPhone and Android.">
+  <meta property="og:url" content="https://mrajan.com.np/get-callbreak/">
+  <meta property="og:image" content="https://mrajan.com.np/assets/img/project/callbreak/feature.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#2A0E33">
+
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #7A3B7E 0%, #2A0E33 100%);
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+    }
+    /* One column; `order` lets mobile and desktop stack the sections differently. */
+    .wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 40px 20px 48px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero { order: 1; }
+    .carousel { order: 3; }
+    .points { order: 4; }
+    .cta { order: 2; }
+    .secondary { order: 5; }
+    footer { order: 6; }
+    @media (min-width: 768px) {
+      .cta { order: 5; }
+      .secondary { order: 6; }
+      footer { order: 7; }
+    }
+
+    .logo { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+    h1 { font-size: clamp(1.6rem, 7vw, 2.1rem); line-height: 1.15; margin: 18px 0 4px; letter-spacing: .5px; }
+    .sub { margin: 0 0 22px; font-size: 1.02rem; color: #FFD27A; font-weight: 500; }
+    .hook { font-size: 1.25rem; font-weight: 700; margin: 0 0 6px; }
+    .lead { margin: 0 0 22px; opacity: .92; font-size: .98rem; line-height: 1.5; }
+    .games { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; }
+    .chip {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    /* Carousel: full width, centred slide enlarged, neighbours dimmed, endless loop. */
+    .carousel {
+      --w: 220px;
+      --gap: 34px;
+      position: relative;
+      width: 100vw;
+      align-self: center;
+      overflow: hidden;
+      margin: 8px 0 22px;
+      padding: 52px 0 64px;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    @media (min-width: 768px) { .carousel { --w: 250px; } }
+    .track {
+      display: flex;
+      gap: var(--gap);
+      width: max-content;
+      will-change: transform;
+      transition: transform .5s cubic-bezier(.22,.8,.3,1);
+    }
+    .track.drag, .track.jump { transition: none; }
+    .slide {
+      flex: 0 0 var(--w);
+      width: var(--w);
+      transform: scale(.9);
+      opacity: .72;
+      transition: transform .5s cubic-bezier(.22,.8,.3,1), opacity .5s;
+      line-height: 0;
+    }
+    .track.drag .slide, .track.jump .slide { transition: none; }
+    .slide.active { transform: scale(1.18); opacity: 1; z-index: 2; position: relative; }
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.5);
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+    .car-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      color: #2A0E33;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,.35);
+      display: none;
+    }
+    .car-btn.prev { left: calc(50% - var(--w) / 2 - 170px); }
+    .car-btn.next { right: calc(50% - var(--w) / 2 - 170px); }
+    @media (min-width: 768px) { .car-btn { display: block; } }
+    .dots { position: absolute; left: 0; right: 0; bottom: 18px; display: flex; justify-content: center; gap: 8px; }
+    .dots button {
+      width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%;
+      background: rgba(255,255,255,.35); cursor: pointer;
+      transition: width .3s, background .3s;
+    }
+    .dots button.on { background: #FFD27A; width: 22px; border-radius: 6px; }
+
+    ul.points { list-style: none; padding: 0; margin: 0 0 26px; text-align: left; }
+    ul.points li {
+      background: rgba(0,0,0,.18);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      font-size: .95rem;
+      line-height: 1.4;
+    }
+    ul.points b { color: #FFD27A; }
+
+    /* Download block: QR (desktop only) → store badges on one line → search hint. */
+    .cta { display: flex; flex-direction: column; align-items: center; margin-bottom: 8px; }
+    .desktop-qr { display: none; margin-bottom: 18px; }
+    .desktop-qr img { width: 168px; height: 168px; border-radius: 14px; background: #fff; }
+    .desktop-qr p { margin: 8px 0 0; font-size: .9rem; opacity: .9; }
+    @media (min-width: 768px) { .desktop-qr { display: block; } }
+    .stores { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 12px; flex-wrap: nowrap; }
+    .stores a { display: block; line-height: 0; }
+    .stores img { height: 46px; width: auto; }
+    @media (min-width: 768px) { .stores img { height: 54px; } }
+    .status { min-height: 1.4em; font-size: .88rem; opacity: .85; margin: 8px 0 0; }
+    .search {
+      margin: 14px auto 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: #2A0E33;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0,0,0,.25);
+    }
+    .search small { font-weight: 400; color: #6b7785; }
+
+    .secondary a { color: #90CAF9; font-weight: 600; text-decoration: none; }
+    .secondary a:hover { text-decoration: underline; }
+    .secondary p { margin: 6px 0; font-size: .95rem; }
+    footer { margin-top: 28px; font-size: .8rem; opacity: .75; line-height: 1.6; }
+    footer a { color: #90CAF9; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <img class="logo" src="/assets/img/project/callbreak/callbreak-icon.png" alt="Callbreak Point Record logo" width="104" height="104">
+      <h1>Callbreak Point Record</h1>
+      <p class="sub">Call Break Score Keeper</p>
+
+      <p class="hook">Put the pen and paper away.</p>
+      <p class="lead">Enter each round's calls and results, and the totals update for you.<br>Keep every game and see who is winning.</p>
+
+      <div class="games" aria-label="Also known as">
+        <span class="chip">♠ Call Break</span>
+        <span class="chip">♥ Call Bridge</span>
+        <span class="chip">♦ Spades</span>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="stores">
+        <a id="ios-link" href="https://apps.apple.com/app/id6474490853" rel="noopener">
+          <img src="/assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on the App Store">
+        </a>
+        <a id="android-link" href="https://play.google.com/store/apps/details?id=com.techstackapps.callbreakpointrecord" rel="noopener">
+          <img src="/assets/img/Google_Play_Store_badge_EN.webp" alt="Get it on Google Play">
+        </a>
+      </div>
+      <p class="status" id="status" aria-live="polite"></p>
+
+      <div class="search">🔍 Search <span>“Callbreak Point Record”</span> <small>in your app store</small></div>
+    </section>
+
+    <section class="carousel" id="carousel" aria-roledescription="carousel" aria-label="App screenshots">
+      <button class="car-btn prev" id="car-prev" aria-label="Previous screenshot">‹</button>
+      <div class="track" id="track">
+        <div class="slide"><img src="/assets/img/project/callbreak/get-callbreak-1.jpg" alt="Callbreak Point Record home: new game, continue game, game logs and settings" width="480" height="960" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/callbreak/get-callbreak-2.jpg" alt="Entering each player's calls for a round" width="480" height="960" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/callbreak/get-callbreak-3.jpg" alt="Scoreboard with the current round and overall summary" width="480" height="960" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/callbreak/get-callbreak-4.jpg" alt="Round-by-round summary with totals" width="480" height="960" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/callbreak/get-callbreak-5.jpg" alt="Leaderboard with points and total won or lost" width="480" height="960" draggable="false"></div>
+        <div class="slide"><img src="/assets/img/project/callbreak/get-callbreak-6.jpg" alt="Game logs: continue a previous game" width="480" height="960" draggable="false"></div>
+      </div>
+      <button class="car-btn next" id="car-next" aria-label="Next screenshot">›</button>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <ul class="points">
+      <li><b>🧮 Totals that add up themselves.</b> Enter each player's calls and the hands they won, and the scoreboard updates every round.</li>
+      <li><b>🏆 A leaderboard for the whole game.</b> See points, who is ahead and the total won or lost for each player.</li>
+      <li><b>📒 Pick a game up again.</b> Every game is saved in the game logs, so you can continue one later.</li>
+      <li><b>⚙️ Your house rules.</b> Change the game settings to match how your group plays.</li>
+    </ul>
+
+    <div class="secondary">
+      <p>Also play Marriage or Kitti? <a href="/get-mgpc/?stay=1">Try MGPC</a></p>
+      <p>More apps: <a href="/techstackapps#apps">Tech Stack Apps</a></p>
+    </div>
+
+    <footer>
+      Free to use. Found it useful? Share it with the people you play with.<br>
+      © Tech Stack Apps
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var PLAY_BASE = 'https://play.google.com/store/apps/details?id=com.techstackapps.callbreakpointrecord';
+      var APPLE_URL = 'https://apps.apple.com/app/id6474490853';
+      var params = new URLSearchParams(window.location.search);
+
+      // Pass campaign tags through to the Play Store install referrer so story conversions are measurable.
+      var utm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+        .filter(function (k) { return params.get(k) })
+        .map(function (k) { return k + '=' + encodeURIComponent(params.get(k)) })
+        .join('&');
+      var playUrl = utm ? PLAY_BASE + '&referrer=' + encodeURIComponent(utm) : PLAY_BASE;
+
+      document.getElementById('android-link').href = playUrl;
+      document.getElementById('ios-link').href = APPLE_URL;
+
+      var ua = navigator.userAgent || '';
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+      // Mobile visitors are sent straight to their store. Add ?stay=1 to keep them on this page.
+      if (params.get('stay') === '1') return;
+      var target = isAndroid ? playUrl : isIOS ? APPLE_URL : null;
+      if (!target) return;
+
+      var status = document.getElementById('status');
+      status.textContent = 'Taking you to ' + (isAndroid ? 'Google Play' : 'the App Store') + '…';
+      setTimeout(function () { window.location.replace(target) }, 900);
+    })();
+  </script>
+
+  <script>
+    // Endless carousel: three copies of the slides, jump back to the middle copy after each move.
+    (function () {
+      var root = document.getElementById('carousel');
+      var track = document.getElementById('track');
+      var dotsEl = document.getElementById('dots');
+      var originals = Array.prototype.slice.call(track.children);
+      var N = originals.length;
+
+      [0, 1].forEach(function () {
+        originals.forEach(function (s) {
+          var c = s.cloneNode(true);
+          c.setAttribute('aria-hidden', 'true');
+          track.appendChild(c);
+        });
+      });
+      var slides = Array.prototype.slice.call(track.children);
+      var index = N, step = 0, dragging = false, startX = 0, dx = 0, lastTouch = 0, timer = null;
+
+      for (var i = 0; i < N; i++) {
+        (function (k) {
+          var b = document.createElement('button');
+          b.setAttribute('aria-label', 'Show screenshot ' + (k + 1));
+          b.addEventListener('click', function () {
+            var cur = ((index % N) + N) % N;
+            var d = k - cur;
+            if (d > N / 2) d -= N;
+            if (d < -N / 2) d += N;
+            move(d, true);
+          });
+          dotsEl.appendChild(b);
+        })(i);
+      }
+      var dots = Array.prototype.slice.call(dotsEl.children);
+
+      function measure() {
+        var w = slides[0].offsetWidth;
+        var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        step = w + gap;
+      }
+      function offsetFor(i) {
+        return root.clientWidth / 2 - (i * step + slides[0].offsetWidth / 2);
+      }
+      function paint(extra) {
+        track.style.transform = 'translate3d(' + (offsetFor(index) + (extra || 0)) + 'px,0,0)';
+        slides.forEach(function (s, k) { s.classList.toggle('active', k === index) });
+        var cur = ((index % N) + N) % N;
+        dots.forEach(function (d, k) { d.className = k === cur ? 'on' : '' });
+      }
+      function jumpTo(i) {
+        track.classList.add('jump');
+        index = i;
+        paint();
+        void track.offsetWidth;
+        track.classList.remove('jump');
+      }
+      function move(delta, byUser) {
+        if (byUser) bump();
+        index += delta;
+        paint();
+      }
+      // After the slide settles, hop back to the middle copy so there is always an image on both sides.
+      track.addEventListener('transitionend', function (e) {
+        if (e.target !== track || e.propertyName !== 'transform') return;
+        if (index >= 2 * N) jumpTo(index - N);
+        else if (index < N) jumpTo(index + N);
+      });
+
+      document.getElementById('car-prev').addEventListener('click', function () { move(-1, true) });
+      document.getElementById('car-next').addEventListener('click', function () { move(1, true) });
+
+      // Drag / swipe.
+      root.addEventListener('pointerdown', function (e) {
+        if (e.target.closest('.car-btn, .dots')) return;
+        dragging = true; startX = e.clientX; dx = 0;
+        track.classList.add('drag');
+        bump();
+      });
+      window.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        dx = e.clientX - startX;
+        paint(dx);
+      });
+      function endDrag() {
+        if (!dragging) return;
+        dragging = false;
+        track.classList.remove('drag');
+        var d = Math.abs(dx) > 40 ? (dx < 0 ? 1 : -1) : 0;
+        move(d, true);
+      }
+      window.addEventListener('pointerup', endDrag);
+      window.addEventListener('pointercancel', endDrag);
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') move(-1, true);
+        if (e.key === 'ArrowRight') move(1, true);
+      });
+
+      // Auto-advance; pauses on any interaction and resumes after a few idle seconds.
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var resumeAt = 0;
+      function bump() { resumeAt = Date.now() + 6000 }
+      if (!reduce) {
+        timer = setInterval(function () {
+          if (document.hidden || dragging || Date.now() < resumeAt) return;
+          move(1, false);
+        }, 3200);
+      }
+
+      window.addEventListener('resize', function () { measure(); jumpTo(index) });
+      measure();
+      jumpTo(index);
+      window.addEventListener('load', function () { measure(); jumpTo(index) });
+    })();
+  </script>
+</body>
+</html>
