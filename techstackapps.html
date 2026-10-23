@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tech Stack Apps — Simple Apps. Useful Solutions." />
+  <meta name="description" content="Tech Stack Apps — Simple Apps. Useful Solutions. MGPC and Callbreak Point Record: score keepers for Marriage, Callbreak and Kitti card games." />
   <title>Tech Stack Apps</title>
+  <link rel="canonical" href="https://mrajan.com.np/techstackapps" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tech Stack Apps" />
+  <meta property="og:description" content="Simple Apps. Useful Solutions. MGPC and Callbreak Point Record: score keepers for Marriage, Callbreak and Kitti card games." />
+  <meta property="og:url" content="https://mrajan.com.np/techstackapps" />
+  <meta property="og:image" content="https://mrajan.com.np/assets/img/project/mgpc/get-mgpc-feature.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -360,6 +368,12 @@
     }
     .app-card-link:hover { border-color: var(--ink); background: var(--bg); }
 
+    .app-card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     .app-card-link svg {
       transition: transform .18s;
     }
@@ -541,7 +555,16 @@
           </div>
           <div>
             <div class="card-name">MGPC</div>
-            <div class="card-tag">Marriage Game Point Calculator</div>
+            <div class="card-tag">Marriage, Callbreak &amp; Kitti score keeper</div>
+          </div>
+        </div>
+        <div class="hero-app-card featured">
+          <div class="app-icon-mini">
+            <img src="assets/img/project/callbreak/callbreak-icon.png" alt="Callbreak Point Record" />
+          </div>
+          <div>
+            <div class="card-name">Callbreak Point Record</div>
+            <div class="card-tag">Call Break score keeper</div>
           </div>
         </div>
         <div class="hero-app-card">
@@ -580,7 +603,7 @@
             <img src="assets/img/project/mgpc/logo.png" alt="MGPC icon" />
           </div>
           <h3>MGPC</h3>
-          <p>A simple scoring app for the popular Marriage card game. Track points in real-time, hands-free.</p>
+          <p>Marriage Game Point Calculator. A simple scoring app for Marriage, Callbreak and Kitti. Track points in real-time and share a live scoreboard.</p>
           <div class="badges">
             <span class="badge ios">iOS</span>
             <span class="badge android">Android</span>
@@ -591,8 +614,25 @@
           </a>
         </div>
 
-        <!-- MGPC Stream -->
+        <!-- Callbreak Point Record -->
         <div class="app-card fade-up" style="transition-delay:.08s">
+          <div class="app-card-icon">
+            <img src="assets/img/project/callbreak/callbreak-icon.png" alt="Callbreak Point Record icon" />
+          </div>
+          <h3>Callbreak Point Record</h3>
+          <p>Say goodbye to pen-and-paper scorekeeping for Call Break. Round-by-round scores, automatic totals, game history and a win/loss leaderboard.</p>
+          <div class="badges">
+            <span class="badge ios">iOS</span>
+            <span class="badge android">Android</span>
+          </div>
+          <div class="app-card-links">
+            <a href="https://apps.apple.com/app/id6474490853" target="_blank" rel="noopener" class="app-card-link">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.techstackapps.callbreakpointrecord" target="_blank" rel="noopener" class="app-card-link">Google Play</a>
+          </div>
+        </div>
+
+        <!-- MGPC Stream -->
+        <div class="app-card fade-up" style="transition-delay:.16s">
           <div class="app-card-icon" style="background:#FFF0F0;">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="11" height="11" rx="3" fill="#C8181A" opacity=".85"/><rect x="17" y="4" width="11" height="11" rx="3" fill="#C8181A" opacity=".45"/><rect x="4" y="17" width="11" height="11" rx="3" fill="#C8181A" opacity=".45"/><rect x="17" y="17" width="11" height="11" rx="3" fill="#C8181A" opacity=".2"/></svg>
           </div>
@@ -608,7 +648,7 @@
         </div>
 
         <!-- MGPC Android TV -->
-        <div class="app-card fade-up" style="transition-delay:.16s">
+        <div class="app-card fade-up" style="transition-delay:.24s">
           <div class="app-card-icon" style="background:#F0FDF4;">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="7" width="28" height="18" rx="3" stroke="#16A34A" stroke-width="2"/><path d="M11 25v3M21 25v3M8 28h16" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="16" r="2" fill="#16A34A" opacity=".6"/><circle cx="16" cy="16" r="2" fill="#16A34A"/><circle cx="22" cy="16" r="2" fill="#16A34A" opacity=".6"/></svg>
           </div>
@@ -640,7 +680,7 @@
           <div class="email-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5z" stroke="white" stroke-width="1.6"/><path d="M2 6l8 5 8-5" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
-          <span class="__cf_email__" data-cfemail="e88b87869c898b9ca89c8d8b809b9c898b838998989bc68b8785">[techstackapps@gmail.com]</span>
+          <span>techstackapps@gmail.com</span>
         </a>
       </div>
     </div>
@@ -662,7 +702,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Scroll fade-in
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
