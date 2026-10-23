@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settle Up - MGPC</title>
+  <meta name="description" content="Someone shared a Settle Up from MGPC: who pays whom after a card game. Open it in the app or download MGPC.">
+  <meta property="og:title" content="Settle Up on MGPC">
+  <meta property="og:description" content="Who pays whom after a card game, worked out in MGPC.">
+  <meta property="og:image" content="https://mrajan.com.np/assets/img/project/mgpc/get-mgpc-settle.jpg">
+  <link rel="icon" href="/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      background: linear-gradient(135deg, #AF1919 0%, #2C3E50 100%);
+      color: #fff;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      max-width: 880px;
+      width: 100%;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #F2C879;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #DCE6F1;
+      margin-bottom: 28px;
+    }
+
+    .game-code {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      margin-bottom: 24px;
+    }
+
+    .open-app {
+      display: inline-block;
+      background: #1E88E5;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .open-app:hover {
+      background: #1565C0;
+    }
+
+    .get-app {
+      margin-top: 36px;
+      font-size: 0.9rem;
+      color: #DCE6F1;
+    }
+
+    .download-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .download-buttons img {
+      height: 48px;
+      width: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .download-buttons a:hover img {
+      transform: scale(1.05);
+    }
+
+    .preview {
+      flex: 0 0 280px;
+    }
+
+    .preview img {
+      width: 100%;
+      display: block;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 720px) {
+      .card {
+        flex-direction: column;
+        gap: 36px;
+        text-align: center;
+      }
+
+      .logo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .download-buttons {
+        justify-content: center;
+      }
+
+      .preview {
+        flex: none;
+        width: min(260px, 70vw);
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="text">
+      <img class="logo" src="/assets/img/project/mgpc/logo.png" alt="MGPC logo">
+      <div class="eyebrow">Settle Up</div>
+      <h1>Who pays whom, worked out</h1>
+      <p>Someone shared a Settle Up from their card game. Open it in the MGPC app to see who pays whom and the shared costs.</p>
+      <div class="game-code" id="gameCode" hidden></div>
+      <div><a class="open-app" id="openApp" href="mgpc://settle">Open in the app</a></div>
+      <div class="get-app">Don't have the app yet?</div>
+      <div class="download-buttons">
+        <a href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator" aria-label="Get it on Google Play">
+          <img src="/assets/img/Google_Play_Store_badge_EN.webp" alt="Get it on Google Play">
+        </a>
+        <a href="https://apps.apple.com/app/id1546733404" aria-label="Download on the App Store">
+          <img src="/assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on the App Store">
+        </a>
+      </div>
+    </div>
+    <div class="preview">
+      <img src="/assets/img/project/mgpc/get-mgpc-settle.jpg" alt="MGPC Settle Up screen showing who pays whom">
+    </div>
+  </main>
+
+  <script>
+    (function() {
+      // /mgpc/settle/EL9AM8 is rewritten to /mgpc/settle/?id=EL9AM8 by 404.html
+      var id = new URLSearchParams(window.location.search).get('id') || '';
+      if (!/^[A-Za-z0-9]{4,12}$/.test(id)) return;
+
+      document.getElementById('openApp').href = 'mgpc://settle/' + id;
+      var code = document.getElementById('gameCode');
+      code.textContent = 'Game #' + id.toUpperCase();
+      code.hidden = false;
+    })();
+  </script>
+</body>
+</html>

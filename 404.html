@@ -40,6 +40,16 @@ permalink: /404.html
       }
     }
     
+    // Settle Up links: /mgpc/settle/<gameId> goes to the static fallback page
+    if (path.includes('/mgpc/settle/')) {
+      const settleId = path.split('/').filter(Boolean).pop();
+
+      if (settleId && settleId !== 'settle') {
+        window.location.replace('/mgpc/settle/?id=' + encodeURIComponent(settleId));
+        return;
+      }
+    }
+
     // Check for transfer-host paths
     if (path.includes('/mgpc/transfer-host/') || path.includes('/mgpc/transfer/')) {
       const pathParts = path.split('/').filter(Boolean);
