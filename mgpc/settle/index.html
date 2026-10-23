@@ -125,6 +125,12 @@
       transform: scale(1.05);
     }
 
+    .status {
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      min-height: 1.4em;
+    }
+
     .preview {
       flex: 0 0 280px;
     }
@@ -174,13 +180,14 @@
       <div><a class="open-app" id="openApp" href="mgpc://settle">Open in the app</a></div>
       <div class="get-app">Don't have the app yet?</div>
       <div class="download-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator" aria-label="Get it on Google Play">
+        <a id="android-link" href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator" aria-label="Get it on Google Play">
           <img src="/assets/img/Google_Play_Store_badge_EN.webp" alt="Get it on Google Play">
         </a>
-        <a href="https://apps.apple.com/app/id1546733404" aria-label="Download on the App Store">
+        <a id="ios-link" href="https://apps.apple.com/app/id1546733404" aria-label="Download on the App Store">
           <img src="/assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on the App Store">
         </a>
       </div>
+      <p class="status" id="status" aria-live="polite"></p>
     </div>
     <div class="preview">
       <img src="/assets/img/project/mgpc/get-mgpc-settle.jpg" alt="MGPC Settle Up screen showing who pays whom">
@@ -189,14 +196,45 @@
 
   <script>
     (function() {
-      // /mgpc/settle/EL9AM8 is rewritten to /mgpc/settle/?id=EL9AM8 by 404.html
-      var id = new URLSearchParams(window.location.search).get('id') || '';
-      if (!/^[A-Za-z0-9]{4,12}$/.test(id)) return;
+      var PLAY_BASE = 'https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator';
+      var APPLE_URL = 'https://apps.apple.com/app/id1546733404';
+      var params = new URLSearchParams(window.location.search);
 
-      document.getElementById('openApp').href = 'mgpc://settle/' + id;
-      var code = document.getElementById('gameCode');
-      code.textContent = 'Game #' + id.toUpperCase();
-      code.hidden = false;
+      // Tag installs that start from a shared Settle Up in the Play install referrer.
+      var playUrl = PLAY_BASE + '&referrer=' + encodeURIComponent('utm_source=app&utm_medium=share&utm_campaign=settle_up');
+      document.getElementById('android-link').href = playUrl;
+      document.getElementById('ios-link').href = APPLE_URL;
+
+      // /mgpc/settle/EL9AM8 is rewritten to /mgpc/settle/?id=EL9AM8 by 404.html
+      var id = params.get('id') || '';
+      var hasId = /^[A-Za-z0-9]{4,12}$/.test(id);
+      var openApp = document.getElementById('openApp');
+      if (hasId) {
+        openApp.href = 'mgpc://settle/' + id;
+        var code = document.getElementById('gameCode');
+        code.textContent = 'Game #' + id.toUpperCase();
+        code.hidden = false;
+      }
+
+      var ua = navigator.userAgent || '';
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+      // Someone with the app is taken straight into it by the link, so a phone that
+      // lands here most likely does not have it: send it to its own store. Tapping
+      // "Open in the app" cancels that, and ?stay=1 keeps the page.
+      if (params.get('stay') === '1') return;
+      var target = isAndroid ? playUrl : isIOS ? APPLE_URL : null;
+      if (!target) return;
+
+      var status = document.getElementById('status');
+      status.textContent = 'Taking you to ' + (isAndroid ? 'Google Play' : 'the App Store') + '…';
+      var timer = setTimeout(function () { window.location.replace(target) }, 1500);
+      openApp.addEventListener('click', function () {
+        clearTimeout(timer);
+        status.textContent = '';
+      });
     })();
   </script>
 </body>
