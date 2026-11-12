@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join a Faras table - MGPC</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Someone invited you to a Faras table on MGPC. Open the invite in the app, or download MGPC to join.">
+  <meta property="og:title" content="Join a Faras table on MGPC">
+  <meta property="og:description" content="You have been invited to a Faras table. Open it in MGPC.">
+  <link rel="icon" href="/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      background: linear-gradient(135deg, #AF1919 0%, #2C3E50 100%);
+      color: #fff;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #F2C879;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #DCE6F1;
+      margin-bottom: 28px;
+    }
+
+    .game-code {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      margin-bottom: 24px;
+    }
+
+    .open-app {
+      display: inline-block;
+      background: linear-gradient(135deg, #F2C879, #E0A93B);
+      color: #2C3E50;
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .open-app:hover {
+      background: linear-gradient(135deg, #F7D58F, #EBB84F);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .get-app {
+      margin-top: 36px;
+      font-size: 0.9rem;
+      color: #DCE6F1;
+    }
+
+    .download-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .download-buttons img {
+      height: 48px;
+      width: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .download-buttons a:hover img {
+      transform: scale(1.05);
+    }
+
+    /* The badge for the visitor's own phone comes first and the other one steps back. */
+    .download-buttons a.mine img {
+      outline: 2px solid rgba(255, 255, 255, 0.85);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    .download-buttons a.other {
+      order: 2;
+      opacity: 0.7;
+    }
+
+
+
+    @media (max-width: 720px) {
+      .card {
+        flex-direction: column;
+        gap: 36px;
+        text-align: center;
+      }
+
+      .logo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .download-buttons {
+        justify-content: center;
+      }
+
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="text">
+      <img class="logo" src="/assets/img/project/mgpc/logo.png" alt="MGPC logo">
+      <div class="eyebrow">Faras</div>
+      <h1>You are invited to a table</h1>
+      <p>Someone invited you to play Faras with them. Open the invite in the MGPC app, pick your seat and wait for the host to let you in.</p>
+      <div class="game-code" id="gameCode" hidden></div>
+      <div><a class="open-app" id="openApp" href="mgpc://faras/join">Open in the app</a></div>
+      <div class="get-app">Don't have the app yet?</div>
+      <div class="download-buttons">
+        <a id="android-link" href="https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator" aria-label="Get it on Google Play">
+          <img src="/assets/img/Google_Play_Store_badge_EN.webp" alt="Get it on Google Play">
+        </a>
+        <a id="ios-link" href="https://apps.apple.com/app/id1546733404" aria-label="Download on the App Store">
+          <img src="/assets/img/Download_on_the_App_Store_Badge.webp" alt="Download on the App Store">
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function() {
+      var PLAY_BASE = 'https://play.google.com/store/apps/details?id=com.marriagecardgamepointcalculator';
+      var APPLE_URL = 'https://apps.apple.com/app/id1546733404';
+      var params = new URLSearchParams(window.location.search);
+
+      // Tag installs that start from a shared Faras invite in the Play install referrer.
+      var playUrl = PLAY_BASE + '&referrer=' + encodeURIComponent('utm_source=app&utm_medium=share&utm_campaign=faras_invite');
+      document.getElementById('android-link').href = playUrl;
+      document.getElementById('ios-link').href = APPLE_URL;
+
+      // /mgpc/faras/join/K7M4Q2 is rewritten to /mgpc/faras/join/?code=K7M4Q2 by 404.html
+      var id = params.get('code') || '';
+      var hasId = /^[A-Za-z0-9]{4,12}$/.test(id);
+      var openApp = document.getElementById('openApp');
+      if (hasId) {
+        openApp.href = 'mgpc://faras/join/' + id.toUpperCase();
+        var code = document.getElementById('gameCode');
+        code.textContent = 'Table ' + id.toUpperCase();
+        code.hidden = false;
+      }
+
+      // Highlight the store for this phone. Nothing navigates on its own: the person taps.
+      var ua = navigator.userAgent || '';
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (isAndroid || isIOS) {
+        document.getElementById(isAndroid ? 'android-link' : 'ios-link').className = 'mine';
+        document.getElementById(isAndroid ? 'ios-link' : 'android-link').className = 'other';
+      }
+    })();
+  </script>
+</body>
+</html>

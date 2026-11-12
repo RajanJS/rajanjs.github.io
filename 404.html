@@ -40,6 +40,16 @@ permalink: /404.html
       }
     }
     
+    // Faras table invites: /mgpc/faras/join/<code> goes to the static fallback page, which offers the app or the stores
+    if (path.includes('/mgpc/faras/join/')) {
+      const farasCode = path.split('/').filter(Boolean).pop();
+
+      if (farasCode && farasCode !== 'join') {
+        window.location.replace('/mgpc/faras/join/?code=' + encodeURIComponent(farasCode));
+        return;
+      }
+    }
+
     // Settle Up links: /mgpc/settle/<gameId> goes to the static fallback page
     if (path.includes('/mgpc/settle/')) {
       const settleId = path.split('/').filter(Boolean).pop();
