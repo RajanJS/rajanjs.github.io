@@ -50,6 +50,16 @@ permalink: /404.html
       }
     }
 
+    // Faras settlement reminders: /mgpc/faras/settle/<code> goes to its static fallback page
+    if (path.includes('/mgpc/faras/settle/')) {
+      const farasSettleCode = path.split('/').filter(Boolean).pop();
+
+      if (farasSettleCode && farasSettleCode !== 'settle') {
+        window.location.replace('/mgpc/faras/settle/?code=' + encodeURIComponent(farasSettleCode));
+        return;
+      }
+    }
+
     // Settle Up links: /mgpc/settle/<gameId> goes to the static fallback page
     if (path.includes('/mgpc/settle/')) {
       const settleId = path.split('/').filter(Boolean).pop();
