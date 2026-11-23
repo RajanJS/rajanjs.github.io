@@ -50,6 +50,16 @@ permalink: /404.html
       }
     }
 
+    // Kitti chips table invites: /mgpc/kitti/join/<code> goes to its static fallback page
+    if (path.includes('/mgpc/kitti/join/')) {
+      const kittiCode = path.split('/').filter(Boolean).pop();
+
+      if (kittiCode && kittiCode !== 'join') {
+        window.location.replace('/mgpc/kitti/join/?code=' + encodeURIComponent(kittiCode));
+        return;
+      }
+    }
+
     // Faras settlement reminders: /mgpc/faras/settle/<code> goes to its static fallback page
     if (path.includes('/mgpc/faras/settle/')) {
       const farasSettleCode = path.split('/').filter(Boolean).pop();
